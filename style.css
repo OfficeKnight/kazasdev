@@ -1,0 +1,140 @@
+/* kazas.dev · Über mich
+   Farben als Tokens, hell als Vorgabe, dunkel folgt der Systemeinstellung. */
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("assets/fonts/publicsans-latin.woff2") format("woff2");
+}
+
+:root {
+  --bg: #f3f4f6;
+  --fg: #1b1f26;
+  --muted: #5b6472;
+  --line: #d5d9e0;
+  --soft: #e3eff0;
+  --accent: #0f5e68;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c2026;
+    --fg: #e8eaee;
+    --muted: #9aa3b0;
+    --line: #2b3039;
+    --soft: #1d2e31;
+    --accent: #6fc3cd;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+  padding-block: 48px 40px;
+}
+main { max-width: 760px; margin: 0 auto; display: grid; gap: 40px; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.1rem); line-height: 1.05; letter-spacing: -0.01em; }
+h2 { font-size: 1.4rem; margin-bottom: 10px; }
+p { margin: 0 0 12px; max-width: 65ch; }
+p:last-child { margin-bottom: 0; }
+
+/* Kopf mit großem Foto */
+.kopf {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.kopf img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background: var(--soft);
+}
+.kopf .text { display: grid; gap: 12px; min-width: 0; }
+.rolle { font-size: 1.15rem; font-weight: 500; }
+.ort {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (max-width: 620px) {
+  body { padding-block: 32px 32px; }
+  .kopf { grid-template-columns: 1fr; gap: 24px; }
+  .kopf img { max-width: 340px; }
+}
+
+/* Schwerpunkte */
+.liste { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.liste li { padding-left: 1.1em; position: relative; }
+.liste li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.68em;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Abschluss */
+footer {
+  max-width: 760px;
+  margin: 56px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+footer img {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--soft);
+  flex: none;
+}
+footer .wer { display: grid; gap: 2px; min-width: 0; }
+footer .wer b { font-family: var(--display); font-weight: 500; font-size: 1.15rem; }
+footer .wer span { color: var(--muted); font-size: 0.95rem; }
+footer nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.95rem; }
+footer nav a { display: inline-flex; align-items: center; gap: 7px; }
+footer nav svg { width: 18px; height: 18px; fill: currentColor; }
+@media (max-width: 620px) { footer nav { margin-left: 0; width: 100%; } }
+
+/* Unterseite Datenschutz */
+.schmal { max-width: 680px; }
+.schmal h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); }
+.zurueck { font-size: 0.95rem; }
+.schmal h2 { font-size: 1.25rem; margin-top: 8px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: color 0.15s; }
+}

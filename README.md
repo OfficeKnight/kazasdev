@@ -1,15 +1,18 @@
 # kazas.dev
 
-Persönliche Seite von Rostislaw Kazas. Statisches HTML und CSS, kein Build, kein JavaScript, kein Tracking.
+Persönliche Seite von Rostislaw Kazas. Statisches HTML und CSS, kein Build, keine Cookies. Einziges Skript ist der Farbschema-Schalter (hell, dunkel, wie Gerät).
 
 ## Dateien
 
 | Datei | Zweck |
 | --- | --- |
-| `index.html` | Über-mich-Seite |
+| `index.html` | Startseite mit Kopf, Schwerpunkten und den vier Stationen |
+| `werkstatt/index.html` | Werkstatt, Projekte aus der Freizeit, Fotos folgen |
 | `datenschutz.html` | Datenschutzerklärung |
-| `style.css` | Gestaltung, hell als Vorgabe, dunkel nach Systemeinstellung |
-| `assets/` | Fotos, Vorschaubild für geteilte Links, Schriften (Newsreader, Public Sans, beide SIL Open Font License) |
+| `style.css` | Gestaltung, Farben als Tokens, hell und dunkel nach Systemeinstellung oder Schalter |
+| `assets/js/farbschema.js` | Schalter für das Farbschema, speichert eine Wahl nur im localStorage |
+| `assets/fonts/` | IBM Plex Sans und IBM Plex Mono (SIL Open Font License, siehe `OFL-IBM-Plex.txt`), offizielle Latin1-Teildateien von IBM |
+| `assets/` | Fotos, Vorschaubild für geteilte Links |
 | `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` | Browser-Symbole mit den Initialen |
 | `.well-known/security.txt` | Kontakt für Sicherheitsmeldungen, läuft am 28.10.2027 ab und muss dann verlängert werden |
 | `CNAME` | Custom Domain für GitHub Pages |
@@ -43,6 +46,7 @@ TXT   _dmarc  "v=DMARC1; p=reject;"
 
 ## Pflege
 
-- Text ändern in `index.html`, pushen nach `main`, nach etwa einer Minute ist es live.
+- Text ändern in `index.html` oder `werkstatt/index.html`, pushen nach `main`, nach etwa einer Minute ist es live.
+- Die Links zu LinkedIn tragen schon `data-goatcounter-click`. Sobald GoatCounter eingebunden ist, zählen sie als Ereignis. Dann Content-Security-Policy in allen Seiten um die GoatCounter-Adresse erweitern und den Absatz zur Besucherstatistik in `datenschutz.html` ergänzen.
 - `security.txt` einmal im Jahr das Datum in `Expires` verlängern.
 - Bei einem Wechsel der E-Mail-Adresse `datenschutz.html` und `security.txt` anpassen.

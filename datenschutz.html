@@ -3,50 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Datenschutz · kazas.dev</title>
   <meta name="description" content="Datenschutzerklärung für kazas.dev.">
   <meta name="robots" content="noindex, follow">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1c2026" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161514" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="assets/js/farbschema.js"></script>
 </head>
 <body>
-<main class="schmal">
-  <p class="zurueck"><a href="./">Zurück zur Startseite</a></p>
-  <h1>Datenschutz</h1>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-  <section>
-    <h2>Verantwortlicher</h2>
-    <p>Rostislaw Kazas, Chemnitz<br>E-Mail rostislaw.kazas@gmail.com</p>
-  </section>
+<header class="leiste">
+  <div class="wrap">
+    <a class="marke" href="./" aria-label="kazas.dev, Startseite">
+      <img src="assets/rostislaw-kazas.jpg" width="320" height="320" alt="">
+      <span>kazas.dev</span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="werkstatt/">Werkstatt</a>
+      <a href="https://www.linkedin.com/in/rkazas/" rel="me noopener">LinkedIn</a>
+      <button class="schema" type="button" aria-label="Farbschema wechseln" hidden>
+        <svg class="i-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17A8.5 8.5 0 0 0 12 3.5z" fill="currentColor"></path></svg>
+        <svg class="i-hell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="i-dunkel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+      </button>
+    </nav>
+  </div>
+</header>
 
-  <section>
-    <h2>Was diese Seite tut</h2>
-    <p>kazas.dev ist eine statische Seite ohne Konto, Formular, Kommentare, Newsletter oder Shop. Sie setzt keine Cookies, nutzt keine Analyse- oder Tracking-Dienste und bindet keine Inhalte von fremden Servern ein. Schriften und Bilder werden von kazas.dev selbst ausgeliefert.</p>
-  </section>
+<main id="inhalt" class="wrap">
+  <div class="recht">
+    <span class="label">Rechtliches</span>
+    <h1>Datenschutz</h1>
+    <p class="einleitung">kazas.dev ist eine private, statische Seite ohne Konto, Formular, Kommentare, Newsletter oder Shop. Sie setzt keine Cookies und bindet keine Inhalte von fremden Servern ein. Schriften, Bilder und Skripte werden von kazas.dev selbst ausgeliefert.</p>
 
-  <section>
-    <h2>Hosting und Server-Logs</h2>
-    <p>Die Seite wird über GitHub Pages ausgeliefert, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie die IP-Adresse, Datum und Uhrzeit, die aufgerufene Datei, den Browsertyp und die zuvor besuchte Seite, soweit Ihr Browser sie überträgt. GitHub nutzt diese Daten zur Bereitstellung und zum Schutz des Dienstes. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, das berechtigte Interesse an einer sicheren und stabilen Auslieferung der Seite. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Einzelheiten stehen in der Datenschutzerklärung von GitHub unter docs.github.com/site-policy/privacy-policies.</p>
-  </section>
+    <section class="block" aria-labelledby="d-verantwortlich">
+      <h2 class="label" id="d-verantwortlich">Verantwortlicher</h2>
+      <p>Rostislaw Kazas, Chemnitz<br>E-Mail <a class="mono" href="mailto:rostislaw.kazas@gmail.com">rostislaw.kazas@gmail.com</a></p>
+    </section>
 
-  <section>
-    <h2>Links zu LinkedIn</h2>
-    <p>Die Seite enthält einen Link zu meinem Profil bei LinkedIn. Es handelt sich um einen einfachen Verweis, nichts von LinkedIn wird in diese Seite eingebettet. Erst mit dem Klick verlassen Sie kazas.dev, und ab dort gelten die Datenschutzbestimmungen der LinkedIn Ireland Unlimited Company.</p>
-  </section>
+    <section class="block" aria-labelledby="d-hosting">
+      <h2 class="label" id="d-hosting">Hosting und Server-Logs</h2>
+      <div>
+        <p>Die Seite wird über GitHub Pages ausgeliefert, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie die IP-Adresse, Datum und Uhrzeit, die aufgerufene Datei, den Browsertyp und die zuvor besuchte Seite, soweit Ihr Browser sie überträgt. GitHub nutzt diese Daten zur Bereitstellung und zum Schutz des Dienstes. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, das berechtigte Interesse an einer sicheren und stabilen Auslieferung der Seite.</p>
+        <p>Dabei können Daten in die USA übermittelt werden. GitHub gibt an, das EU-U.S. Data Privacy Framework einzuhalten. Einzelheiten stehen in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+      </div>
+    </section>
 
-  <section>
-    <h2>Ihre Rechte</h2>
-    <p>Ich selbst speichere keine Daten über Sie und habe keinen Zugriff auf die Server-Logs von GitHub. Für diese Logs stehen Ihnen die Rechte aus Art. 15 bis 21 DSGVO, also Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch zu, sowie das Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
-  </section>
+    <section class="block" aria-labelledby="d-schema">
+      <h2 class="label" id="d-schema">Hell oder dunkel</h2>
+      <p>Wenn Sie über den Schalter oben rechts ein Farbschema wählen, speichert Ihr Browser diese Einstellung lokal (localStorage). Sie verlässt Ihr Gerät nicht und wird nicht an mich übertragen. Die Speicherung ist für die von Ihnen gewünschte Funktion erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Wählen Sie wieder „wie Gerät“, wird der Eintrag gelöscht. Sie können ihn auch über die Website-Daten Ihres Browsers entfernen.</p>
+    </section>
 
-  <p class="ort">Stand Oktober 2026</p>
+    <section class="block" aria-labelledby="d-linkedin">
+      <h2 class="label" id="d-linkedin">Links zu LinkedIn</h2>
+      <p>Die Seite enthält Links zu meinem Profil bei LinkedIn. Es handelt sich um einfache Verweise, nichts von LinkedIn wird in diese Seite eingebettet. Erst mit dem Klick verlassen Sie kazas.dev, und ab dort gelten die Datenschutzbestimmungen der LinkedIn Ireland Unlimited Company.</p>
+    </section>
+
+    <section class="block" aria-labelledby="d-mail">
+      <h2 class="label" id="d-mail">E-Mail</h2>
+      <p>Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben nur, um Ihre Nachricht zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Die Nachricht lösche ich, sobald sie erledigt ist und keine Aufbewahrungspflicht besteht.</p>
+    </section>
+
+    <section class="block" aria-labelledby="d-rechte">
+      <h2 class="label" id="d-rechte">Ihre Rechte</h2>
+      <p>Abgesehen von E-Mails, die Sie mir schreiben, speichere ich selbst keine Daten über Sie. Verarbeitet werden nur die oben genannten Daten beim Hosting. Unabhängig davon haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Beschweren können Sie sich bei der Sächsischen Datenschutz- und Transparenzbeauftragten.</p>
+    </section>
+  </div>
 </main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <div class="wer">
+      <img src="assets/rostislaw-kazas.jpg" width="320" height="320" alt="Portrait von Rostislaw Kazas" loading="lazy">
+      <div><b>Rostislaw Kazas</b><span>Chemnitz · Stand 10/2026</span></div>
+    </div>
+    <nav class="fusslinks" aria-label="Weitere Seiten">
+      <a href="https://www.linkedin.com/in/rkazas/" rel="me noopener">LinkedIn</a>
+      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>

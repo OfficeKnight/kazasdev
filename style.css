@@ -235,7 +235,7 @@ a.karte:hover { border-color: var(--muted); }
 /* Handy */
 @media (max-width: 720px) {
   .hero { flex-direction: column; gap: 24px; padding-top: 20px; align-items: stretch; }
-  .hero-bild { flex: none; width: 100%; aspect-ratio: 6 / 5; object-position: 50% 30%; }
+  .hero-bild { flex: none; width: 100%; aspect-ratio: 6 / 5; object-position: 50% 12%; }
   .hero h1, .seitenkopf h1 { font-size: 2.5rem; }
   .recht h1 { font-size: 2.25rem; }
   .abschnitt { padding-top: 56px; }

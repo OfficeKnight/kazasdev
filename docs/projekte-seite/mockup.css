@@ -1,0 +1,69 @@
+/* Projekte-Seite · Ergänzung zu style.css
+   Bei der Umsetzung ans Ende von style.css hängen. Nutzt nur die vorhandenen Farbvariablen,
+   funktioniert deshalb in hell und dunkel. Chips und Statusmarken sind Flächen, keine Rahmen. */
+
+:root { --line: color-mix(in srgb, var(--mut) 24%, transparent); }
+
+/* Kopf ohne Foto */
+.top.solo { grid-template-columns: 1fr; padding-block: 40px 0; }
+
+/* Kleine Bausteine */
+.kind { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); font-weight: 500; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 14px; }
+.stat { display: inline-flex; align-items: center; gap: 8px; font-size: .75rem; padding: 3px 12px; border-radius: 999px; background: var(--p); }
+.stat::before { content: ""; box-sizing: border-box; width: 8px; height: 8px; border-radius: 50%; background: var(--acc2); }
+.stat.wip::before { background: var(--acc); }
+.stat.off { color: var(--mut); }
+.stat.off::before { background: none; border: 1.5px solid var(--mut); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.tags li { font-size: .75rem; padding: 2px 10px; border-radius: 6px; background: var(--p); color: var(--mut); }
+.more { display: inline-flex; align-items: center; min-height: 44px; color: var(--acc2); font-size: .85rem; }
+.none { display: inline-flex; align-items: center; min-height: 44px; color: var(--mut); font-size: .85rem; }
+
+/* Im Fokus */
+.focus { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 32px; padding: 28px; background: var(--card); border-radius: var(--r); box-shadow: var(--sh); }
+.focus > div { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.focus .meta { justify-content: flex-start; }
+.focus h3 { font-size: 1.5rem; line-height: 1.25; font-weight: 700; letter-spacing: -.02em; margin: 0 0 8px; }
+.focus .sub { color: var(--mut); margin: 0; }
+.focus .more::after { content: " →"; white-space: pre; color: var(--acc); }
+.card .more::after { white-space: pre; }
+.focus > .shots { gap: 16px; }
+.shot { margin: 0; border-radius: 10px; overflow: hidden; background: var(--p); }
+.shot figcaption { font-size: .72rem; color: var(--mut); padding: 9px 12px; }
+.shot figcaption::before { content: "● ● ●"; margin-right: 10px; letter-spacing: 2px; color: var(--line); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot .ph { aspect-ratio: 16 / 10; display: grid; place-items: center; padding: 16px; text-align: center; font-size: .78rem; color: var(--mut); background-image: repeating-linear-gradient(135deg, transparent 0 14px, var(--line) 14px 15px); }
+.shot.low .ph { aspect-ratio: 16 / 7; }
+
+/* Wer hat was gemacht */
+.who { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 18px 24px; padding-block: 18px; border-block: 1px solid var(--line); }
+.who h4 { margin: 0 0 8px; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; color: var(--mut); }
+.who ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: .85rem; }
+.who li { position: relative; padding-left: 1.5em; }
+.who li::before { content: "■"; position: absolute; left: 0; top: .3em; font-size: .7em; color: var(--mut); }
+.who .old { color: var(--mut); }
+.who .mine h4, .who .mine li::before { color: var(--acc); }
+
+/* Zahlen und Aktionen */
+.facts { display: flex; flex-wrap: wrap; gap: 10px; }
+.facts span { display: inline-flex; align-items: baseline; gap: 8px; padding: 6px 14px; border-radius: 999px; background: var(--p); font-size: .78rem; color: var(--mut); }
+.facts b { font-size: .95rem; color: var(--ink); }
+.acts { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: var(--acc); color: var(--p); font-weight: 700; font-size: .85rem; }
+.btn::after { content: " →"; white-space: pre; }
+
+/* Eigene Projekte */
+.cards.proj { grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 18px; }
+.cards.proj .card { display: flex; flex-direction: column; gap: 12px; padding: 22px; }
+.cards.proj .card h3 { margin: 0; font-size: 1.1rem; }
+.cards.proj .card p { flex: 1; }
+.cards.one { grid-template-columns: 1fr; }
+
+/* Früher */
+.hist { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 6px 22px; }
+.hist > div { display: flex; flex-wrap: wrap; gap: 4px 24px; padding-block: 16px; }
+.hist > div + div { border-top: 1px solid var(--line); }
+.hist .yr { flex: 0 0 130px; font-size: .82rem; color: var(--acc); }
+.hist b { flex: 1 1 220px; font-size: .95rem; }
+.hist .txt { flex: 3 1 340px; font-size: .88rem; color: var(--mut); }

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0b0e13">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="mockup.css">
+  <script src="../../theme.js"></script>
+  <title>Projekte · Rostislaw Kazas (Entwurf)</title>
+</head>
+<body>
+<!-- Entwurf der Projekte-Seite. Texte in eckigen Klammern sind Platzhalter, siehe KONZEPT.md und SCREENSHOTS.md. -->
+<div class="in">
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a class="brand" href="../../">kazas.dev</a>
+    <a href="../../">Start</a>
+    <a href="mockup.html" aria-current="page">Projekte</a>
+    <button class="tog" id="tog" type="button" aria-label="Hell oder dunkel umschalten">☾ dunkel</button>
+  </nav>
+
+  <header class="top solo">
+    <div>
+      <p class="sys"><span>path <b>/projekte</b></span><span>kunde <b>1</b></span><span>eigene <b>3</b></span><span>pausiert <b>1</b></span><span>stand <b>11/2026</b></span></p>
+      <h1>Projekte</h1>
+      <p class="lead">Was ich nach Feierabend baue und betreue. Lieber wenige Projekte mit offenem Blick unter die Haube als eine lange Liste.</p>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="p1"><h2 id="p1" data-n="01">Im Fokus</h2>
+      <article class="focus">
+        <div class="shots">
+          <figure class="shot">
+            <figcaption>nadelneu-tattoo.de</figcaption>
+            <div class="ph">[Screenshot Startseite]</div>
+          </figure>
+          <figure class="shot low">
+            <figcaption>Dashboard</figcaption>
+            <div class="ph">[Screenshot Dashboard, Fotos verwalten]</div>
+          </figure>
+        </div>
+
+        <div>
+          <div class="meta"><span class="kind">Kundenprojekt</span><span class="stat wip">[Status]</span></div>
+          <div>
+            <h3>Nadelneu Tattoo Atelier Chemnitz</h3>
+            <p class="sub">Webseite eines Tattoo-Studios. Das Design stand schon, darunter habe ich fast alles neu gebaut.</p>
+          </div>
+
+          <div class="who">
+            <div class="old">
+              <h4>Übernommen</h4>
+              <ul>
+                <li>Gestaltung und Bildsprache</li>
+                <li>Aufbau der Startseite</li>
+                <li>Fotos und Videos des Studios</li>
+              </ul>
+            </div>
+            <div class="mine">
+              <h4>Von mir</h4>
+              <ul>
+                <li>Neues Dashboard mit Anmeldung, Konten und Passwort-Reset</li>
+                <li>Fotos, Videos und Texte ohne Programmierer pflegen</li>
+                <li>Besucherstatistik ohne Cookies</li>
+                <li>Englisch als zweite Sprache</li>
+                <li>Sicherheitsreview und automatische Prüfungen</li>
+                <li>Docker-Testumgebung und Sicherung</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="facts">
+            <span><b>[Zahl]</b>Befunde behoben</span>
+            <span><b>[Zahl]</b>automatische Prüfungen</span>
+            <span><b>0</b>Cookies</span>
+          </div>
+
+          <ul class="tags"><li>PHP 8.3</li><li>Twig</li><li>MariaDB</li><li>Apache</li><li>Docker</li></ul>
+
+          <div class="acts">
+            <a class="btn" href="#">Fallstudie lesen</a>
+            <a class="more" href="#">nadelneu-tattoo.de</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section aria-labelledby="p2"><h2 id="p2" data-n="02">Eigene Projekte</h2>
+      <div class="cards proj">
+        <article class="card">
+          <div class="meta"><span class="kind">Windows</span><span class="stat wip">in Arbeit</span></div>
+          <h3>WinUtil RoKa Edition</h3>
+          <p>Fork von WinUtil mit eigenen Profilen für Diagnose-Laptop, Büro-PC und Privat-PC. Jede Änderung wird vorher gesichert und danach geprüft.</p>
+          <ul class="tags"><li>PowerShell</li><li>Windows 11</li><li>Open Source</li></ul>
+          <a class="more" href="#">GitHub</a>
+        </article>
+
+        <article class="card">
+          <div class="meta"><span class="kind">Hardware</span><span class="stat">läuft</span></div>
+          <h3>rokacharger</h3>
+          <p>Mein Labornetzteil lädt Bleiakkus, gesteuert über Modbus und eine eigene Weboberfläche auf dem Raspberry Pi 5. Fernzugriff nur per VPN.</p>
+          <ul class="tags"><li>Modbus</li><li>Raspberry Pi 5</li><li>WireGuard</li></ul>
+          <a class="more" href="#">Bilder und Aufbau</a>
+        </article>
+
+        <article class="card">
+          <div class="meta"><span class="kind">Web</span><span class="stat">live</span></div>
+          <h3>kazas.dev</h3>
+          <p>Diese Seite. Statisch, ohne Framework und ohne Cookies, die Schrift wird selbst ausgeliefert.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>GitHub Pages</li></ul>
+          <a class="more" href="#">So ist die Seite gebaut</a>
+        </article>
+
+        <article class="card">
+          <div class="meta"><span class="kind">Web</span><span class="stat off">pausiert</span></div>
+          <h3>Schulungsplattform</h3>
+          <p>IT-Sicherheitsschulungen mit Login, Kontrollfragen und Zertifikat als PDF, auf Deutsch und Russisch. Konzept und Grundgerüst stehen.</p>
+          <ul class="tags"><li>Django</li><li>PostgreSQL</li><li>Docker</li></ul>
+          <span class="none">Noch nichts zum Ansehen</span>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="p3"><h2 id="p3" data-n="03">Früher</h2>
+      <div class="hist">
+        <div><span class="yr">2026</span><b>Bachelorarbeit</b><span class="txt">Web-Prototyp, der acht Excel-Werkzeuge aus dem Prüfgelände-Alltag in einer Anwendung vereint. Beruflich, ohne Quellcode.</span></div>
+        <div><span class="yr">2018 bis 2026</span><b>Tooling in der Fahrzeugerprobung</b><span class="txt">Acht VBA-Werkzeuge, von 25 Kollegen genutzt. Ein Testbericht dauerte danach 20 Minuten statt 2 Stunden. Beruflich, ohne Quellcode.</span></div>
+        <div><span class="yr">2017 bis 2022</span><b>Mining-Rigs</b><span class="txt">Drei Rigs mit je 12 Grafikkarten an zwei Standorten, aus der Ferne betrieben.</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="p4"><h2 id="p4" data-n="04">Weiter</h2>
+      <div class="cards one">
+        <div class="card"><h3><a href="https://www.linkedin.com/in/rkazas/" rel="me noopener">LinkedIn</a></h3><p>Fragen zu einem Projekt beantworte ich dort.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="../../assets/rostislaw-kazas.jpg" width="320" height="320" alt="" loading="lazy">
+    <span>Rostislaw Kazas, Chemnitz</span>
+    <span class="sp"><a href="https://www.linkedin.com/in/rkazas/" rel="me noopener">LinkedIn</a><a href="../../datenschutz.html">Datenschutz</a></span>
+  </footer>
+</div>
+</body>
+</html>

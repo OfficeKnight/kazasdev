@@ -1,19 +1,28 @@
-// Auto folgt dem System. Der Umschalter setzt hell oder dunkel fest und merkt sich die Wahl im Browser.
+// Farbschema mit drei Stellungen. "auto" folgt der Systemeinstellung des Geraets,
+// "hell" und "dunkel" legen es fest. Die feste Wahl wird nur im Browser gemerkt.
 (function () {
   var k = "kazas-theme", h = document.documentElement, mq = null;
+  var order = ["auto", "light", "dark"];
+  var text = { auto: "◐ auto", light: "☀ hell", dark: "☾ dunkel" };
+  var name = { auto: "automatisch nach Systemeinstellung", light: "hell", dark: "dunkel" };
   try { mq = matchMedia("(prefers-color-scheme: light)"); } catch (e) {}
-  try { var v = localStorage.getItem(k); if (v === "light" || v === "dark") h.classList.add(v); } catch (e) {}
-  function isLight() { return h.classList.contains("light") || (!h.classList.contains("dark") && mq && mq.matches); }
-  function label(b) { b.textContent = isLight() ? "☀ hell" : "☾ dunkel"; }
+  function load() { try { var v = localStorage.getItem(k); return (v === "light" || v === "dark") ? v : "auto"; } catch (e) { return "auto"; } }
+  function apply(m) { h.classList.remove("light", "dark"); if (m !== "auto") h.classList.add(m); }
+  var mode = load();
+  apply(mode);
+  function label(b) {
+    b.textContent = text[mode];
+    b.setAttribute("aria-label", "Farbschema " + name[mode] + ", zum Wechseln klicken");
+  }
   document.addEventListener("DOMContentLoaded", function () {
     var b = document.getElementById("tog"); if (!b) return;
+    b.hidden = false;
     label(b);
     b.addEventListener("click", function () {
-      var next = isLight() ? "dark" : "light";
-      h.classList.remove("light", "dark"); h.classList.add(next);
-      try { localStorage.setItem(k, next); } catch (e) {}
+      mode = order[(order.indexOf(mode) + 1) % order.length];
+      apply(mode);
+      try { if (mode === "auto") localStorage.removeItem(k); else localStorage.setItem(k, mode); } catch (e) {}
       label(b);
     });
-    if (mq && mq.addEventListener) mq.addEventListener("change", function () { label(b); });
   });
 })();

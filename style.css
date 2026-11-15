@@ -1,5 +1,5 @@
 /* kazas.dev · Konsole ohne Rahmen
-   Eine Schrift, kariertes Raster, Flächen statt Linien. Auto folgt dem System, der Umschalter setzt html.light oder html.dark. */
+   Eine Schrift, kariertes Raster, Flächen statt Linien. Ohne Klasse folgt die Seite dem System, der Umschalter setzt html.light oder html.dark oder nimmt beides weg. */
 
 @font-face {
   font-family: "JetBrains Mono";

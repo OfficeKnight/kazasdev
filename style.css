@@ -78,14 +78,14 @@ h1::after { content: "_"; color: var(--acc); animation: bl 1s steps(2) infinite;
 @media (prefers-reduced-motion: reduce) { h1::after { animation: none; } }
 .role { color: var(--acc); font-size: 1rem; margin: 0; }
 .lead { color: var(--mut); max-width: 56ch; margin: 10px 0 0; font-size: .92rem; }
-.pic { position: relative; min-height: 460px; padding-bottom: 26px; }
+.pic { position: relative; min-height: 500px; padding-bottom: 26px; }
 .pic::before {
   content: ""; position: absolute; left: -25%; right: -25%; top: -10%; bottom: -30%; pointer-events: none;
-  background: radial-gradient(ellipse 34% 30% at 50% 58%, color-mix(in srgb, var(--acc2) 26%, transparent) 0%, color-mix(in srgb, var(--acc2) 9%, transparent) 50%, transparent 100%);
+  background: radial-gradient(ellipse 34% 34% at 50% 52%, color-mix(in srgb, var(--acc2) 22%, transparent) 0%, color-mix(in srgb, var(--acc2) 8%, transparent) 50%, transparent 100%);
 }
 .pic img { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); height: calc(100% - 26px); width: auto; max-width: 100%; object-fit: contain; }
-.pic .cap { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: .7rem; color: var(--mut); }
-@media (max-width: 760px) { .top { grid-template-columns: 1fr; } .pic { min-height: 340px; } }
+.pic .cap { position: absolute; bottom: 0; left: 0; right: 0; height: 26px; padding-top: 6px; text-align: center; white-space: nowrap; font-size: .7rem; color: var(--mut); }
+@media (max-width: 760px) { .top { grid-template-columns: 1fr; } .pic { min-height: 380px; } }
 
 /* Abschnitte */
 section { margin-top: 36px; }

@@ -55,15 +55,15 @@
   <main>
     <section aria-labelledby="bcm-s1"><h2 id="bcm-s1" data-n="01">Was ist BCM</h2>
       <div class="prose">
-        <p>BCM steht für Business Continuity Management, auf Deutsch Notfallmanagement. Es sorgt dafür, dass die wichtigsten Abläufe eines Betriebs nach einem Ausfall in einer festgelegten Zeit wieder laufen, notfalls zunächst im Notbetrieb.</p>
-        <p>Das ISMS soll verhindern, dass etwas passiert. Das BCM regelt, was geschieht, wenn es trotzdem passiert. Grundlagen sind der BSI-Standard 200-4 und die internationale Norm ISO&nbsp;22301. Der BSI-Standard kennt drei Ausbaustufen, sodass auch ein kleiner Betrieb einen passenden Einstieg findet.</p>
+        <p>BCM steht für Business Continuity Management. Früher hieß es beim BSI Notfallmanagement (BSI-Standard 100-4). Das BCM sorgt dafür, dass die wichtigsten Abläufe eines Betriebs nach einem Ausfall in einer festgelegten Zeit wieder laufen, notfalls zunächst im Notbetrieb.</p>
+        <p>Das ISMS soll verhindern, dass etwas passiert. Das BCM regelt, was geschieht, wenn es trotzdem passiert. Grundlagen sind der BSI-Standard 200-4 und die internationale Norm ISO&nbsp;22301. Der BSI-Standard kennt drei Ausbaustufen, sodass auch ein kleiner Betrieb einen passenden Einstieg findet (BSI-Standard 200-4, Kap. 2.6).</p>
       </div>
     </section>
     <section aria-labelledby="bcm-s2"><h2 id="bcm-s2" data-n="02">Wann es greift</h2>
       <div class="prose">
         <ul>
           <li><b>NIS-2.</b> §&nbsp;30 BSI-Gesetz verlangt ausdrücklich, den Betrieb aufrechtzuerhalten. Genannt sind Backup-Management, Wiederherstellung nach einem Notfall und Krisenmanagement.</li>
-          <li><b>ISO&nbsp;27001.</b> Die Norm sieht vor, Informationssicherheit auch während einer Störung zu halten und die IT auf einen Notfall vorzubereiten (Maßnahmen 5.29 und 5.30).</li>
+          <li><b>ISO&nbsp;27001.</b> Die Norm führt dazu in Anhang A die Maßnahmen 5.29 und 5.30.</li>
           <li><b>Versicherung und Kunden.</b> Cyberversicherer und größere Kunden fragen nach Notfallplan und Wiederanlauf.</li>
           <li><b>Ohne äußeren Druck.</b> Sobald ein Tag Stillstand mehr kostet als die Vorsorge.</li>
         </ul>
@@ -203,17 +203,17 @@
         <details class="alt">
           <summary>Die Grafik in Worten</summary>
           <ol>
-            <li>NIS-2 verpflichtet Betreiber wichtiger und besonders wichtiger Einrichtungen zu Risikomanagement sowie zu Notfall- und Krisenvorsorge. In Deutschland gilt sie seit dem 6. Dezember 2025 über das BSI-Gesetz.</li>
+            <li>NIS-2 verpflichtet Betreiber wichtiger und besonders wichtiger Einrichtungen zu Risikomanagement sowie zu Notfall- und Krisenvorsorge. In Deutschland gilt sie seit dem 6. Dezember 2025 über das BSI-Gesetz (BGBl. 2025 I Nr. 301).</li>
             <li>Der CRA verpflichtet vor allem Hersteller von Produkten mit digitalen Elementen zu sicheren Produkten und zum Umgang mit Schwachstellen. Er wirkt über die Produkte direkt auf IT und OT.</li>
             <li>Ein ISMS nach BSI IT-Grundschutz oder ISO&nbsp;27001 ist der Rahmen, mit dem ein Betrieb diese Anforderungen umsetzt und nachweist.</li>
-            <li>Das BCM, also das Notfallmanagement nach BSI-Standard 200-4, ist eng mit dem ISMS verzahnt und regelt, wie der Betrieb weiterläuft, wenn trotzdem etwas ausfällt. Das ist das Thema dieser Seite.</li>
+            <li>Das BCM nach BSI-Standard 200-4 ist eng mit dem ISMS verzahnt und regelt, wie der Betrieb weiterläuft, wenn trotzdem etwas ausfällt. Das ist das Thema dieser Seite.</li>
             <li>Wirken muss das alles in der IT und in der OT, also in Steuerungen, Maschinen und Anlagen.</li>
           </ol>
         </details>
       </figure>
     </section>
     <section aria-labelledby="bcm-s4"><h2 id="bcm-s4" data-n="04">Drei Zahlen, die die Leitung festlegt</h2>
-      <div class="prose"><p>Für jeden wichtigen Ablauf braucht es drei Entscheidungen. Das sind geschäftliche Entscheidungen, denn jede Stunde weniger kostet Geld für Technik und Vorsorge.</p></div>
+      <div class="prose"><p>Für jeden wichtigen Ablauf braucht es drei Entscheidungen. Das sind geschäftliche Entscheidungen, denn jede Stunde weniger kostet Geld für Technik und Vorsorge. Die Begriffe folgen dem BSI-Standard 200-4, Kap. 7. Die Beispielwerte in den Karten sind frei gewählt.</p></div>
       <div class="nums">
         <div><b>MTA</b><span class="n">Maximal tolerierbare Ausfallzeit</span><p>Wie lange hält der Betrieb ohne diesen Ablauf durch, bevor der Schaden nicht mehr tragbar ist.</p><span class="ex"><i>Beispiel</i> Auftragsannahme 3 Tage</span></div>
         <div><b>RTO</b><span class="n">Geforderte Wiederanlaufzeit</span><p>Wie schnell muss der Ablauf wieder laufen, zumindest im Notbetrieb. Sie liegt immer unter der MTA.</p><span class="ex"><i>Beispiel</i> Auftragsannahme 1 Tag</span></div>
@@ -222,7 +222,7 @@
       <ol class="flow">
         <li><h3>Ausfall</h3><p>Der Vorfall wird erkannt und gemeldet. Es steht fest, wer den Notfall ausruft.</p></li>
         <li><h3>Notbetrieb</h3><p>Die wichtigsten Abläufe laufen mit Ersatzverfahren weiter, zum Beispiel auf Papier oder mit Leihgeräten.</p></li>
-        <li><h3>Wiederanlauf</h3><p>Systeme werden in der festgelegten Reihenfolge wiederhergestellt und geprüft.</p></li>
+        <li><h3>Wiederherstellung</h3><p>Systeme werden in der festgelegten Reihenfolge wiederhergestellt und geprüft.</p></li>
         <li><h3>Normalbetrieb</h3><p>Liegengebliebenes wird nachgearbeitet, der Vorfall ausgewertet und der Plan verbessert.</p></li>
       </ol>
     </section>
@@ -233,7 +233,7 @@
         <li><h3>Zeiten festlegen</h3><p>Für jeden kritischen Ablauf werden Ausfallzeit, Wiederanlaufzeit und tolerierbarer Datenverlust beschlossen.</p></li>
         <li><h3>Ersatzverfahren planen</h3><p>Wie arbeitet der Betrieb ohne IT, ohne Gebäude, ohne eine Schlüsselperson oder ohne einen Dienstleister.</p></li>
         <li><h3>Notfallhandbuch schreiben</h3><p>Alarmierung, Krisenstab, Kontaktlisten und Wiederanlaufpläne. Kurz gehalten, auf Papier und außer Haus hinterlegt.</p></li>
-        <li><h3>Üben und verbessern</h3><p>Mindestens einmal im Jahr eine Übung, anfangs am Tisch. Jede Übung führt zu Änderungen am Plan.</p></li>
+        <li><h3>Üben und verbessern</h3><p>Mindestens einmal im Jahr eine Übung, anfangs am Tisch (BSI-Standard 200-4, Kap. 13). Jede Übung führt zu Änderungen am Plan.</p></li>
       </ol>
     </section>
     <section aria-labelledby="bcm-s6"><h2 id="bcm-s6" data-n="06">Häufige Missverständnisse</h2>

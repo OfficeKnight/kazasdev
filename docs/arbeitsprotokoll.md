@@ -4,17 +4,18 @@ Dieses Protokoll begleitet die Umsetzung der Wissensseiten (`isms.html`, `nis2-c
 
 ## 1. Aktueller Stand
 
-Stand 21.11.2026, 18:04 Uhr
+Stand 21.11.2026, 18:40 Uhr
 
 - **Branch:** `claude/intelligent-hawking-6ohcfk`
-- **Letzter Commit:** „Themenseite OT“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
+- **Letzter Commit:** „Korrekturen aus der Quellenprüfung“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
 - **Fertig und geprüft:**
   - CLAUDE.md, Protokoll, Vorlagen in docs/.
   - Gemeinsame Teile.
-  - isms.html, nis2-cra.html, bcm.html, ot.html (Stand Mockup, vor Übernahme der Quellenbefunde).
+  - isms.html, nis2-cra.html, bcm.html, ot.html.
+  - Quellenprüfung mit Gegenprüfung, Korrekturen eingearbeitet und unabhängig geprüft.
 - **Als Nächstes:**
-  1. Gegengeprüfte Befunde der Quellenprüfung in die Seiten übernehmen.
-  2. Schlussprüfung aller Seiten in 390 px und 1280 px, hell und dunkel.
+  1. Schlussprüfung aller Seiten in 390 px und 1280 px, hell und dunkel, mit Sichtprüfung der Screenshots.
+  2. Vor dem Livegang: Verkündung des CRA-Durchführungsgesetzes im Bundesgesetzblatt erneut prüfen. Die Links zu iso.org und digital-strategy.ec.europa.eu einmal anklicken, sie sind aus der Sitzung gesperrt.
   3. `docs/` und `CLAUDE.md` vor dem Merge nach `main` entfernen. Das Zusammenführen selbst macht Rostik.
 
 ### Offene Fragen an Rostik
@@ -23,8 +24,56 @@ Stand 21.11.2026, 18:04 Uhr
 2. Laut Konzept besteht „Kurz gesagt“ aus drei Sätzen. Im Mockup sind es auf allen Seiten drei Punkte mit je zwei Sätzen. Ich habe das unverändert übernommen. Sollen die Punkte auf je einen Satz gekürzt werden?
 3. Der Lead der ISMS-Seite verspricht „… und worauf ich in der Praxis achte“, der Abschnitt ist aber vorerst ein Platzhalter. Soll der Lead bis zur Freigabe so bleiben?
 4. NIS-2 / CRA: Das Konzept verlangt unter „Wann es greift“ auch den Fall ohne äußeren Druck. Der Mockup-Abschnitt „Wen es betrifft“ hat dafür keinen Text, ich habe keinen erfunden. Bitte einen Satz liefern oder bestätigen, dass er bei dieser Seite entfällt.
+5. BCM: Im Ablauf unter „Drei Zahlen“ heißt der dritte Schritt jetzt „Wiederherstellung“ statt „Wiederanlauf“, wie es Konzept und Mockup vorsehen. Grund ist der BSI-Standard 200-4. Dort bezeichnet Wiederanlauf den Wechsel in den Notbetrieb und Wiederherstellung die Rückkehr zum Normalbetrieb. Einverstanden?
+6. NIS-2 / CRA: Das CRA-Durchführungsgesetz ist bis BGBl. 2026 I Nr. 345 (20.11.2026) nicht verkündet. Auf der Seite steht „Verkündet ist das Gesetz noch nicht (Stand 21.11.2026)“. Vor dem Livegang bitte erneut prüfen und den Satz anpassen.
 
 ## 2. Verlauf
+
+### 21.11.2026, 18:40 Uhr – Korrekturen aus der Quellenprüfung
+
+- **Schritt:**
+  1. Ein Subagent hat 78 Aussagen geprüft.
+  2. Je zwei Gegenprüfer haben die 15 abweichenden oder ungeklärten Befunde nachgeprüft. Je Seite ein Gegenprüfer hat alle bestätigten Aussagen erneut geprüft (63).
+  3. Der Hauptagent hat strittige Fälle selbst nachgeprüft: den Meilensteinplan Grundschutz++ und BSI-CS 005. Daraus entstand eine verbindliche Korrekturliste.
+  4. Je Seite hat ein Agent die Liste eingearbeitet und ein weiterer unabhängig geprüft (alle vier ohne Muss-Befund). Die Folgehinweise der Prüfer hat der Hauptagent eingearbeitet.
+- **Geänderte Dateien:** `isms.html`, `nis2-cra.html`, `bcm.html`, `ot.html`, `docs/arbeitsprotokoll.md`
+- **Commit:** „Korrekturen aus der Quellenprüfung“
+- **Änderungen auf allen Seiten:**
+  - In „Die Grafik in Worten“ steht bei „seit dem 6. Dezember 2025“ die Fundstelle BGBl. 2025 I Nr. 301.
+  - „Das BCM, also das Notfallmanagement nach BSI-Standard 200-4“ heißt jetzt „Das BCM nach BSI-Standard 200-4“, passend zur Begriffsklärung auf der BCM-Seite.
+- **Änderungen auf isms.html:**
+  - Kasten „Neu“: Der IT-Grundschutz bleibt laut Meilensteinplan des BSI bis 30.11.2031 zertifizierbar. Die Quelle Grundschutz++ ist ergänzt.
+  - Grammatik „Das sind die … Norm … und der IT-Grundschutz“.
+  - Schritt 6 hat die Fundstelle BSI-Standard 200-1, Kap. 7.4 („jährliche Managementbewertung“, am PDF bestätigt).
+- **Änderungen auf nis2-cra.html:**
+  - Kasten „Neu“: Quelle BSI-Pressemitteilung vom 16.10.2026, dazu der Satz „noch nicht verkündet (Stand 21.11.2026)“. Die Registrierungsfrist hat die Fundstelle § 33 Abs. 1 und gilt für alle, die seit dem 6.12.2025 betroffen sind.
+  - Fundstellen ergänzt: Anlage 1 und 2 an der Sektorenliste, § 28 Abs. 1 Nr. 4, § 28 Abs. 1, Art. 2 Abs. 2 CRA.
+  - Meldefristen NIS-2 und CRA als Höchstfristen („spätestens“) mit § 32 Abs. 1 bzw. Art. 14 Abs. 2 und 4 CRA.
+  - Gilt seit: BGBl.-Fundstelle. CRA-Pflichten für Hersteller, Importeure und Händler ab 11.12.2027 (Art. 71 Abs. 2).
+  - Fundstellen Art. 13 Abs. 8 (fünf Jahre) und Art. 64 Abs. 2 (Bußgeld).
+  - Registrieren: Kontaktdaten statt Kontaktstelle, Frist drei Monate.
+  - Meldeweg: „spätestens 24 Stunden“.
+  - Schwelle „mehr als 10 Mio. Euro“ mit § 28 Abs. 2 Nr. 3.
+  - CRA-Missverständnis mit Art. 69 Abs. 3 und Art. 71 Abs. 2.
+  - EUR-Lex-Links auf die deutsche Fassung (`/oj/deu`, HTTP 200).
+- **Änderungen auf bcm.html:**
+  - BCM ist nicht mehr „auf Deutsch Notfallmanagement“, sondern der frühere BSI-Begriff (BSI-Standard 100-4).
+  - Der ISO-Satz ist auf „Die Norm führt dazu in Anhang A die Maßnahmen 5.29 und 5.30“ gekürzt (Regel zu Normtexten).
+  - Unter „Drei Zahlen“ stehen die Hinweise „Begriffe nach BSI-Standard 200-4, Kap. 7“ und „Beispielwerte frei gewählt“.
+  - Im Ablauf heißt der dritte Schritt „Wiederherstellung“ statt „Wiederanlauf“.
+  - Fundstellen Kap. 13 (Übungen) und Kap. 2.6 (drei Ausbaustufen).
+- **Änderungen auf ot.html:**
+  - Maschinenverordnung mit Fundstelle Art. 54 und Anhang III Nr. 1.1.9 und 1.2.1. Der Quelleneintrag nennt die Berichtigung (20. Januar 2027).
+  - CRA-Satz präzisiert („herstellt und unter eigenem Namen auf den Markt bringt“, Art. 2 Abs. 1 und Art. 3 Nr. 13), dazu die CRA-Quelle.
+  - Lebensdauer „in der Regel 10 bis 15 Jahre, mitunter über 20“ und „meist 3 bis 5 Jahre“ mit dem ICS-Security-Kompendium als Quelle.
+  - Fernwartung und Steuerungen am Internet an den Wortlaut von BSI-CS 005 angepasst. Der Hinweissatz nennt BSI-CS 005 (2022) ohne Platznummern.
+  - Der BSI-CS-005-Link zeigt jetzt direkt auf das PDF, die EUR-Lex-Links auf die deutsche Fassung.
+- **Prüfung:**
+  - Je Seite ein unabhängiger Prüfer: Korrekturliste vollständig und exakt umgesetzt, [PRÜFEN]-Fundstellen am Primärtext bestätigt, keine fremden Änderungen, Schreibregeln eingehalten, neue Links per curl geprüft.
+  - Danach Lint über alle sechs Seiten ohne Befund. Der Doppelpunkt im wörtlichen Titel der BSI-Pressemitteilung ist kein Satzeinleitungs-Doppelpunkt. Das Prüfskript überspringt jetzt Doppelpunkte in „…“.
+- **Abweichungen:**
+  - Vom Mockup weichen alle oben genannten Textänderungen ab.
+  - Vom Konzept weicht der Ablaufschritt „Wiederherstellung“ statt „Wiederanlauf“ ab. Begründung ist der BSI-Standard 200-4 (Frage an Rostik).
 
 ### 21.11.2026, 18:04 Uhr – Themenseite OT
 
@@ -150,11 +199,125 @@ Stand 21.11.2026, 18:04 Uhr
 
 ## 3. Quellenprüfung
 
-Noch nicht begonnen. Die Aussagen, die zu prüfen sind, stehen im Mockup, das fehlt.
+Geprüft am 21.11.2026 gegen die Primärquellen (BSI-Gesetz mit Anlage 1 und 2 auf gesetze-im-internet.de, EUR-Lex, BSI-CS 005, BSI-Pressemitteilung vom 16.10.2026, BSI-Standards 200-1 und 200-4, BSI-Seite Grundschutz++). Ablauf: Ein Subagent hat alle 78 Aussagen mit Zahl, Frist, Datum oder Fundstelle aus dem Mockup geprüft. Jede Aussage mit Status abweichend oder ungeklärt haben zwei weitere Agenten unabhängig nachgeprüft, einer achtete auf den Wortlaut, einer auf Fundstelle und Aktualität. Alle bestätigten Aussagen hat je Seite ein weiterer Agent vollständig gegengeprüft. Wo die Ergebnisse auseinandergingen, hat der Hauptagent entschieden und das in der Bemerkung begründet. Der Status bezieht sich auf die Aussage im Mockup. Abweichende Aussagen sind auf den Seiten korrigiert.
 
-| Seite | Aussage | Fundstelle | Status | Datum der Prüfung |
-| --- | --- | --- | --- | --- |
-| – | – | – | – | – |
+| Seite | Aussage | Fundstelle | Status | Bemerkung | Datum der Prüfung |
+| --- | --- | --- | --- | --- | --- |
+| isms | Am 26. Oktober 2026 hat das BSI die Methodik Grundschutz++ als BSI-Standard 300-1 veröffentlicht. | BSI-Meldung „Methodik zum Grundschutz++ als BSI-Standard 300-1 veröffentlicht“, Datum 26.10.2026 | bestätigt |  | 21.11.2026 |
+| isms | Sie setzt stärker bei den wichtigen Geschäftsprozessen an. | BSI-Meldung vom 26.10.2026, Abschnitt Features | bestätigt |  | 21.11.2026 |
+| isms | Laut BSI ist ein ISMS danach ab 2027 zertifizierbar | BSI-Meldung vom 26.10.2026, Abschnitt Weitere Entwicklung | bestätigt |  | 21.11.2026 |
+| isms | der bisherige IT-Grundschutz bleibt noch mehrere Jahre zertifizierbar. | BSI, Grundschutz in der Informationssicherheit (isms_node); BSI, IT-Grundschutz (it-grundschutz_node). Die Meldung vom 26.10.2026 sagt dazu nichts. | bestätigt | Prüfer zunächst abweichend (nur „anwendbar“ gefunden). Zwei Gegenprüfer und Hauptagent fanden den Meilensteinplan auf der BSI-Seite Grundschutz++ (Ende der Zertifizierbarkeit 30.11.2031). Fundstelle ergänzt. | 21.11.2026 |
+| isms | Das ist die internationale Norm ISO/IEC 27001 und der IT-Grundschutz des BSI … Nach beiden kann man sich zertifizieren lassen. | BSI, Zertifizierte Informationssicherheit | bestätigt |  | 21.11.2026 |
+| isms | Wichtige und besonders wichtige Einrichtungen müssen nach § 30 BSI-Gesetz Maßnahmen zum Risikomanagement ergreifen. | § 30 Abs. 1 Satz 1 BSIG | bestätigt |  | 21.11.2026 |
+| isms | Die Geschäftsleitung muss sie umsetzen, die Umsetzung überwachen und regelmäßig an Schulungen teilnehmen (§ 38). | § 38 Abs. 1 und 3 BSIG | bestätigt |  | 21.11.2026 |
+| isms | Wer eine kritische Anlage betreibt, muss die Umsetzung zusätzlich gegenüber dem BSI nachweisen (§ 39). | § 39 Abs. 1 BSIG | bestätigt |  | 21.11.2026 |
+| isms | In Deutschland gilt sie seit dem 6. Dezember 2025 über das BSI-Gesetz. | BSIG, Fußnote zum Inkrafttreten (Art. 30 des Gesetzes v. 2.12.2025, BGBl. 2025 I Nr. 301) | bestätigt |  | 21.11.2026 |
+| isms | NIS-2 verpflichtet Betreiber wichtiger und besonders wichtiger Einrichtungen zu Risikomanagement sowie zu Notfall- und Krisenvorsorge. (Grafik: „verlangt Risikomanagement“, „verlangt Notfall- und Krisenvorsorge“) | § 30 Abs. 1 und Abs. 2 Satz 2 Nr. 3 BSIG | bestätigt |  | 21.11.2026 |
+| isms | BCM, Notfallmanagement, eng mit dem ISMS verzahnt (BSI-Standard 200-4) | BSI, Übersicht BSI-Standards | bestätigt |  | 21.11.2026 |
+| isms | Interne Prüfungen und eine jährliche Bewertung durch die Leitung zeigen, was wirkt. | BSI-Standard 200-1, Kap. 4.3 und Kap. 7.4 | bestätigt |  | 21.11.2026 |
+| isms | ISO/IEC 27001:2022, Anforderungen an Managementsysteme für Informationssicherheit | iso.org (Host gesperrt) | ungeklärt | iso.org aus der Sitzung gesperrt. Link vor Livegang einmal anklicken. | 21.11.2026 |
+| isms | BSI-Standards 200-1, 200-2 und 200-3 zum IT-Grundschutz | BSI, Übersicht BSI-Standards | bestätigt |  | 21.11.2026 |
+| isms | BSI-Standard 300-1, Methodik Grundschutz++, veröffentlicht am 26.10.2026 | BSI-Meldung vom 26.10.2026 | bestätigt |  | 21.11.2026 |
+| isms | BSI-Gesetz §§ 30, 38 und 39 | §§ 30, 38, 39 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Deutschland hat sie im BSI-Gesetz umgesetzt, das seit dem 6. Dezember 2025 gilt. | BSIG, Fußnote (Art. 30 G v. 2.12.2025, BGBl. 2025 I Nr. 301) | bestätigt |  | 21.11.2026 |
+| nis2-cra | Der Cyber Resilience Act, kurz CRA, ist eine EU-Verordnung und gilt direkt, ohne dass ein deutsches Gesetz ihn erst umsetzen muss. | Art. 71 VO (EU) 2024/2847 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Der Bundestag hat am 15. Oktober 2026 das deutsche Durchführungsgesetz zum CRA beschlossen. | BSI-Pressemitteilung „Bundestag stärkt Cybersicherheit: CRA-Durchführungsgesetz verabschiedet“, Datum 16.10.2026 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Es sieht das BSI als Marktüberwachungsbehörde für Produkte mit digitalen Elementen vor. | BSI-Pressemitteilung vom 16.10.2026 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Bei NIS-2 ist die gesetzliche Frist zur Registrierung am 6. März 2026 abgelaufen. | § 33 Abs. 1 BSIG i. V. m. Inkrafttreten am 6.12.2025 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Zu den erfassten Sektoren gehören unter anderem Energie, Wasser, Verkehr, Gesundheit, Abfall, Lebensmittel, Chemie und Teile des verarbeitenden Gewerbes. | Anlage 1 und Anlage 2 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Wichtige Einrichtung. Sektor aus Anlage 1 oder 2 des BSI-Gesetzes und mindestens 50 Beschäftigte oder mehr als 10 Mio. Euro Jahresumsatz und Bilanzsumme (§ 28). | § 28 Abs. 2 Satz 1 Nr. 3 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Besonders wichtige Einrichtung. Sektor aus Anlage 1 und mindestens 250 Beschäftigte oder mehr als 50 Mio. Euro Jahresumsatz und mehr als 43 Mio. Euro Bilanzsumme. | § 28 Abs. 1 Satz 1 Nr. 4 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Unabhängig von der Größe. Betreiber kritischer Anlagen und einige digitale Dienste wie DNS-Anbieter zählen immer dazu. | § 28 Abs. 1 Satz 1 Nr. 1 und 2 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Hersteller. Wer ein Produkt mit digitalen Elementen unter eigenem Namen in der EU anbietet. | Art. 3 Nr. 13 VO (EU) 2024/2847 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Importeure und Händler. Sie müssen prüfen, ob der Hersteller seine Pflichten erfüllt hat. | Art. 19 Abs. 2 und Art. 20 VO (EU) 2024/2847 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Ausgenommen. Produkte mit eigenen EU-Regeln, etwa Medizinprodukte und Kraftfahrzeuge. | Art. 2 Abs. 2 VO (EU) 2024/2847 | bestätigt |  | 21.11.2026 |
+| nis2-cra | CRA. EU-Verordnung 2024/2847, gilt direkt | VO (EU) 2024/2847, Titel und Art. 71 | bestätigt |  | 21.11.2026 |
+| nis2-cra | NIS-2. Betreiber in den erfassten Sektoren ab mittlerer Größe | § 28 Abs. 2 Nr. 3 und Abs. 4 BSIG (KMU-Empfehlung 2003/361/EG) | bestätigt |  | 21.11.2026 |
+| nis2-cra | Risikomanagement nach § 30, Registrierung beim BSI, Meldung erheblicher Vorfälle | § 30, § 33 Abs. 1, § 32 Abs. 1 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Sichere Produkte, Umgang mit Schwachstellen, Updates im Unterstützungszeitraum von in der Regel mindestens fünf Jahren, CE-Kennzeichnung | Art. 13 Abs. 8 UAbs. 3 und Art. 30 VO (EU) 2024/2847 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Frühe Erstmeldung nach 24 Stunden, Meldung nach 72 Stunden, Abschlussmeldung einen Monat danach (§ 32) | § 32 Abs. 1 Satz 1 Nr. 1, 2 und 4 BSIG | abweichend | Zahlen stimmen, es sind aber Höchstfristen („spätestens“). Korrigiert, Fundstelle § 32 Abs. 1 ergänzt. | 21.11.2026 |
+| nis2-cra | Frühwarnung nach 24 Stunden, Meldung nach 72 Stunden, Abschlussbericht bei Schwachstellen 14 Tage nach verfügbarer Korrektur, bei Vorfällen einen Monat nach der Meldung | Art. 14 Abs. 2 Buchst. a bis c und Abs. 4 Buchst. a bis c VO (EU) 2024/2847 | abweichend | Zahlen stimmen, Höchstfristen. Korrigiert, Fundstelle Art. 14 Abs. 2 und 4 CRA ergänzt. | 21.11.2026 |
+| nis2-cra | NIS-2. 6. Dezember 2025 / CRA. Meldepflichten seit 11. September 2026, alle übrigen Pflichten ab 11. Dezember 2027 | BSIG Fußnote (Art. 30 G v. 2.12.2025); Art. 71 Abs. 2 VO (EU) 2024/2847 | abweichend | Gegenprüfung: Kapitel IV CRA (Konformitätsbewertungsstellen) gilt schon seit 11.06.2026. Für Hersteller, Importeure und Händler stimmt 11.12.2027. Präzisiert. | 21.11.2026 |
+| nis2-cra | 10 Mio. Euro bei besonders wichtigen und 7 Mio. Euro bei wichtigen Einrichtungen, bei sehr großen Unternehmen bis 2 oder 1,4 Prozent des Umsatzes (§ 65) | § 65 Abs. 5 Satz 1 Nr. 1, Abs. 6 bis 8 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | 15 Mio. Euro oder 2,5 Prozent des weltweiten Jahresumsatzes | Art. 64 Abs. 2 VO (EU) 2024/2847 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Geschäftsleitung muss umsetzen, überwachen und sich schulen lassen, sie haftet gegenüber dem eigenen Unternehmen (§ 38) | § 38 Abs. 1 bis 3 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Ein Maschinenbauer mit 80 Beschäftigten kann beides sein, Betreiber seiner eigenen Fertigung und Hersteller vernetzter Maschinen. | Anlage 2 Nr. 5.4 BSIG i. V. m. § 28 Abs. 2 Nr. 3 BSIG; Art. 2 Abs. 1 CRA | bestätigt |  | 21.11.2026 |
+| nis2-cra | Betroffene Einrichtungen registrieren sich beim BSI und benennen eine Kontaktstelle. Die gesetzliche Frist dafür ist bereits abgelaufen. | § 33 Abs. 1 BSIG | abweichend | § 33 kennt keine „Kontaktstelle“, sondern Kontaktdaten. Frist drei Monate läuft für später Betroffene neu. Korrigiert. | 21.11.2026 |
+| nis2-cra | Die zehn Themen aus § 30 BSI-Gesetz gegen den Ist-Zustand halten, von der Risikoanalyse über die Datensicherung bis zur Lieferkette. | § 30 Abs. 2 Satz 2 Nr. 1 bis 10 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Die erste Meldung ist nach 24 Stunden fällig. | § 32 Abs. 1 Satz 1 Nr. 1 BSIG | abweichend | „nach 24 Stunden“ statt „spätestens 24 Stunden“. Korrigiert. | 21.11.2026 |
+| nis2-cra | Die Schwelle liegt bei 50 Beschäftigten oder 10 Mio. Euro Umsatz und Bilanzsumme. | § 28 Abs. 2 Satz 1 Nr. 3 und Abs. 1 Satz 1 Nr. 1 und 2 BSIG | abweichend | Schwelle ist „über“ 10 Mio. Euro, nicht genau 10 Mio. Korrigiert, Fundstelle § 28 Abs. 2 Nr. 3 ergänzt. | 21.11.2026 |
+| nis2-cra | Jedes Unternehmen prüft selbst, ob es betroffen ist, und registriert sich selbst. Ein Schreiben der Behörde gibt es vorher nicht. | § 33 Abs. 1, 3 und 4 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | Die Meldepflicht für aktiv ausgenutzte Schwachstellen gilt seit dem 11. September 2026, auch für Produkte, die schon länger verkauft werden. | Art. 71 Abs. 2 UAbs. 2 und Art. 69 Abs. 3 VO (EU) 2024/2847 | bestätigt |  | 21.11.2026 |
+| nis2-cra | Registrierung, Meldefristen und die Schulung der Geschäftsleitung kommen aus dem Gesetz hinzu. | § 33, § 32, § 38 Abs. 3 BSIG | bestätigt |  | 21.11.2026 |
+| nis2-cra | BSI-Gesetz §§ 28, 30, 32, 33, 38 und 65 | BSIG Inhaltsübersicht | bestätigt |  | 21.11.2026 |
+| nis2-cra | Richtlinie (EU) 2022/2555 (NIS-2) / Verordnung (EU) 2024/2847 (Cyber Resilience Act) | EUR-Lex ELI | bestätigt |  | 21.11.2026 |
+| nis2-cra | EU-Kommission, Meldepflichten nach dem Cyber Resilience Act | digital-strategy.ec.europa.eu (Host gesperrt) | ungeklärt | digital-strategy.ec.europa.eu aus der Sitzung gesperrt. Link vor Livegang einmal anklicken. | 21.11.2026 |
+| bcm | Grundlagen sind der BSI-Standard 200-4 und die internationale Norm ISO 22301. | BSI-Standard 200-4, Kap. 1 | bestätigt |  | 21.11.2026 |
+| bcm | Der BSI-Standard kennt drei Ausbaustufen, sodass auch ein kleiner Betrieb einen passenden Einstieg findet. | BSI-Standard 200-4, Kap. 1 und Kap. 2.6 BCMS-Stufenmodell | bestätigt |  | 21.11.2026 |
+| bcm | BCM steht für Business Continuity Management, auf Deutsch Notfallmanagement. | BSI-Standard 200-4, Änderungshistorie | abweichend | BSI-Standard 200-4 hat den Begriff Notfallmanagement durch BCM ersetzt, keine Übersetzung. Ein Gegenprüfer hielt das für vertretbar, einer bestätigte die Abweichung. Satz angepasst. | 21.11.2026 |
+| bcm | § 30 BSI-Gesetz verlangt ausdrücklich, den Betrieb aufrechtzuerhalten. Genannt sind Backup-Management, Wiederherstellung nach einem Notfall und Krisenmanagement. | § 30 Abs. 2 Satz 2 Nr. 3 BSIG | bestätigt |  | 21.11.2026 |
+| bcm | Die Norm sieht vor, Informationssicherheit auch während einer Störung zu halten und die IT auf einen Notfall vorzubereiten (Maßnahmen 5.29 und 5.30). | ISO/IEC 27001:2022 Anhang A bzw. ISO/IEC 27002:2022 (iso.org gesperrt, Norm lizenzpflichtig) | bestätigt | Nummern 5.29 und 5.30 über die BSI-Zuordnungstabelle ISO/IEC 27001 zum IT-Grundschutz (Edition 6) bestätigt, Normtext selbst nicht einsehbar. Satz auf die Nummern gekürzt, weil er die Maßnahmentitel nah umschrieb. | 21.11.2026 |
+| bcm | MTA Maximal tolerierbare Ausfallzeit. Wie lange hält der Betrieb ohne diesen Ablauf durch, bevor der Schaden nicht mehr tragbar ist. | BSI-Standard 200-4, Kap. 7 Business-Impact-Analyse, S. 159; BSI 200-4 Glossar | bestätigt |  | 21.11.2026 |
+| bcm | RTO Geforderte Wiederanlaufzeit. Wie schnell muss der Ablauf wieder laufen, zumindest im Notbetrieb. Sie liegt immer unter der MTA. | BSI-Standard 200-4, Kap. 7, S. 159 | bestätigt |  | 21.11.2026 |
+| bcm | RPO Maximaler Datenverlust. Wie viele Stunden an Daten dürfen verloren gehen. Daraus folgt, wie oft gesichert wird. | BSI-Standard 200-4, Kap. 7, S. 159; Glossar | bestätigt |  | 21.11.2026 |
+| bcm | Beispiel Auftragsannahme 3 Tage / Beispiel Auftragsannahme 1 Tag / Beispiel Auftragsdaten 4 Stunden | Konzept „Vor dem Livegang prüfen“; BSI-Standard 200-4, Kap. 7 | abweichend | Konzept verlangt Kennzeichnung als frei gewählt. Satz ergänzt. | 21.11.2026 |
+| bcm | Wiederanlauf. Systeme werden in der festgelegten Reihenfolge wiederhergestellt und geprüft. | BSI-Standard 200-4 Glossar, Begriffe Wiederanlauf und Wiederherstellung | abweichend | Im BSI-Standard 200-4 heißt der Schritt nach dem Notbetrieb Wiederherstellung, Wiederanlauf ist der Wechsel in den Notbetrieb. Umbenannt. | 21.11.2026 |
+| bcm | Mindestens einmal im Jahr eine Übung, anfangs am Tisch. | BSI-Standard 200-4, Kap. 13.3 Jahresübungsplanung, Tabelle 37 | abweichend | In der Sache gedeckt, Fundstelle Kap. 13 statt Tabelle 37 als Beispiel. Fundstelle ergänzt. | 21.11.2026 |
+| bcm | BSI-Gesetz § 30 Absatz 2 Nummer 3 | § 30 Abs. 2 Satz 2 Nr. 3 BSIG | bestätigt |  | 21.11.2026 |
+| bcm | ISO 22301:2019, Managementsysteme für Business Continuity | BSI-Standard 200-4, Kap. 1 (Bezug auf ISO 22301:2019) | bestätigt |  | 21.11.2026 |
+| bcm | ISO/IEC 27002:2022, Maßnahmen 5.29 und 5.30 | ISO/IEC 27002:2022 (iso.org gesperrt) | bestätigt | Ausgabe 2022 und Nummern über die BSI-Zuordnungstabelle bestätigt. iso.org gesperrt. | 21.11.2026 |
+| bcm | In Deutschland gilt sie seit dem 6. Dezember 2025 über das BSI-Gesetz. | BSIG Fußnote (Art. 30 G v. 2.12.2025, BGBl. 2025 I Nr. 301) | bestätigt |  | 21.11.2026 |
+| ot | Die Pflichten aus § 30 BSI-Gesetz gelten für alle Systeme, die der Betrieb für seine Leistungen nutzt, also auch für die Steuerungstechnik. | § 30 Abs. 1 Satz 1 BSIG | bestätigt |  | 21.11.2026 |
+| ot | Ab dem 20. Januar 2027 verlangt zusätzlich die EU-Maschinenverordnung, Steuerungen gegen Manipulation zu schützen. | Art. 54 Abs. 2 VO (EU) 2023/1230; Anhang III Nr. 1.1.9 und 1.2.1 | bestätigt | Prüfer zunächst abweichend (14. Januar 2027 aus der Originalfassung). Beide Gegenprüfer fanden die Berichtigung C1 (ABl. L 169 vom 4.7.2023): 20. Januar 2027. Der Hauptagent konnte EUR-Lex beim erneuten Abruf nicht laden (Antwort 202), Status stützt sich auf die beiden Gegenprüfungen. Fundstelle ergänzt. | 21.11.2026 |
+| ot | Wer Maschinen mit vernetzter Steuerung baut, fällt unter den CRA. | Art. 2 Abs. 1 VO (EU) 2024/2847 | abweichend | Erfasst ist, wer herstellt und unter eigenem Namen vermarktet (Art. 3 Nr. 13 CRA), nicht jeder, der baut. Präzisiert. | 21.11.2026 |
+| ot | OT. Oft 15 Jahre und länger / IT. Wenige Jahre | BSI, ICS-Security-Kompendium, Version 2.0.0 (2024), Kap. 2.2.3 Lebenszyklus | abweichend | ICS-Security-Kompendium: 10 bis 15 Jahre, mitunter über 20, Office-IT 3 bis 5 Jahre. Korrigiert, Quelle ergänzt. | 21.11.2026 |
+| ot | Schadsoftware kommt per E-Mail ins Büro und wandert von dort in die Produktion, wenn beide Netze nicht getrennt sind. | BSI-CS 005, Version 1.50 vom 03.05.2022, Platz 2 „Infektion mit Schadsoftware über Internet und Intranet“ | bestätigt |  | 21.11.2026 |
+| ot | Zugänge von Herstellern und Dienstleistern sind oft dauerhaft offen, schwach geschützt und niemandem im Betrieb vollständig bekannt. | BSI-CS 005, Platz 8 „Einbruch über Fernwartungszugänge“ | abweichend | „dauerhaft offen“ und „niemandem bekannt“ stehen nicht in BSI-CS 005, „Platz 8“ ebenfalls nicht. Text an die Quelle angepasst. | 21.11.2026 |
+| ot | USB-Sticks und fremde Rechner werden direkt an der Anlage angeschlossen und umgehen jede Schutzschicht davor. | BSI-CS 005, Platz 1 „Einschleusen von Schadsoftware über Wechseldatenträger und mobile Systeme“ | bestätigt |  | 21.11.2026 |
+| ot | Geräte, die für eine bequeme Abfrage direkt aus dem Internet erreichbar sind, werden von spezialisierten Suchmaschinen gefunden. | BSI-CS 005, Platz 7 „Internet-verbundene Steuerungskomponenten“ | abweichend | Grund „bequeme Abfrage“ steht nicht in BSI-CS 005. Text an die Quelle angepasst. | 21.11.2026 |
+| ot | Auswahl aus den zehn häufigsten Bedrohungen, die das BSI für industrielle Anlagen nennt. | BSI-CS 005, S. 2, Tabelle Top 10 Bedrohungen | bestätigt |  | 21.11.2026 |
+| ot | BSI, Industrial Control System Security, Top 10 Bedrohungen und Gegenmaßnahmen 2022 (BSI-CS 005) | BSI-CS 005, Version 1.50 vom 03.05.2022 (ACS-Seite: Datum 31.05.2022) | bestätigt |  | 21.11.2026 |
+| ot | Verordnung (EU) 2023/1230 über Maschinen, Anhang III Nummer 1.1.9 | VO (EU) 2023/1230, Anhang III Abschnitt 1.1.9 | bestätigt |  | 21.11.2026 |
+| ot | IEC 62443, der Normenreihe für die Sicherheit industrieller Anlagen | BSI, ICS-Security-Kompendium 2.0.0, Kap. 4.1.1.2 | bestätigt |  | 21.11.2026 |
+| ot | BSI-Gesetz § 30 | § 30 BSIG | bestätigt |  | 21.11.2026 |
+| ot | In Deutschland gilt sie seit dem 6. Dezember 2025 über das BSI-Gesetz. | BSIG Fußnote (Art. 30 G v. 2.12.2025, BGBl. 2025 I Nr. 301) | bestätigt |  | 21.11.2026 |
+
+**Liste „Vor dem Livegang prüfen“ aus dem Konzept**
+
+| Punkt | Ergebnis | Status | Datum der Prüfung |
+| --- | --- | --- | --- |
+| (a1) Kasten „Neu“ NIS-2/CRA: BSI-Mitteilung vom 16.10.2026 finden, Datum und Inhalt prüfen | Gefunden als BSI-Pressemitteilung „Bundestag stärkt Cybersicherheit: CRA-Durchführungsgesetz verabschiedet“, URL https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/261020_CRA-Durchf%C3%BChrungsgesetz.html (Dateiname 261020, Seitendatum „16.10.2026“). Inhalt: „Mit der gestrigen Verabschiedung des Durchführungsgesetzes … durch den Deutschen Bundestag“ (also 15.10.2026), BSI | bestätigt | 21.11.2026 |
+| (a2) Ist das CRA-Durchführungsgesetz im Bundesgesetzblatt verkündet? | Nicht verkündet bis BGBl. 2026 I Nr. 345 (20.11.2026). Stand im Bundesrat ungeklärt, weil die Suche auf recht.bund.de und die DIP-API aus der Sitzung nicht erreichbar sind. Auf der Seite steht deshalb „noch nicht verkündet (Stand 21.11.2026)“. Vor dem Livegang erneut prüfen. | ungeklärt | 21.11.2026 |
+| (b) Sektorenliste NIS-2 gegen Anlage 1 und 2 BSIG | Alle acht genannten Sektoren stehen in Anlage 1 oder 2. Fundstelle an der Sektorenliste ergänzt. | bestätigt | 21.11.2026 |
+| (c) Auswahl der vier Einfallstore OT gegen BSI-CS 005 (Top 10 2022) | Die vier Einfallstore entsprechen den Einträgen 1, 2, 7 und 8 der Tabelle in BSI-CS 005, Version 1.50 vom 03.05.2022. Die Tabelle nummeriert nicht, deshalb nennt die Seite keine Plätze, nur die Quelle. | bestätigt | 21.11.2026 |
+| (d) Links zu EUR-Lex und zur Allianz für Cybersicherheit aufrufen | EUR-Lex-Links liefern 200, aber die englische Fassung. Auf /oj/deu umgestellt. Der Link zu BSI-CS 005 bei der Allianz für Cybersicherheit wurde geprüft. | bestätigt | 21.11.2026 |
+| (e) Beispielwerte MTA/RTO/RPO als frei gewählt kennzeichnen; Begriffe gegen BSI-Standard 200-4 | Werte sind stimmig (RTO unter MTA). Hinweis „frei gewählt“ ergänzt. Dazu Begriff Wiederherstellung im Ablauf korrigiert. | abweichend | 21.11.2026 |
+
+**Links**
+
+| Seite | URL | Ergebnis | Datum der Prüfung |
+| --- | --- | --- | --- |
+| isms | https://www.iso.org/standard/27001 | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| isms | https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/BSI-Standards/bsi-standards_node.html | 200 | 21.11.2026 |
+| isms | https://www.bsi.bund.de/DE/Service-Navi/Presse/Alle-Meldungen-News/Meldungen/2026/BSI-Standard_300-1_261026.html | 200 | 21.11.2026 |
+| isms | https://www.gesetze-im-internet.de/bsig_2025/ | 200 | 21.11.2026 |
+| isms | https://www.linkedin.com/in/rkazas/ | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| isms | https://kazas.dev/datenschutz.html | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| nis2-cra | https://www.gesetze-im-internet.de/bsig_2025/ | 200 | 21.11.2026 |
+| nis2-cra | https://eur-lex.europa.eu/eli/dir/2022/2555/oj | 200 | 21.11.2026 |
+| nis2-cra | https://eur-lex.europa.eu/eli/reg/2024/2847/oj | 200 | 21.11.2026 |
+| nis2-cra | https://digital-strategy.ec.europa.eu/en/policies/cra-reporting | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| nis2-cra | https://www.linkedin.com/in/rkazas/ | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| nis2-cra | https://kazas.dev/datenschutz.html | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| bcm | https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/BSI-Standards/bsi-standards_node.html | 200 | 21.11.2026 |
+| bcm | https://www.gesetze-im-internet.de/bsig_2025/__30.html | 200 | 21.11.2026 |
+| bcm | https://www.linkedin.com/in/rkazas/ | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| bcm | https://kazas.dev/datenschutz.html | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| ot | https://www.allianz-fuer-cybersicherheit.de/SharedDocs/Downloads/Webs/ACS/DE/BSI-CS/BSI-CS_005.pdf | 200 | 21.11.2026 |
+| ot | https://eur-lex.europa.eu/eli/reg/2023/1230/oj | 200 | 21.11.2026 |
+| ot | https://www.gesetze-im-internet.de/bsig_2025/__30.html | 200 | 21.11.2026 |
+| ot | https://www.linkedin.com/in/rkazas/ | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
+| ot | https://kazas.dev/datenschutz.html | gesperrt, nicht erreichbar aus der Sitzung | 21.11.2026 |
 
 ## 4. Entscheidungen
 
@@ -173,3 +336,8 @@ Noch nicht begonnen. Die Aussagen, die zu prüfen sind, stehen im Mockup, das fe
 | 21.11.2026 | Die eigenen Bausteine stehen an der Stelle, die das Mockup vorsieht, auch wenn sie dadurch auf den Seiten unterschiedlich weit vorn stehen (OT-Vergleich vor „Wann es greift“, „Auf einen Blick“ und „Drei Zahlen“ danach). | Das Konzept legt die Position der eigenen Bausteine nicht fest. Das Mockup ist hier die genauere Vorlage. |
 | 21.11.2026 | „Quellen“ und „Weiterlesen“ bleiben wie im Mockup zwei Abschnitte mit eigener Nummer. | Das Konzept nennt beide als einen Baustein in derselben Reihenfolge (erst Primärquellen, dann die anderen drei Themen). Die Reihenfolge stimmt, die Aufteilung kommt aus dem Mockup und widerspricht dem Konzept nicht. |
 | 21.11.2026 | Die Abschnitts-IDs aus dem Mockup bleiben, auch wo die Nummer nicht zur Abschnittsnummer passt (etwa `isms-s7` für Abschnitt 08). | Die IDs sind nur Anker für `aria-labelledby`. Eine Umbenennung hätte keinen Nutzen und würde den Abgleich mit dem Mockup erschweren. |
+| 21.11.2026 | Wo Quelle und Mockup oder Konzept auseinandergehen, gilt die Primärquelle. Abweichungen sind korrigiert und hier vermerkt (z. B. „Wiederherstellung“). | Die Seiten verweisen selbst auf diese Quellen. Ein Begriff, der der zitierten Quelle widerspricht, würde Leser irreführen. |
+| 21.11.2026 | Status bei Uneinigkeit der Prüfer: Der Hauptagent entscheidet nach dem Wortlaut der Quelle. Bei isms-04 und ot-02 setzte sich der Befund der Gegenprüfer durch, bei bcm-03 der des Prüfers. | Die Gegenprüfer hatten in beiden Fällen die genauere Fundstelle (Meilensteinplan, Berichtigung C1). |
+| 21.11.2026 | Normbezug auf der BCM-Seite nur noch als Nummer („Maßnahmen 5.29 und 5.30“). | Der Mockup-Satz gab die Maßnahmentitel sinngemäß wieder. Das Konzept verbietet nahe Umschreibungen. |
+| 21.11.2026 | Keine Platznummern bei den Einfallstoren. | Die Tabelle in BSI-CS 005 listet die Top 10 ohne Nummern. Der Hauptagent hat das PDF selbst gelesen. |
+| 21.11.2026 | Die Links zu iso.org und zur EU-Kommission bleiben, Status „ungeklärt“. | Beide Hosts sind aus der Sitzung gesperrt. Ein Ersatz ohne Prüfung wäre nicht besser. |

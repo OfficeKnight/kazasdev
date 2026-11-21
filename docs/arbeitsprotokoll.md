@@ -4,19 +4,18 @@ Dieses Protokoll begleitet die Umsetzung der Wissensseiten (`isms.html`, `nis2-c
 
 ## 1. Aktueller Stand
 
-Stand 21.11.2026, 18:02 Uhr
+Stand 21.11.2026, 18:04 Uhr
 
 - **Branch:** `claude/intelligent-hawking-6ohcfk`
-- **Letzter Commit:** „Themenseite BCM“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
+- **Letzter Commit:** „Themenseite OT“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
 - **Fertig und geprüft:**
   - CLAUDE.md, Protokoll, Vorlagen in docs/.
   - Gemeinsame Teile.
-  - isms.html, nis2-cra.html, bcm.html.
+  - isms.html, nis2-cra.html, bcm.html, ot.html (Stand Mockup, vor Übernahme der Quellenbefunde).
 - **Als Nächstes:**
-  1. ot.html committen.
-  2. Gegengeprüfte Befunde der Quellenprüfung in die Seiten übernehmen.
-  3. Schlussprüfung aller Seiten in 390 px und 1280 px, hell und dunkel.
-  4. `docs/` und `CLAUDE.md` vor dem Merge nach `main` entfernen. Das Zusammenführen selbst macht Rostik.
+  1. Gegengeprüfte Befunde der Quellenprüfung in die Seiten übernehmen.
+  2. Schlussprüfung aller Seiten in 390 px und 1280 px, hell und dunkel.
+  3. `docs/` und `CLAUDE.md` vor dem Merge nach `main` entfernen. Das Zusammenführen selbst macht Rostik.
 
 ### Offene Fragen an Rostik
 
@@ -26,6 +25,27 @@ Stand 21.11.2026, 18:02 Uhr
 4. NIS-2 / CRA: Das Konzept verlangt unter „Wann es greift“ auch den Fall ohne äußeren Druck. Der Mockup-Abschnitt „Wen es betrifft“ hat dafür keinen Text, ich habe keinen erfunden. Bitte einen Satz liefern oder bestätigen, dass er bei dieser Seite entfällt.
 
 ## 2. Verlauf
+
+### 21.11.2026, 18:04 Uhr – Themenseite OT
+
+- **Schritt:** Ein Subagent hat `ot.html` aus der Mockup-Ansicht `ot` gebaut, der Hauptagent hat geprüft und committet. Abschnitte: Kopf mit „Kurz gesagt“, 01 Was ist OT, 02 IT und OT im Vergleich (`.cmp`), 03 Wann es greift, 04 Zusammenhang, 05 Wo Angriffe ansetzen (vier Einfallstore `.gates`), 06 Grundsätzliches Vorgehen (6), 07 Häufige Missverständnisse (4), 08 Platzhalter, 09 Fünf Fragen, 10 Quellen, 11 Weiterlesen.
+- **Geänderte Dateien:** `ot.html` (neu), `docs/arbeitsprotokoll.md`
+- **Commit:** „Themenseite OT“
+- **Prüfung:**
+  - Prüfskript (Lint) ohne Befund. CSP identisch mit `index.html`, kein style-Attribut, kein Inline-Skript, keine data:-URI, keine Gedankenstriche, keine Markierung VORSCHLAG oder NEU, alle IDs eindeutig, alle ID-Bezüge auflösbar.
+  - Playwright 390 px und 1280 px, hell und dunkel: kein horizontales Scrollen, keine Konsolenfehler, keine 404. Bei 390 px die hohe Grafik, bei 1280 px die breite.
+  - Ein Abgleich mit dem Seitenschema durch den Seiten-Agenten liegt vor.
+- **Abweichungen vom Mockup:**
+  - Die Hülle `div.page` mit `data-page` entfällt. Die Klasse `topic` sitzt auf `body`.
+  - Kopf mit CSP, Preload, `canonical` und Open Graph wie in `index.html`. Titel und Beschreibung sind aus H1, Rollenzeile, Lead und „Kurz gesagt“ abgeleitet, ohne neue Aussagen.
+  - Die Navigation hat Start und Themen statt Einzelpunkten je Thema (Konzept vor Mockup).
+  - Der Fuß nutzt die Avatar-Datei statt eines data:-Bilds, weil die CSP `img-src 'self'` keine data:-URIs erlaubt. Der Datenschutz-Link ist relativ.
+  - Die Markierungen `NEU` an „Kurz gesagt“, „Fünf Fragen“ und „Weiterlesen“ sind entfernt.
+  - „Worauf ich in der Praxis achte“ ist ein Platzhalter mit der Markierung PLATZHALTER statt fünf Vorschlagspunkten mit der Markierung VORSCHLAG. Das Konzept geht hier vor, Rostik schreibt den Abschnitt selbst. Die Vorschlagstexte stehen weiter in `docs/mockup.html`.
+  - Das Stand-Datum ist 21.11.2026 statt 15.11.2026, weil die Quellenprüfung an diesem Tag stattfand.
+  - Kaputte ID-Bezüge der Grafik sind repariert (`aria-labelledby="…-gwt gwd"` auf `…-gwt …-gwd`, ebenso `gtd`), sonst fehlt Screenreadern die Beschreibung.
+  - Die Mockup-Anker zeigen jetzt auf die Dateien (`#isms` auf `isms.html` usw.).
+  - Fachliche Zahlen sind in diesem Schritt unverändert aus dem Mockup übernommen. Die Korrekturen aus der Quellenprüfung folgen in einem eigenen Schritt.
 
 ### 21.11.2026, 18:02 Uhr – Themenseite BCM
 
@@ -150,3 +170,6 @@ Noch nicht begonnen. Die Aussagen, die zu prüfen sind, stehen im Mockup, das fe
 | 21.11.2026 | Inter als variable Schrift in einer Datei (Teilmenge latin) aus @fontsource-variable/inter, Lizenztext liegt bei. | Eine Datei deckt die Stärken 400 und 600 ab. github.com ist aus der Sitzung nicht erreichbar, npm schon. Die OFL verlangt, dass der Lizenztext mitgeliefert wird. |
 | 21.11.2026 | Inter wird nur auf den Themenseiten vorgeladen, nicht auf Startseite und Datenschutz. | Diese beiden Seiten nutzen Inter nicht. |
 | 21.11.2026 | Die Markierungen `NEU` aus dem Mockup entfallen auf allen Seiten. Der Kasten „NEU · STAND“ bleibt. | Die Markierungen zeigen im Mockup nur, was neu entworfen wurde. Der Kasten „Neu“ ist laut Konzept ein Baustein. |
+| 21.11.2026 | Die eigenen Bausteine stehen an der Stelle, die das Mockup vorsieht, auch wenn sie dadurch auf den Seiten unterschiedlich weit vorn stehen (OT-Vergleich vor „Wann es greift“, „Auf einen Blick“ und „Drei Zahlen“ danach). | Das Konzept legt die Position der eigenen Bausteine nicht fest. Das Mockup ist hier die genauere Vorlage. |
+| 21.11.2026 | „Quellen“ und „Weiterlesen“ bleiben wie im Mockup zwei Abschnitte mit eigener Nummer. | Das Konzept nennt beide als einen Baustein in derselben Reihenfolge (erst Primärquellen, dann die anderen drei Themen). Die Reihenfolge stimmt, die Aufteilung kommt aus dem Mockup und widerspricht dem Konzept nicht. |
+| 21.11.2026 | Die Abschnitts-IDs aus dem Mockup bleiben, auch wo die Nummer nicht zur Abschnittsnummer passt (etwa `isms-s7` für Abschnitt 08). | Die IDs sind nur Anker für `aria-labelledby`. Eine Umbenennung hätte keinen Nutzen und würde den Abgleich mit dem Mockup erschweren. |

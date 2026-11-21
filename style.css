@@ -276,3 +276,6 @@ a.card:hover { text-decoration: none; background: color-mix(in srgb, var(--acc) 
 /* Platzhalter für Abschnitte, die noch folgen */
 .ph { background: color-mix(in srgb, var(--acc) 9%, var(--card)); border-radius: var(--r); box-shadow: var(--sh); padding: 16px 18px; max-width: 68ch; }
 .ph p { margin: 0; color: var(--mut); font-family: var(--tf); font-size: var(--tfs); }
+
+/* Lange Wörter in den schmalen Themenkacheln der Startseite trennen, sonst ragt „Informationssicherheit“ bei 390 px über die Kachel hinaus */
+@media (max-width: 560px) { a.card p { hyphens: auto; overflow-wrap: break-word; } }

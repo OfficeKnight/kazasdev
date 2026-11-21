@@ -4,19 +4,21 @@ Dieses Protokoll begleitet die Umsetzung der Wissensseiten (`isms.html`, `nis2-c
 
 ## 1. Aktueller Stand
 
-Stand 21.11.2026, 18:40 Uhr
+Stand 21.11.2026, 19:15 Uhr
 
 - **Branch:** `claude/intelligent-hawking-6ohcfk`
-- **Letzter Commit:** „Korrekturen aus der Quellenprüfung“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
+- **Letzter Commit:** „Schlussprüfung 390 und 1280 px, hell und dunkel, mit Korrekturen“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
 - **Fertig und geprüft:**
   - CLAUDE.md, Protokoll, Vorlagen in docs/.
   - Gemeinsame Teile.
   - isms.html, nis2-cra.html, bcm.html, ot.html.
   - Quellenprüfung mit Gegenprüfung, Korrekturen eingearbeitet und unabhängig geprüft.
+  - Schlussprüfung aller sechs Seiten in 390 px und 1280 px, hell und dunkel, mit Sichtprüfung und Behebung der Befunde.
 - **Als Nächstes:**
-  1. Schlussprüfung aller Seiten in 390 px und 1280 px, hell und dunkel, mit Sichtprüfung der Screenshots.
+  1. Rostik beantwortet die offenen Fragen unten und schreibt „Worauf ich in der Praxis achte“ auf allen vier Seiten.
   2. Vor dem Livegang: Verkündung des CRA-Durchführungsgesetzes im Bundesgesetzblatt erneut prüfen. Die Links zu iso.org und digital-strategy.ec.europa.eu einmal anklicken, sie sind aus der Sitzung gesperrt.
-  3. `docs/` und `CLAUDE.md` vor dem Merge nach `main` entfernen. Das Zusammenführen selbst macht Rostik.
+  3. Technisches Audit laut Konzept (Sicherheitsheader, Barrierefreiheit, Ladezeit, Meta-Angaben).
+  4. `docs/` und `CLAUDE.md` vor dem Merge nach `main` entfernen. Das Zusammenführen selbst macht Rostik.
 
 ### Offene Fragen an Rostik
 
@@ -26,10 +28,33 @@ Stand 21.11.2026, 18:40 Uhr
 4. NIS-2 / CRA: Das Konzept verlangt unter „Wann es greift“ auch den Fall ohne äußeren Druck. Der Mockup-Abschnitt „Wen es betrifft“ hat dafür keinen Text, ich habe keinen erfunden. Bitte einen Satz liefern oder bestätigen, dass er bei dieser Seite entfällt.
 5. BCM: Im Ablauf unter „Drei Zahlen“ heißt der dritte Schritt jetzt „Wiederherstellung“ statt „Wiederanlauf“, wie es Konzept und Mockup vorsehen. Grund ist der BSI-Standard 200-4. Dort bezeichnet Wiederanlauf den Wechsel in den Notbetrieb und Wiederherstellung die Rückkehr zum Normalbetrieb. Einverstanden?
 6. NIS-2 / CRA: Das CRA-Durchführungsgesetz ist bis BGBl. 2026 I Nr. 345 (20.11.2026) nicht verkündet. Auf der Seite steht „Verkündet ist das Gesetz noch nicht (Stand 21.11.2026)“. Vor dem Livegang bitte erneut prüfen und den Satz anpassen.
+7. Inter gilt wie im Mockup nur für den Fließtext der Themenseiten. Startseite und Datenschutz bleiben in JetBrains Mono. Soll Inter auch dort eingesetzt werden?
 
 ## 2. Verlauf
 
-### 21.11.2026, 18:40 Uhr – Korrekturen aus der Quellenprüfung
+### 21.11.2026, 19:15 Uhr · Schlussprüfung in 390 px und 1280 px, hell und dunkel
+
+- **Schritt:**
+  1. Playwright-Screenshots aller sechs Seiten (Startseite, vier Themenseiten, Datenschutz) in 390 px und 1280 px, jeweils mit hellem und dunklem Systemfarbschema, dazu dieselben Ansichten aus dem Mockup als Vergleich.
+  2. Sechs Subagenten haben je eine Seite in allen vier Ansichten Ausschnitt für Ausschnitt angesehen und mit dem Mockup verglichen. Der Hauptagent hat Stichproben selbst angesehen.
+  3. Die Befunde sind behoben, danach lief eine vollständige Wiederholung.
+- **Geänderte Dateien:** `style.css`, `isms.html`, `nis2-cra.html`, `bcm.html`, `ot.html`, `docs/arbeitsprotokoll.md`
+- **Commit:** „Schlussprüfung 390 und 1280 px, hell und dunkel, mit Korrekturen“
+- **Befunde und Behebung:**
+  - Muss: Auf der Startseite ragte bei 390 px das Wort „Informationssicherheit“ über die ISMS-Kachel hinaus, um 40 px in die Nachbarkachel. Der Fehler steckt schon im Mockup. Behoben mit Silbentrennung nur in den Themenkacheln der Startseite und nur unter 560 px (`a.card p { hyphens: auto; overflow-wrap: break-word; }`). Nachgemessen: kein Kacheltext breiter als seine Kachel.
+  - Eigene Stichprobe: Zeilenumbruch zwischen „Kap.“ und der Nummer. Auf den Themenseiten steht jetzt außerhalb der Grafik ein geschütztes Leerzeichen nach „Kap.“, „Art.“, „Abs.“ und „Nr.“ vor einer Zahl (40 Stellen).
+  - Kein Fehler: Der Avatar im Fuß fehlte in den Ganzseiten-Screenshots der langen Seiten. Grund ist `loading="lazy"`, wie auf der Startseite. Nach dem Scrollen lädt er, in der Wiederholung ist er sichtbar.
+  - Kein Fehler: Das Kennzeichen „NEU · STAND“ im Kasten „Neu“ bleibt. Der Kasten „Neu“ ist laut Konzept ein Baustein, entfernt wurden nur die Review-Markierungen.
+  - Hinweis, nicht geändert: Startseite und Datenschutz setzen den Fließtext in JetBrains Mono. Das entspricht dem Mockup (offene Frage). Die Datenschutzseite trägt „Stand Oktober 2026“. Das ist das Datum der Rechtstexte und bleibt.
+  - Hinweis, nicht geändert: In der hohen BCM-Grafik stehen zwei Pfeilbeschriftungen eng untereinander, wie im Mockup. Sie sind lesbar und überlappen nicht.
+- **Prüfung (Wiederholung nach den Korrekturen):**
+  - Alle 24 Ansichten ohne horizontales Scrollen, ohne Konsolenfehler, CSP-Meldung oder 404, kein Element ragt über den Rand.
+  - Inter und JetBrains Mono laden. Bei 390 px zeigt die Seite die hohe Grafik, bei 1280 px die breite.
+  - Der Farbumschalter wechselt auto, hell und dunkel und merkt sich die Wahl über die Seiten hinweg.
+  - Lint über alle sechs Seiten ohne Befund.
+- **Abweichungen vom Mockup:** Silbentrennung in den Startseiten-Kacheln bei 390 px (behebt einen Darstellungsfehler des Mockups) und geschützte Leerzeichen in Fundstellen.
+
+### 21.11.2026, 18:40 Uhr · Korrekturen aus der Quellenprüfung
 
 - **Schritt:**
   1. Ein Subagent hat 78 Aussagen geprüft.
@@ -75,7 +100,7 @@ Stand 21.11.2026, 18:40 Uhr
   - Vom Mockup weichen alle oben genannten Textänderungen ab.
   - Vom Konzept weicht der Ablaufschritt „Wiederherstellung“ statt „Wiederanlauf“ ab. Begründung ist der BSI-Standard 200-4 (Frage an Rostik).
 
-### 21.11.2026, 18:04 Uhr – Themenseite OT
+### 21.11.2026, 18:04 Uhr · Themenseite OT
 
 - **Schritt:** Ein Subagent hat `ot.html` aus der Mockup-Ansicht `ot` gebaut, der Hauptagent hat geprüft und committet. Abschnitte: Kopf mit „Kurz gesagt“, 01 Was ist OT, 02 IT und OT im Vergleich (`.cmp`), 03 Wann es greift, 04 Zusammenhang, 05 Wo Angriffe ansetzen (vier Einfallstore `.gates`), 06 Grundsätzliches Vorgehen (6), 07 Häufige Missverständnisse (4), 08 Platzhalter, 09 Fünf Fragen, 10 Quellen, 11 Weiterlesen.
 - **Geänderte Dateien:** `ot.html` (neu), `docs/arbeitsprotokoll.md`
@@ -96,7 +121,7 @@ Stand 21.11.2026, 18:40 Uhr
   - Die Mockup-Anker zeigen jetzt auf die Dateien (`#isms` auf `isms.html` usw.).
   - Fachliche Zahlen sind in diesem Schritt unverändert aus dem Mockup übernommen. Die Korrekturen aus der Quellenprüfung folgen in einem eigenen Schritt.
 
-### 21.11.2026, 18:02 Uhr – Themenseite BCM
+### 21.11.2026, 18:02 Uhr · Themenseite BCM
 
 - **Schritt:** Ein Subagent hat `bcm.html` aus der Mockup-Ansicht `bcm` gebaut, der Hauptagent hat geprüft und committet. Abschnitte: Kopf mit „Kurz gesagt“, 01 Was ist BCM, 02 Wann es greift, 03 Zusammenhang, 04 Drei Zahlen, die die Leitung festlegt (`.nums` mit MTA, RTO, RPO und Beispielen, darunter `.flow` mit Ausfall, Notbetrieb, Wiederanlauf, Normalbetrieb), 05 Grundsätzliches Vorgehen (6), 06 Häufige Missverständnisse (4), 07 Platzhalter, 08 Fünf Fragen, 09 Quellen, 10 Weiterlesen.
 - **Geänderte Dateien:** `bcm.html` (neu), `docs/arbeitsprotokoll.md`
@@ -117,7 +142,7 @@ Stand 21.11.2026, 18:40 Uhr
   - Die Mockup-Anker zeigen jetzt auf die Dateien (`#isms` auf `isms.html` usw.).
   - Fachliche Zahlen sind in diesem Schritt unverändert aus dem Mockup übernommen. Die Korrekturen aus der Quellenprüfung folgen in einem eigenen Schritt.
 
-### 21.11.2026, 18:00 Uhr – Themenseite NIS-2 / CRA
+### 21.11.2026, 18:00 Uhr · Themenseite NIS-2 / CRA
 
 - **Schritt:** Ein Subagent hat `nis2-cra.html` aus der Mockup-Ansicht `nis2-cra` gebaut, der Hauptagent hat geprüft und committet. Abschnitte: Kopf mit „Kurz gesagt“, 01 Was ist das mit dem Kasten „Neu“ (CRA-Durchführungsgesetz, Registrierungsfrist), 02 Wen es betrifft, 03 Auf einen Blick (Gegenüberstellung `.cmp` mit Rechtsform, Adressaten, Kernpflichten, Meldefristen, Geltung, Bußgeld, Leitung), 04 Zusammenhang, 05 Grundsätzliches Vorgehen (6), 06 Häufige Missverständnisse (4), 07 Platzhalter, 08 Fünf Fragen, 09 Quellen, 10 Weiterlesen.
 - **Geänderte Dateien:** `nis2-cra.html` (neu), `docs/arbeitsprotokoll.md`
@@ -139,7 +164,7 @@ Stand 21.11.2026, 18:40 Uhr
   - Fachliche Zahlen sind in diesem Schritt unverändert aus dem Mockup übernommen. Die Korrekturen aus der Quellenprüfung folgen in einem eigenen Schritt.
 - **Abweichung vom Konzept, offen:** Der Abschnitt „Wen es betrifft“ entspricht dem Baustein „Wann es greift“, enthält aber keinen Fall ohne äußeren Druck (siehe offene Fragen).
 
-### 21.11.2026, 17:55 Uhr – Themenseite ISMS
+### 21.11.2026, 17:55 Uhr · Themenseite ISMS
 
 - **Schritt:** Ein Subagent hat `isms.html` aus der Mockup-Ansicht `isms` gebaut, der Hauptagent hat geprüft und committet. Abschnitte: Kopf mit „Kurz gesagt“, 01 Was ist ein ISMS mit dem Kasten „Neu“ (Grundschutz++, BSI-Standard 300-1), 02 Wann es greift, 03 Zusammenhang, 04 Grundsätzliches Vorgehen (6 Karten), 05 Häufige Missverständnisse (4), 06 Worauf ich in der Praxis achte (Platzhalter), 07 Fünf Fragen, 08 Quellen, 09 Weiterlesen.
 - **Geänderte Dateien:** `isms.html` (neu), `docs/arbeitsprotokoll.md`
@@ -160,7 +185,7 @@ Stand 21.11.2026, 18:40 Uhr
   - Die Mockup-Anker zeigen jetzt auf die Dateien (`#isms` auf `isms.html` usw.).
   - Fachliche Zahlen sind in diesem Schritt unverändert aus dem Mockup übernommen. Die Korrekturen aus der Quellenprüfung folgen in einem eigenen Schritt.
 
-### 21.11.2026, 17:50 Uhr – Gemeinsame Teile
+### 21.11.2026, 17:50 Uhr · Gemeinsame Teile
 
 - **Schritt:** Ein Subagent hat die gemeinsamen Teile umgesetzt, der Hauptagent hat geprüft und committet.
   - `style.css`: Am Ende angehängt sind @font-face für Inter, die Mockup-Blöcke „Themengrafik“ und „Themenseiten“, die Regel `.vor`, der Block „Ergänzungen für die Wissensseiten“ (`.tldr`, `.cmp`, `.nums`, `.flow`, `.gates`, `.ask`, `.cards.three`, `a.card`, `.go`, `.hint`) und neu `.ph` für den Platzhalter. Nicht übernommen sind die Mockup-Leiste (`.mock`), die Regeln für `data-theme` und die base64-Schrift. Bestehende Regeln sind unverändert.
@@ -181,7 +206,7 @@ Stand 21.11.2026, 18:40 Uhr
   - Die Navigation hat einen Punkt „Themen“ statt vier Einzelpunkten. Auch hier gilt das Konzept.
   - Die Markierung `NEU` an „Kernthemen“ ist entfernt, weil sie nur ein Review-Hinweis im Mockup war.
 
-### 21.11.2026, 17:05 Uhr – Vorlagen ablegen und Quellen erreichbar machen
+### 21.11.2026, 17:05 Uhr · Vorlagen ablegen und Quellen erreichbar machen
 
 - **Schritt:** Die hochgeladenen Vorlagen unverändert als `docs/wissensseiten-konzept.md` und `docs/mockup.html` abgelegt. Für die Quellenprüfung eine eigene Umgebung „kazasdev“ angelegt, weil die Standardumgebung die Quellseiten sperrte.
 - **Geänderte Dateien:** `docs/wissensseiten-konzept.md` (neu), `docs/mockup.html` (neu), `docs/arbeitsprotokoll.md`
@@ -189,7 +214,7 @@ Stand 21.11.2026, 18:40 Uhr
 - **Prüfung:** Dateien mit den Uploads verglichen (byteweise gleich, `cmp`). Abruf von gesetze-im-internet.de, eur-lex.europa.eu, bsi.bund.de und allianz-fuer-cybersicherheit.de liefert HTTP 200.
 - **Abweichungen:** Keine.
 
-### 21.11.2026, 16:45 Uhr – Arbeitsprotokoll und CLAUDE.md anlegen
+### 21.11.2026, 16:45 Uhr · Arbeitsprotokoll und CLAUDE.md anlegen
 
 - **Schritt:** `CLAUDE.md` im Hauptordner angelegt (gab es noch nicht) mit dem Abschnitt „Arbeitsprotokoll“ im vorgegebenen Wortlaut. `docs/arbeitsprotokoll.md` mit den vier Teilen angelegt.
 - **Geänderte Dateien:** `CLAUDE.md` (neu), `docs/arbeitsprotokoll.md` (neu)
@@ -341,3 +366,5 @@ Geprüft am 21.11.2026 gegen die Primärquellen (BSI-Gesetz mit Anlage 1 und 2 a
 | 21.11.2026 | Normbezug auf der BCM-Seite nur noch als Nummer („Maßnahmen 5.29 und 5.30“). | Der Mockup-Satz gab die Maßnahmentitel sinngemäß wieder. Das Konzept verbietet nahe Umschreibungen. |
 | 21.11.2026 | Keine Platznummern bei den Einfallstoren. | Die Tabelle in BSI-CS 005 listet die Top 10 ohne Nummern. Der Hauptagent hat das PDF selbst gelesen. |
 | 21.11.2026 | Die Links zu iso.org und zur EU-Kommission bleiben, Status „ungeklärt“. | Beide Hosts sind aus der Sitzung gesperrt. Ein Ersatz ohne Prüfung wäre nicht besser. |
+| 21.11.2026 | Silbentrennung nur für die Themenkacheln der Startseite und nur unter 560 px. | Eine allgemeine Regel für alle Karten trennte auch in den Weiterlesen-Karten der Themenseiten unnötig viele Wörter. |
+| 21.11.2026 | Fuß-Avatar behält `loading="lazy"` wie auf der Startseite. | Das Bild lädt beim Scrollen. Das Fehlen in Ganzseiten-Screenshots ist ein Aufnahmeeffekt. |

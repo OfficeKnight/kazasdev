@@ -4,16 +4,16 @@ Dieses Protokoll begleitet die Umsetzung der Wissensseiten (`isms.html`, `nis2-c
 
 ## 1. Aktueller Stand
 
-Stand 21.11.2026, 17:55 Uhr
+Stand 21.11.2026, 18:00 Uhr
 
 - **Branch:** `claude/intelligent-hawking-6ohcfk`
-- **Letzter Commit:** „Themenseite ISMS“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
+- **Letzter Commit:** „Themenseite NIS-2 / CRA“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
 - **Fertig und geprüft:**
   - CLAUDE.md, Protokoll, Vorlagen in docs/.
   - Gemeinsame Teile.
-  - isms.html.
+  - isms.html, nis2-cra.html.
 - **Als Nächstes:**
-  1. nis2-cra.html, bcm.html, ot.html einzeln committen.
+  1. bcm.html, ot.html einzeln committen.
   2. Gegengeprüfte Befunde der Quellenprüfung in die Seiten übernehmen.
   3. Schlussprüfung aller Seiten in 390 px und 1280 px, hell und dunkel.
   4. `docs/` und `CLAUDE.md` vor dem Merge nach `main` entfernen. Das Zusammenführen selbst macht Rostik.
@@ -23,8 +23,31 @@ Stand 21.11.2026, 17:55 Uhr
 1. Die Kacheltexte der Startseite sind jetzt die Mockup-Fassung. Die alten Texte („Audit-Vorbereitung“, „Mittelstand“, „Techniker-Sicht“) sind ersetzt. Passt das?
 2. Laut Konzept besteht „Kurz gesagt“ aus drei Sätzen. Im Mockup sind es auf allen Seiten drei Punkte mit je zwei Sätzen. Ich habe das unverändert übernommen. Sollen die Punkte auf je einen Satz gekürzt werden?
 3. Der Lead der ISMS-Seite verspricht „… und worauf ich in der Praxis achte“, der Abschnitt ist aber vorerst ein Platzhalter. Soll der Lead bis zur Freigabe so bleiben?
+4. NIS-2 / CRA: Das Konzept verlangt unter „Wann es greift“ auch den Fall ohne äußeren Druck. Der Mockup-Abschnitt „Wen es betrifft“ hat dafür keinen Text, ich habe keinen erfunden. Bitte einen Satz liefern oder bestätigen, dass er bei dieser Seite entfällt.
 
 ## 2. Verlauf
+
+### 21.11.2026, 18:00 Uhr – Themenseite NIS-2 / CRA
+
+- **Schritt:** Ein Subagent hat `nis2-cra.html` aus der Mockup-Ansicht `nis2-cra` gebaut, der Hauptagent hat geprüft und committet. Abschnitte: Kopf mit „Kurz gesagt“, 01 Was ist das mit dem Kasten „Neu“ (CRA-Durchführungsgesetz, Registrierungsfrist), 02 Wen es betrifft, 03 Auf einen Blick (Gegenüberstellung `.cmp` mit Rechtsform, Adressaten, Kernpflichten, Meldefristen, Geltung, Bußgeld, Leitung), 04 Zusammenhang, 05 Grundsätzliches Vorgehen (6), 06 Häufige Missverständnisse (4), 07 Platzhalter, 08 Fünf Fragen, 09 Quellen, 10 Weiterlesen.
+- **Geänderte Dateien:** `nis2-cra.html` (neu), `docs/arbeitsprotokoll.md`
+- **Commit:** „Themenseite NIS-2 / CRA“
+- **Prüfung:**
+  - Prüfskript (Lint) ohne Befund. CSP identisch mit `index.html`, kein style-Attribut, kein Inline-Skript, keine data:-URI, keine Gedankenstriche, keine Markierung VORSCHLAG oder NEU, alle IDs eindeutig, alle ID-Bezüge auflösbar.
+  - Playwright 390 px und 1280 px, hell und dunkel: kein horizontales Scrollen, keine Konsolenfehler, keine 404. Bei 390 px die hohe Grafik, bei 1280 px die breite.
+  - Ein Abgleich mit dem Seitenschema durch den Seiten-Agenten liegt vor.
+- **Abweichungen vom Mockup:**
+  - Die Hülle `div.page` mit `data-page` entfällt. Die Klasse `topic` sitzt auf `body`.
+  - Kopf mit CSP, Preload, `canonical` und Open Graph wie in `index.html`. Titel und Beschreibung sind aus H1, Rollenzeile, Lead und „Kurz gesagt“ abgeleitet, ohne neue Aussagen.
+  - Die Navigation hat Start und Themen statt Einzelpunkten je Thema (Konzept vor Mockup).
+  - Der Fuß nutzt die Avatar-Datei statt eines data:-Bilds, weil die CSP `img-src 'self'` keine data:-URIs erlaubt. Der Datenschutz-Link ist relativ.
+  - Die Markierungen `NEU` an „Kurz gesagt“, „Fünf Fragen“ und „Weiterlesen“ sind entfernt.
+  - „Worauf ich in der Praxis achte“ ist ein Platzhalter mit der Markierung PLATZHALTER statt fünf Vorschlagspunkten mit der Markierung VORSCHLAG. Das Konzept geht hier vor, Rostik schreibt den Abschnitt selbst. Die Vorschlagstexte stehen weiter in `docs/mockup.html`.
+  - Das Stand-Datum ist 21.11.2026 statt 15.11.2026, weil die Quellenprüfung an diesem Tag stattfand.
+  - Kaputte ID-Bezüge der Grafik sind repariert (`aria-labelledby="…-gwt gwd"` auf `…-gwt …-gwd`, ebenso `gtd`), sonst fehlt Screenreadern die Beschreibung.
+  - Die Mockup-Anker zeigen jetzt auf die Dateien (`#isms` auf `isms.html` usw.).
+  - Fachliche Zahlen sind in diesem Schritt unverändert aus dem Mockup übernommen. Die Korrekturen aus der Quellenprüfung folgen in einem eigenen Schritt.
+- **Abweichung vom Konzept, offen:** Der Abschnitt „Wen es betrifft“ entspricht dem Baustein „Wann es greift“, enthält aber keinen Fall ohne äußeren Druck (siehe offene Fragen).
 
 ### 21.11.2026, 17:55 Uhr – Themenseite ISMS
 

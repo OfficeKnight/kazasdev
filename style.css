@@ -130,3 +130,149 @@ h2::before { content: attr(data-n) " / "; color: var(--acc); }
 .doc h1::after { content: ""; }
 .doc h2 { margin-top: 30px; }
 .doc p { font-size: .92rem; }
+
+/* Inter für den Fließtext der Themenseiten, selbst ausgeliefert (SIL Open Font License) */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("assets/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Themengrafik. Breite Fassung ab 1000 px, darunter die hohe Fassung. Farben kommen aus den Tokens, keine Inline-Styles wegen CSP.
+   Auf Themenseiten ist das eigene Thema hervorgehoben, die anderen sind gedimmt. */
+.map { margin: 18px 0 0; }
+.g { display: block; width: 100%; height: auto; overflow: visible; }
+.g-tall { display: none; max-width: 440px; margin: 0 auto; }
+@media (max-width: 999px) { .g-wide { display: none; } .g-tall { display: block; } }
+.g text { fill: var(--ink); font-family: inherit; }
+.g .lab { font-size: 12px; letter-spacing: .14em; fill: var(--mut); }
+.g .lab .n { fill: var(--acc); }
+.g .t { font-size: 22px; font-weight: 700; }
+.g .t.s { font-size: 20px; }
+.g .st { font-size: 13px; fill: var(--mut); }
+.g .tag { font-size: 12px; fill: var(--acc2); }
+.g .al { font-size: 12px; fill: var(--acc2); }
+.g .al.a { fill: var(--acc); }
+.g .note { font-size: 12px; fill: var(--mut); }
+.g-tall .st { font-size: 14px; }
+.g-tall .tag, .g-tall .al, .g-tall .note, .g-tall .lab { font-size: 13px; }
+.g .box { fill: var(--card); stroke: color-mix(in srgb, var(--mut) 28%, transparent); stroke-width: 1; }
+.g .box.isms { stroke: var(--acc); stroke-width: 1.5; }
+.g .box.bcm { fill: color-mix(in srgb, var(--acc) 10%, var(--card)); stroke: var(--acc); stroke-dasharray: 5 4; }
+.g .grp { fill: none; stroke: color-mix(in srgb, var(--mut) 45%, transparent); stroke-dasharray: 2 5; }
+.g .ar { stroke: var(--acc2); stroke-width: 1.6; fill: none; }
+.g .ar.a { stroke: var(--acc); }
+.g .mk { fill: var(--acc2); }
+.g .mk.a { fill: var(--acc); }
+.alt { margin-top: 14px; font-size: .86rem; color: var(--mut); max-width: 80ch; }
+.alt summary { cursor: pointer; color: var(--ink); width: fit-content; }
+.alt summary::marker { color: var(--acc); }
+.alt ol { margin: 10px 0 0; padding-left: 1.4em; display: grid; gap: 6px; }
+.g .dim { opacity: .38; }
+.g .here { font-size: 12px; fill: var(--acc); }
+.g-tall .here { font-size: 13px; }
+
+/* Themenseiten. Ueberschriften und Kennzeichnungen bleiben Monospace, der Fliesstext nutzt --tf. */
+:root { --tf: Inter, system-ui, sans-serif; --tfs: 1.02rem; }
+.topic .head { padding-block: 34px 6px; }
+.topic h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.topic .lead { font-size: .95rem; max-width: 60ch; }
+.prose, .prose p, .prose li, .steps p, .mis p, .stand p { font-family: var(--tf); font-size: var(--tfs); }
+.prose { max-width: 68ch; }
+.prose p { margin: 0 0 12px; }
+.prose ul { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; }
+.prose li::marker { color: var(--acc); }
+.prose b { font-weight: 600; }
+.stand { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 16px 18px; max-width: 68ch; margin-top: 18px; }
+.stand .k { display: block; font-size: .75rem; letter-spacing: .14em; color: var(--acc); margin-bottom: 6px; }
+.stand p { margin: 0; color: var(--ink); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); counter-reset: s; }
+.steps li { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 16px 18px; counter-increment: s; min-width: 0; }
+.steps h3 { font-size: .95rem; margin: 0 0 6px; }
+.steps h3::before { content: counter(s, decimal-leading-zero) " "; color: var(--acc); }
+.steps p { color: var(--mut); margin: 0; }
+.mis { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+.mis div { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 16px 18px; min-width: 0; }
+.mis h3 { font-size: .95rem; margin: 0 0 6px; }
+.mis h3::before { content: "✗ "; color: var(--acc); }
+.mis p { color: var(--mut); margin: 0; }
+.prax li a { color: var(--acc2); }
+.src { font-size: .82rem; color: var(--mut); max-width: 80ch; padding-left: 1.2em; margin: 0; display: grid; gap: 6px; }
+.src a { color: var(--acc2); }
+.legal { font-size: .78rem; color: var(--mut); margin-top: 28px; max-width: 80ch; }
+@media (max-width: 980px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .steps, .mis { grid-template-columns: 1fr; } }
+
+/* Markierung in Überschriften */
+.vor { display: inline-block; margin-left: 10px; font-size: .72rem; letter-spacing: .1em; color: var(--p); background: var(--acc); padding: 2px 8px; border-radius: 999px; vertical-align: middle; }
+
+/* Ergänzungen für die Wissensseiten */
+
+/* Kurzfassung im Kopf */
+.tldr { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 16px 18px; max-width: 68ch; margin-top: 22px; }
+.tldr .k { display: block; font-size: .75rem; letter-spacing: .14em; color: var(--acc); margin-bottom: 8px; }
+.tldr ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.tldr li { font-family: var(--tf); font-size: var(--tfs); }
+.tldr li::marker { color: var(--acc); }
+.prose .gap { margin-top: 18px; }
+
+/* Gegenüberstellung in zwei Spalten, Flächen statt Linien */
+.cmp { display: grid; gap: 10px; }
+.cmp .r { display: grid; grid-template-columns: 10.5rem 1fr 1fr; gap: 10px; }
+.cmp .k { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); padding-top: 14px; }
+.cmp .a, .cmp .b { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 12px 16px; min-width: 0; font-family: var(--tf); font-size: var(--tfs); }
+.cmp .hd .a, .cmp .hd .b { background: none; box-shadow: none; padding: 0 16px; font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--acc); }
+.cmp .h { display: none; }
+@media (max-width: 760px) {
+  .cmp { gap: 4px; }
+  .cmp .r { grid-template-columns: 1fr 1fr; }
+  .cmp .hd { display: none; }
+  .cmp .k { grid-column: 1 / -1; padding-top: 12px; }
+  .cmp .h { display: block; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem; font-weight: 500; letter-spacing: .1em; color: var(--acc); margin-bottom: 4px; }
+}
+@media (max-width: 480px) { .cmp .r { grid-template-columns: 1fr; } }
+
+/* Drei Zahlen und Ablauf (BCM) */
+.nums { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); margin-top: 6px; }
+.nums div { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 18px; min-width: 0; }
+.nums b { display: block; font-size: 1.55rem; line-height: 1; letter-spacing: -.02em; }
+.nums .n { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--acc2); margin: 8px 0; }
+.nums p { color: var(--mut); margin: 0; font-family: var(--tf); font-size: var(--tfs); }
+.nums .ex { display: block; margin-top: 12px; font-size: .8rem; }
+.nums .ex i { font-style: normal; color: var(--acc); letter-spacing: .1em; text-transform: uppercase; font-size: .7rem; margin-right: 8px; }
+.flow { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
+.flow li { background: color-mix(in srgb, var(--acc) 9%, var(--card)); border-radius: var(--r); box-shadow: var(--sh); padding: 14px 16px; min-width: 0; }
+.flow h3 { font-size: .9rem; margin: 0 0 6px; }
+.flow h3::before { content: "→ "; color: var(--acc); }
+.flow p { color: var(--mut); margin: 0; font-family: var(--tf); font-size: calc(var(--tfs) * .94); }
+@media (max-width: 980px) { .flow { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .nums, .flow { grid-template-columns: 1fr; } }
+
+/* Einfallstore (OT), gleiche Form wie die Missverständnisse */
+.gates { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+.gates div { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 16px 18px; min-width: 0; }
+.gates h3 { font-size: .95rem; margin: 0 0 6px; }
+.gates h3::before { content: "▸ "; color: var(--acc); }
+.gates p { color: var(--mut); margin: 0; font-family: var(--tf); font-size: var(--tfs); }
+@media (max-width: 640px) { .gates { grid-template-columns: 1fr; } }
+
+/* Fragen für die Leitungsrunde */
+.ask { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 72ch; counter-reset: q; }
+.ask li { counter-increment: q; position: relative; background: var(--card); border-radius: var(--r); box-shadow: var(--sh); padding: 13px 16px 13px 56px; font-family: var(--tf); font-size: var(--tfs); }
+.ask li::before { content: counter(q, decimal-leading-zero); position: absolute; left: 18px; top: 13px; color: var(--acc); font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .95rem; font-weight: 700; }
+
+/* Weiterlesen und verlinkte Kacheln */
+.cards.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .cards.three { grid-template-columns: 1fr; } }
+a.card { display: block; }
+a.card:hover { text-decoration: none; background: color-mix(in srgb, var(--acc) 7%, var(--card)); }
+.card .go { display: block; margin-top: 12px; font-size: .78rem; color: var(--acc2); }
+.hint { color: var(--mut); font-size: .88rem; margin-bottom: 14px; }
+.g .node.on .box { stroke: var(--acc); stroke-width: 1.5; }
+
+/* Platzhalter für Abschnitte, die noch folgen */
+.ph { background: color-mix(in srgb, var(--acc) 9%, var(--card)); border-radius: var(--r); box-shadow: var(--sh); padding: 16px 18px; max-width: 68ch; }
+.ph p { margin: 0; color: var(--mut); font-family: var(--tf); font-size: var(--tfs); }

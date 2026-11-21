@@ -4,16 +4,16 @@ Dieses Protokoll begleitet die Umsetzung der Wissensseiten (`isms.html`, `nis2-c
 
 ## 1. Aktueller Stand
 
-Stand 21.11.2026, 18:00 Uhr
+Stand 21.11.2026, 18:02 Uhr
 
 - **Branch:** `claude/intelligent-hawking-6ohcfk`
-- **Letzter Commit:** „Themenseite NIS-2 / CRA“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
+- **Letzter Commit:** „Themenseite BCM“ (Prüfsumme im Git-Verlauf, sie steht beim Schreiben noch nicht fest)
 - **Fertig und geprüft:**
   - CLAUDE.md, Protokoll, Vorlagen in docs/.
   - Gemeinsame Teile.
-  - isms.html, nis2-cra.html.
+  - isms.html, nis2-cra.html, bcm.html.
 - **Als Nächstes:**
-  1. bcm.html, ot.html einzeln committen.
+  1. ot.html committen.
   2. Gegengeprüfte Befunde der Quellenprüfung in die Seiten übernehmen.
   3. Schlussprüfung aller Seiten in 390 px und 1280 px, hell und dunkel.
   4. `docs/` und `CLAUDE.md` vor dem Merge nach `main` entfernen. Das Zusammenführen selbst macht Rostik.
@@ -26,6 +26,27 @@ Stand 21.11.2026, 18:00 Uhr
 4. NIS-2 / CRA: Das Konzept verlangt unter „Wann es greift“ auch den Fall ohne äußeren Druck. Der Mockup-Abschnitt „Wen es betrifft“ hat dafür keinen Text, ich habe keinen erfunden. Bitte einen Satz liefern oder bestätigen, dass er bei dieser Seite entfällt.
 
 ## 2. Verlauf
+
+### 21.11.2026, 18:02 Uhr – Themenseite BCM
+
+- **Schritt:** Ein Subagent hat `bcm.html` aus der Mockup-Ansicht `bcm` gebaut, der Hauptagent hat geprüft und committet. Abschnitte: Kopf mit „Kurz gesagt“, 01 Was ist BCM, 02 Wann es greift, 03 Zusammenhang, 04 Drei Zahlen, die die Leitung festlegt (`.nums` mit MTA, RTO, RPO und Beispielen, darunter `.flow` mit Ausfall, Notbetrieb, Wiederanlauf, Normalbetrieb), 05 Grundsätzliches Vorgehen (6), 06 Häufige Missverständnisse (4), 07 Platzhalter, 08 Fünf Fragen, 09 Quellen, 10 Weiterlesen.
+- **Geänderte Dateien:** `bcm.html` (neu), `docs/arbeitsprotokoll.md`
+- **Commit:** „Themenseite BCM“
+- **Prüfung:**
+  - Prüfskript (Lint) ohne Befund. CSP identisch mit `index.html`, kein style-Attribut, kein Inline-Skript, keine data:-URI, keine Gedankenstriche, keine Markierung VORSCHLAG oder NEU, alle IDs eindeutig, alle ID-Bezüge auflösbar.
+  - Playwright 390 px und 1280 px, hell und dunkel: kein horizontales Scrollen, keine Konsolenfehler, keine 404. Bei 390 px die hohe Grafik, bei 1280 px die breite.
+  - Ein Abgleich mit dem Seitenschema durch den Seiten-Agenten liegt vor.
+- **Abweichungen vom Mockup:**
+  - Die Hülle `div.page` mit `data-page` entfällt. Die Klasse `topic` sitzt auf `body`.
+  - Kopf mit CSP, Preload, `canonical` und Open Graph wie in `index.html`. Titel und Beschreibung sind aus H1, Rollenzeile, Lead und „Kurz gesagt“ abgeleitet, ohne neue Aussagen.
+  - Die Navigation hat Start und Themen statt Einzelpunkten je Thema (Konzept vor Mockup).
+  - Der Fuß nutzt die Avatar-Datei statt eines data:-Bilds, weil die CSP `img-src 'self'` keine data:-URIs erlaubt. Der Datenschutz-Link ist relativ.
+  - Die Markierungen `NEU` an „Kurz gesagt“, „Fünf Fragen“ und „Weiterlesen“ sind entfernt.
+  - „Worauf ich in der Praxis achte“ ist ein Platzhalter mit der Markierung PLATZHALTER statt fünf Vorschlagspunkten mit der Markierung VORSCHLAG. Das Konzept geht hier vor, Rostik schreibt den Abschnitt selbst. Die Vorschlagstexte stehen weiter in `docs/mockup.html`.
+  - Das Stand-Datum ist 21.11.2026 statt 15.11.2026, weil die Quellenprüfung an diesem Tag stattfand.
+  - Kaputte ID-Bezüge der Grafik sind repariert (`aria-labelledby="…-gwt gwd"` auf `…-gwt …-gwd`, ebenso `gtd`), sonst fehlt Screenreadern die Beschreibung.
+  - Die Mockup-Anker zeigen jetzt auf die Dateien (`#isms` auf `isms.html` usw.).
+  - Fachliche Zahlen sind in diesem Schritt unverändert aus dem Mockup übernommen. Die Korrekturen aus der Quellenprüfung folgen in einem eigenen Schritt.
 
 ### 21.11.2026, 18:00 Uhr – Themenseite NIS-2 / CRA
 

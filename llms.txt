@@ -1,0 +1,15 @@
+# Rostislaw Kazas
+
+> IT-Security- und ISMS-Consultant in Chemnitz. Informationssicherheit nach BSI IT-Grundschutz und ISO 27001, NIS-2, Notfallplanung und OT im Mittelstand.
+
+Persönliche Seite von Rostislaw Kazas. Er arbeitet im Consulting für Informationssicherheit bei SIGMA IT-Security und Infrastruktur in Chemnitz und kommt aus der Technik (Schaltschrankbau, Server und Netzwerke, Fahrzeugerprobung auf TISAX-zertifizierten Prüfgeländen). Schwerpunkt ist, Geschäftsführung und Technik auf denselben Stand zu bringen.
+
+## Seiten
+
+- [Startseite](https://kazas.dev/): Arbeitsweise, Kernthemen (ISMS, NIS-2 / CRA, BCM, OT), Hintergrund und Kennzahlen
+
+## Profile und Kontakt
+
+- [LinkedIn](https://www.linkedin.com/in/rkazas/): Beiträge zu Notfallplanung, NIS-2 und Technik im Mittelstand
+- [SIGMA IT-Security und Infrastruktur](https://itsecurity-infrastruktur.de/): Arbeitgeber, Systemhaus und Consulting in Chemnitz
+- [security.txt](https://kazas.dev/.well-known/security.txt): Kontakt für Sicherheitsmeldungen

@@ -10,11 +10,14 @@ Persönliche Seite von Rostislaw Kazas im Konsolendesign. Statisches HTML und CS
 | --- | --- |
 | `index.html` | Startseite |
 | `datenschutz.html` | Datenschutzerklärung |
+| `404.html` | Fehlerseite für nicht vorhandene Adressen, Pfade absolut, weil GitHub Pages sie unter jeder Adresse ausliefert |
 | `style.css` | Gestaltung, dunkel als Vorgabe, hell per Umschalter |
 | `theme.js` | Merkt sich die Wahl hell oder dunkel im Browser |
 | `assets/` | Fotos, Vorschaubild für geteilte Links, Schrift JetBrains Mono (SIL Open Font License) |
 | `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` | Browser-Symbole mit den Initialen |
 | `.well-known/security.txt` | Kontakt für Sicherheitsmeldungen, läuft am 28.10.2027 ab |
+| `llms.txt` | Kurzbeschreibung der Seite für KI-Agenten, bei neuen Seiten ergänzen |
+| `sitemap.xml` | Seitenliste für Suchmaschinen, bei neuen Seiten ergänzen |
 | `CNAME`, `robots.txt`, `.nojekyll` | GitHub Pages |
 
 ## Pflege

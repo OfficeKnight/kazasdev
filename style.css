@@ -105,10 +105,11 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .card h3 { font-size: 1rem; text-wrap: balance; font-weight: 700; margin: 0 0 6px; hyphens: auto; overflow-wrap: break-word; }
 .card h3::before { content: "■\00a0"; content: "■\00a0" / ""; color: var(--acc); font-size: .7em; }
 .card p { color: var(--mut); font-size: .88rem; margin: 0; }
-.kpi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.kpi div { display: inline-flex; align-items: baseline; gap: 12px; padding: 12px 22px; border-radius: 999px; background: var(--card); box-shadow: var(--sh); min-width: 0; }
-.kpi b { font-size: 1.55rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; }
-.kpi span { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); font-weight: 500; }
+/* Kennzahlen: Messwerte ohne Fläche, Zahl oben, Beschriftung darunter */
+.kpi { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 48px; }
+.kpi div { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
+.kpi b { font-size: 1.8rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; }
+.kpi span { max-width: 30ch; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); font-weight: 500; }
 @media (max-width: 980px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
 }
@@ -128,7 +129,7 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .ba { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 48px; margin: 0; }
 .ba div { display: flex; flex-direction: column-reverse; gap: 6px; }
 .ba dt { font-size: .75rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
-.ba dd { margin: 0; font-size: 1.55rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; }
+.ba dd { margin: 0; font-size: 1.8rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; }
 @media (max-width: 420px) { .ba { grid-template-columns: 1fr; } }
 .sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 /* Kontakt: eine Fläche, ganz klickbar, LinkedIn allein */
@@ -137,12 +138,14 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .contact a { font-size: clamp(1rem, .6rem + 2.2vw, 1.55rem); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; overflow-wrap: anywhere; }
 .contact a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .contact .arr { display: inline-block; margin-left: .6ch; color: var(--acc); }
-.contact:hover a { text-decoration: underline; text-underline-offset: 5px; }
+.contact a { text-decoration: underline; text-decoration-color: var(--acc); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.contact:hover a { text-decoration-color: currentColor; }
+.contact:active { background: color-mix(in srgb, var(--card) 88%, var(--acc)); }
 /* Englischer Absatz: Kennung EN in Label-Optik */
 .en .text { color: var(--mut); }
 .en-tag { display: inline-block; margin-right: 1.2ch; font-size: .75rem; font-weight: 500; letter-spacing: .14em; color: var(--acc); }
 .contact p { color: var(--mut); font-size: .88rem; max-width: 72ch; margin: 8px 0 0; text-wrap: pretty; }
-@media (max-width: 560px) { .cards { grid-template-columns: 1fr; } .card { padding: 14px; } .contact { padding: 18px; } .kpi { grid-template-columns: repeat(2, 1fr); gap: 18px 16px; } .kpi div { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; padding: 0; background: none; box-shadow: none; border-radius: 0; } .kpi b { font-size: 1.8rem; } .kpi span { hyphens: auto; overflow-wrap: break-word; max-width: 100%; } }
+@media (max-width: 560px) { .cards { grid-template-columns: 1fr; } .card { padding: 14px; } .contact { padding: 18px; } .kpi { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; } .kpi span { overflow-wrap: break-word; max-width: 100%; } }
 
 /* Arbeitgeber: ein Satz auf getönter Fläche, am Ende von Hintergrund */
 .sigma { position: relative; max-width: 70ch; margin-top: 18px; padding: 16px 120px 16px 20px; background: var(--sig-bg); color: var(--sig-text); border-radius: var(--r); box-shadow: var(--sh); }

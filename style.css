@@ -160,6 +160,7 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .foot img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 .foot .sp { margin-left: auto; display: flex; gap: 18px; }
 .foot .sp a { display: inline-block; padding-block: 12px; }
+@media (max-width: 560px) { .foot .sp { margin-left: 64px; } }
 .foot a { color: var(--acc2); }
 
 /* Datenschutz */

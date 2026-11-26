@@ -6,7 +6,7 @@ Persönliche Seite von Rostislaw Kazas. Er arbeitet im Consulting für Informati
 
 ## Seiten
 
-- [Startseite](https://kazas.dev/): Arbeitsweise, Kernthemen (ISMS, NIS-2 / CRA, BCM, OT), Hintergrund und Kennzahlen
+- [Startseite](https://kazas.dev/): Arbeitsweise, Hintergrund mit belegten Zahlen, Kernthemen (Informationssicherheit/ISMS, EU-Vorgaben NIS-2/CRA, Notfallplanung/BCM, Betriebstechnik/OT), Ausbildung und Sprachen, Kontakt über LinkedIn
 
 ## Profile und Kontakt
 

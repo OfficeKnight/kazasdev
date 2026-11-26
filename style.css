@@ -76,8 +76,8 @@ p { margin: 0 0 10px; }
 h1 { font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1; margin: 14px 0 10px; font-weight: 700; letter-spacing: -.03em; text-wrap: balance; }
 h1 .nm { display: block; }
 /* Cursor blinkt viermal (4 s) und bleibt dann stehen: WCAG 2.2.2 verlangt ein Ende vor 5 s */
-h1 .nm::after { content: "_"; content: "_" / ""; color: var(--acc); animation: bl 1s steps(2) 4; }
-@keyframes bl { to { opacity: 0; } }
+h1 .nm::after { content: "_"; content: "_" / ""; color: var(--acc); animation: bl 1s steps(1, end) 4; }
+@keyframes bl { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { h1 .nm::after { animation: none; } }
 .role { color: var(--acc); font-size: 1rem; margin: 0; }
 h1 .role { display: block; margin-top: 10px; font-weight: 400; line-height: 1.6; letter-spacing: 0; }

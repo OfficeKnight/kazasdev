@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-26T14:27:14Z",
+  "generatedAt": "2026-11-26T14:51:31Z",
   "title": "Design System: kazas.dev",
   "extensions": {
     "colorMeta": {
@@ -192,7 +192,7 @@
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Seitentitel auf Unterseiten; Kennzahl auf dem Handy."
+        "purpose": "Seitentitel auf Unterseiten."
       },
       "contact": {
         "displayName": "Contact",
@@ -200,7 +200,11 @@
       },
       "figure": {
         "displayName": "Figure",
-        "purpose": "Zahl in der Kennzahl-Pille."
+        "purpose": "Zahl jedes Messwerts."
+      },
+      "figure-word": {
+        "displayName": "Figure Word",
+        "purpose": "Wort an der Zahlenstelle, wenn es keine belegte Zahl gibt."
       },
       "role": {
         "displayName": "Role",
@@ -224,7 +228,7 @@
       },
       "body-small": {
         "displayName": "Body Small",
-        "purpose": "Kartentext und Satz im Kontakt."
+        "purpose": "Kartentext, Sätze in Erfahrungsfeldern, Satz im Kontakt."
       },
       "nav": {
         "displayName": "Nav",
@@ -240,7 +244,7 @@
       },
       "label-small": {
         "displayName": "Label Small",
-        "purpose": "Kennzahl-Beschriftung, Marke ARBEITGEBER, Kennung EN; kleinste Stufe."
+        "purpose": "Messwert-Beschriftungen, Marke ARBEITGEBER, Kennung EN; kleinste Stufe."
       }
     },
     "shadows": [
@@ -258,7 +262,7 @@
     "motion": [
       {
         "name": "cursor-blink",
-        "value": "1s steps(2) 4",
+        "value": "1s steps(1, end) 4, keyframe 50% opacity 0",
         "purpose": "Einzige Animation: Cursor hinter dem Namen, viermal, dann stehend; bei reduzierter Bewegung aus."
       }
     ],
@@ -299,7 +303,7 @@
       "kind": "custom",
       "refersTo": "linkedin-line",
       "description": "Die Handlung im ersten Bildschirm: Tinte, Amber-Unterstrich, Pfeil davor, 44 px Tippfläche.",
-      "html": "<p class=\"ds-go\"><a href=\"#\">Auf LinkedIn vernetzen</a></p>",
+      "html": "<p class=\"ds-go\"><a href=\"#\">Auf LinkedIn schreiben</a></p>",
       "css": ".ds-go { margin: 0; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .9375rem; color: var(--ink, #e6e9ef); } .ds-go a { display: inline-block; padding-block: 10px; color: inherit; font-weight: 700; text-decoration: underline; text-decoration-color: var(--acc, #ffb224); text-decoration-thickness: 2px; text-underline-offset: 6px; } .ds-go a::before { content: \"→\"; content: \"→\" / \"\"; display: inline-block; margin-right: 1ch; color: var(--acc, #ffb224); } .ds-go a:hover { text-decoration-color: currentColor; } .ds-go a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
     },
     {
@@ -319,12 +323,28 @@
       "css": ".ds-card { background: var(--card, #171f2b); padding: 18px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; max-width: 320px; } .ds-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 6px; color: var(--ink, #e6e9ef); text-wrap: balance; } .ds-card h3::before { content: \"■ \"; content: \"■ \" / \"\"; color: var(--acc, #ffb224); font-size: .7em; } .ds-card p { color: var(--mut, #8b94a3); font-size: .88rem; line-height: 1.6; margin: 0; }"
     },
     {
-      "name": "Kennzahl-Pille",
-      "kind": "chip",
-      "refersTo": "kpi-pill",
-      "description": "Belegte Zahl mit Beschriftung; unter 560 px ohne Fläche als Messwert.",
-      "html": "<div class=\"ds-kpi\"><b>8</b><span>Jahre Fahrzeug&shy;erprobung</span></div>",
-      "css": ".ds-kpi { display: inline-flex; align-items: baseline; gap: 12px; padding: 12px 22px; border-radius: 999px; background: var(--card, #171f2b); box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-kpi b { font-size: 1.55rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; } .ds-kpi span { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut, #8b94a3); font-weight: 500; }"
+      "name": "Messwert",
+      "kind": "custom",
+      "refersTo": "measure",
+      "description": "Belegte Zahl oben, Beschriftung darunter, ohne Fläche; Leerzeichen zwischen beiden für Screenreader.",
+      "html": "<div class=\"ds-m\"><b>60–100</b> <span>Versuchsfahrzeuge ausgerüstet</span></div>",
+      "css": ".ds-m { display: flex; flex-direction: column; gap: 6px; font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-m b { font-size: 1.8rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; } .ds-m span { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut, #8b94a3); font-weight: 500; }"
+    },
+    {
+      "name": "Erfahrungsfeld",
+      "kind": "custom",
+      "refersTo": "measure",
+      "description": "Gleichrangiges Feld im Hintergrund: Titel, Messwert, Satz; keine Reihenfolge, keine Pfeile.",
+      "html": "<div class=\"ds-field\"><h3>Fahrzeugerprobung</h3><p class=\"ds-fm\"><b>60–100</b> <span>Versuchsfahrzeuge ausgerüstet</span></p><p class=\"ds-fs\">Messtechnik eingebaut, acht Jahre lang, auf 5 TISAX-zertifizierten Prüfgeländen.</p></div>",
+      "css": ".ds-field { display: grid; row-gap: 8px; max-width: 300px; font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-field h3 { font-size: 1rem; font-weight: 700; margin: 0; } .ds-fm { display: flex; flex-direction: column; gap: 6px; margin: 0; } .ds-fm b { font-size: 1.8rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; } .ds-fm span { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut, #8b94a3); font-weight: 500; } .ds-fs { margin: 0; color: var(--mut, #8b94a3); font-size: .88rem; line-height: 1.6; }"
+    },
+    {
+      "name": "Vorher-nachher-Beleg",
+      "kind": "custom",
+      "refersTo": "measure",
+      "description": "Zwei Messwerte der Form vorher → nachher; der Pfeil ist für Screenreader ausgeschrieben.",
+      "html": "<dl class=\"ds-ba\"><div><dt>Testbericht</dt><dd><span aria-hidden=\"true\">2 h → 20 min</span><span class=\"ds-sr\">von 2 Stunden auf 20 Minuten</span></dd></div><div><dt>Rechnung</dt><dd><span aria-hidden=\"true\">1 h → 10 min</span><span class=\"ds-sr\">von 1 Stunde auf 10 Minuten</span></dd></div></dl>",
+      "css": ".ds-ba { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 48px; margin: 0; font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-ba div { display: flex; flex-direction: column-reverse; gap: 6px; } .ds-ba dt { font-size: .75rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--mut, #8b94a3); } .ds-ba dd { margin: 0; font-size: 1.8rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; } .ds-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }"
     },
     {
       "name": "Arbeitgeber-Hinweis",
@@ -332,7 +352,7 @@
       "refersTo": "employer-note",
       "description": "Getönte Fläche am Ende von Hintergrund, genau ein Satz, der Name ist der Link.",
       "html": "<aside class=\"ds-employer\" aria-label=\"Arbeitgeber\"><p>Ich arbeite im Consulting für Informationssicherheit bei <a href=\"#\">SIGMA IT-Security und Infrastruktur</a> in Chemnitz.</p></aside>",
-      "css": ".ds-employer { position: relative; max-width: 70ch; background: var(--sig-bg, #142032); padding: 16px 120px 16px 20px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--sig-text, #b9c8da); } .ds-employer::before { content: \"ARBEITGEBER\"; content: \"ARBEITGEBER\" / \"\"; position: absolute; right: 14px; top: 10px; font-size: .75rem; letter-spacing: .14em; color: var(--sig-link, #8fcbf3); } .ds-employer p { margin: 0; font-size: .9rem; line-height: 1.6; text-wrap: pretty; } .ds-employer a { color: var(--sig-link, #8fcbf3); font-weight: 700; text-decoration: none; } .ds-employer a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-employer a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
+      "css": ".ds-employer { position: relative; max-width: 70ch; background: var(--sig-bg, #142032); padding: 16px 120px 16px 20px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--sig-text, #b9c8da); } .ds-employer::before { content: \"ARBEITGEBER\"; content: \"ARBEITGEBER\" / \"\"; position: absolute; right: 14px; top: 10px; font-size: .75rem; letter-spacing: .14em; color: var(--sig-link, #8fcbf3); } .ds-employer p { margin: 0; font-size: .9rem; line-height: 1.6; text-wrap: pretty; } .ds-employer a { color: var(--sig-link, #8fcbf3); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; } .ds-employer a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
     },
     {
       "name": "Kontakt-Abschluss",
@@ -340,7 +360,7 @@
       "refersTo": "contact",
       "description": "Eine ganz klickbare Fläche mit der LinkedIn-Adresse und einer Einladung in Sie-Form.",
       "html": "<div class=\"ds-contact\"><a href=\"#\">linkedin.com/in/<span class=\"ds-nw\">rkazas<span class=\"ds-arr\" aria-hidden=\"true\">→</span></span></a><p>Schreiben Sie mir auf LinkedIn eine Nachricht oder vernetzen Sie sich mit mir.</p></div>",
-      "css": ".ds-contact { position: relative; background: var(--card, #171f2b); padding: 22px 24px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-contact a { color: inherit; text-decoration: none; font-size: clamp(1rem, .6rem + 2.2vw, 1.55rem); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; } .ds-contact a::after { content: \"\"; position: absolute; inset: 0; border-radius: inherit; } .ds-contact a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; } .ds-contact:hover a { text-decoration: underline; text-underline-offset: 5px; } .ds-nw { white-space: nowrap; } .ds-arr { display: inline-block; margin-left: .6ch; color: var(--acc, #ffb224); } .ds-contact p { color: var(--mut, #8b94a3); font-size: .88rem; line-height: 1.6; margin: 8px 0 0; }"
+      "css": ".ds-contact { position: relative; background: var(--card, #171f2b); padding: 22px 24px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-contact a { color: inherit; font-size: clamp(1rem, .6rem + 2.2vw, 1.55rem); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; text-decoration: underline; text-decoration-color: var(--acc, #ffb224); text-decoration-thickness: 2px; text-underline-offset: 6px; } .ds-contact a::after { content: \"\"; position: absolute; inset: 0; border-radius: inherit; } .ds-contact:has(a:focus-visible) { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; } .ds-contact a:focus-visible { outline: none; } .ds-contact:hover a { text-decoration-color: currentColor; } .ds-contact:active { background: color-mix(in srgb, var(--card, #171f2b) 88%, var(--acc, #ffb224)); } .ds-nw { white-space: nowrap; } .ds-arr { display: inline-block; margin-left: .6ch; color: var(--acc, #ffb224); } .ds-contact p { color: var(--mut, #8b94a3); font-size: .88rem; line-height: 1.6; margin: 8px 0 0; }"
     },
     {
       "name": "Leiser Link",
@@ -353,7 +373,7 @@
   ],
   "narrative": {
     "northStar": "Konsole ohne Rahmen",
-    "overview": "Die Seite liest sich wie eine Konsolenausgabe, ohne eine Konsole nachzubauen. Es gibt kein Fenster, keine Titelleiste und keine Eingabezeile. Was bleibt, ist die Grammatik einer Konsole: eine Monospace-Schrift für alles, Pfad- und Prompt-Zeichen als Wegweiser, nummerierte Abschnitte und ein Cursor hinter dem Namen. Darunter liegt ein ruhiges Karoraster wie auf Millimeterpapier oder einem Schaltplan.\n\nDie Konsolen-Grammatik trägt nur, was der Besucher braucht. Kostüm ohne Inhalt gehört nicht dazu: Eine Statuszeile mit `host / loc / status` oder Bildunterschriften im Dateipfad-Stil wurden bewusst entfernt, weil sie für Nicht-Techniker wie Rauschen wirkten.\n\nInhalte stehen auf Flächen statt in Rahmen. Karten, Kennzahl-Pillen, der Kontakt und der Umschalter heben sich mit weichem Schatten vom Raster ab, Linien und Rahmen gibt es nicht. Die Farbe ist sparsam: Messgeräte-Amber zeigt an, wo man hinschauen soll, Messwert-Blau markiert leise Links. Alles andere ist Tinte auf Grund in zwei Grautönen.\n\nDie Seite ist dunkel als Vorgabe und hat ein vollwertiges helles Schema. Ohne Wahl folgt sie der Systemeinstellung. Sie soll weder wie eine Konzern-Beraterseite (Stockfotos, Schlagworte, blaue Verläufe, Handschlag-Bilder) noch wie eine Startup-Landingpage (bunte Verläufe, Emojis, große Aufforderungs-Buttons) aussehen.",
+    "overview": "Die Seite liest sich wie eine Konsolenausgabe, ohne eine Konsole nachzubauen. Es gibt kein Fenster, keine Titelleiste und keine Eingabezeile. Was bleibt, ist die Grammatik einer Konsole: eine Monospace-Schrift für alles, Pfad- und Prompt-Zeichen als Wegweiser, nummerierte Abschnitte und ein Cursor hinter dem Namen. Darunter liegt ein ruhiges Karoraster wie auf Millimeterpapier oder einem Schaltplan.\n\nDie Konsolen-Grammatik trägt nur, was der Besucher braucht. Kostüm ohne Inhalt gehört nicht dazu: Eine Statuszeile mit `host / loc / status` oder Bildunterschriften im Dateipfad-Stil wurden bewusst entfernt, weil sie für Nicht-Techniker wie Rauschen wirkten.\n\nInhalte stehen auf Flächen statt in Rahmen. Karten, der Kontakt und der Umschalter heben sich mit weichem Schatten vom Raster ab, Linien und Rahmen gibt es nicht. Die Farbe ist sparsam: Messgeräte-Amber zeigt an, wo man hinschauen soll, Messwert-Blau markiert leise Links. Alles andere ist Tinte auf Grund in zwei Grautönen.\n\nDie Seite ist dunkel als Vorgabe und hat ein vollwertiges helles Schema. Ohne Wahl folgt sie der Systemeinstellung. Sie soll weder wie eine Konzern-Beraterseite (Stockfotos, Schlagworte, blaue Verläufe, Handschlag-Bilder) noch wie eine Startup-Landingpage (bunte Verläufe, Emojis, große Aufforderungs-Buttons) aussehen.",
     "keyCharacteristics": [
       "Eine einzige Schrift, JetBrains Mono, selbst ausgeliefert",
       "Karoraster im Hintergrund, 48 px Teilung",
@@ -361,7 +381,8 @@
       "Konsolenzeichen als Markierungen: `~/`, `>`, `01 /`, `■`, `→`, `_`, für Screenreader stumm",
       "Zwei Schemata, Nacht als Vorgabe und Tag als Gegenstück, jede Farbe in beiden Fassungen",
       "Akzentfarbe nur als Signal, nie als große Fläche",
-      "Der Weg zu LinkedIn steht im ersten Bildschirm und als eigener Abschluss"
+      "Der Weg zu LinkedIn steht im ersten Bildschirm und als eigener Abschluss",
+      "Belege erscheinen als Messwerte ohne Fläche: große Zahl, kleine Beschriftung darunter"
     ],
     "rules": [
       {
@@ -396,7 +417,7 @@
       },
       {
         "name": "The Surfaces-not-Lines Rule",
-        "body": "Keine Rahmen, keine Trennlinien, keine Hairlines, auch keine einseitigen Lichtkanten. Die einzigen Linien sind die des Karorasters im Hintergrund und der Amber-Unterstrich des LinkedIn-Links. Was getrennt werden soll, bekommt eine eigene Fläche oder Abstand.",
+        "body": "Keine Rahmen, keine Trennlinien, keine Hairlines, auch keine einseitigen Lichtkanten. Die einzigen Linien sind die des Karorasters im Hintergrund und die Unterstriche von Links. Was getrennt werden soll, bekommt eine eigene Fläche oder Abstand.",
         "section": "elevation"
       },
       {
@@ -410,7 +431,7 @@
       "Do neue Seiten mit derselben Navigation, demselben Fuß und demselben Karoraster bauen; Textseiten nutzen die schmale Dokumentspalte (höchstens 72 Zeichen) wie Datenschutz und 404.",
       "Do den Weg zu LinkedIn auf jeder neuen Inhaltsseite erreichbar halten, mindestens im Fuß.",
       "Do Abschnitte fortlaufend nummerieren (`01 /`, `02 /` …) und Konsolenzeichen per CSS mit leerem Alternativtext setzen.",
-      "Do Flächen mit Schatten statt Rahmen verwenden: 14 px für Inhaltsflächen, Pillen für einzeilige Elemente.",
+      "Do Flächen mit Schatten statt Rahmen verwenden: 14 px für Inhaltsflächen, die Pillenform nur für Bedienelemente wie den Umschalter.",
       "Do jedem Bedienelement 44 px Tippfläche geben, notfalls über Innenabstand oder eine erweiterte Trefferfläche.",
       "Do Amber auf Zeichen, Nummern, Unterstriche und Fokus beschränken und Messwert-Blau für leise Links verwenden.",
       "Do Schrift und Bilder nur von kazas.dev selbst laden, als WebP mit `srcset` und festen Maßen.",
@@ -423,6 +444,8 @@
       "Don't Rahmen, Trennlinien, Hairlines oder einseitige Lichtkanten einsetzen; die einzigen Linien sind die des Rasters und der Unterstrich des LinkedIn-Links.",
       "Don't eine zweite Schrift, Icon-Sets, Webfonts von fremden Servern oder eingebettete Inhalte einbinden.",
       "Don't Schrift unter 0,75 rem setzen.",
+      "Don't den Werdegang als Zeitstrahl zeigen: keine Pfeile, Nummern oder Jahreszahlen zwischen Erfahrungsfeldern. Pfeile im Inhalt nur für Vorher-nachher-Werte.",
+      "Don't Messwerte in Pillen oder auf Flächen setzen; die Pillenform gehört dem Umschalter.",
       "Don't Amber als Flächenfarbe für Buttons oder Hintergründe verwenden.",
       "Don't den Arbeitgeber mehr als einmal pro Seite zeigen oder ihm mehr als einen Satz geben.",
       "Don't mehrere Schattenstufen, Hover-Hebungen, Scroll-Animationen oder endlose Animationen einführen.",

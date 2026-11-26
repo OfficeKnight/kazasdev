@@ -43,10 +43,15 @@ typography:
     letterSpacing: "-0.02em"
   figure:
     fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
-    fontSize: "1.55rem"
+    fontSize: "1.8rem"
     fontWeight: 700
     lineHeight: 1
     letterSpacing: "-0.02em"
+  figure-word:
+    fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    fontSize: "1.15rem"
+    fontWeight: 700
+    lineHeight: 1.2
   role:
     fontFamily: "JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
     fontSize: "1rem"
@@ -123,11 +128,12 @@ components:
   card-title:
     textColor: "{colors.nacht-tinte}"
     typography: "{typography.title}"
-  kpi-pill:
-    backgroundColor: "{colors.nacht-flaeche}"
+  measure:
     textColor: "{colors.nacht-tinte}"
-    rounded: "{rounded.pill}"
-    padding: "12px 22px"
+    typography: "{typography.figure}"
+  measure-label:
+    textColor: "{colors.nacht-gedaempft}"
+    typography: "{typography.label-small}"
   theme-toggle:
     backgroundColor: "{colors.nacht-flaeche}"
     textColor: "{colors.nacht-tinte}"
@@ -174,7 +180,7 @@ Die Seite liest sich wie eine Konsolenausgabe, ohne eine Konsole nachzubauen. Es
 
 Die Konsolen-Grammatik trägt nur, was der Besucher braucht. Kostüm ohne Inhalt gehört nicht dazu: Eine Statuszeile mit `host / loc / status` oder Bildunterschriften im Dateipfad-Stil wurden bewusst entfernt, weil sie für Nicht-Techniker wie Rauschen wirkten.
 
-Inhalte stehen auf Flächen statt in Rahmen. Karten, Kennzahl-Pillen, der Kontakt und der Umschalter heben sich mit weichem Schatten vom Raster ab, Linien und Rahmen gibt es nicht. Die Farbe ist sparsam: Messgeräte-Amber zeigt an, wo man hinschauen soll, Messwert-Blau markiert leise Links. Alles andere ist Tinte auf Grund in zwei Grautönen.
+Inhalte stehen auf Flächen statt in Rahmen. Karten, der Kontakt und der Umschalter heben sich mit weichem Schatten vom Raster ab, Linien und Rahmen gibt es nicht. Die Farbe ist sparsam: Messgeräte-Amber zeigt an, wo man hinschauen soll, Messwert-Blau markiert leise Links. Alles andere ist Tinte auf Grund in zwei Grautönen.
 
 Die Seite ist dunkel als Vorgabe und hat ein vollwertiges helles Schema. Ohne Wahl folgt sie der Systemeinstellung. Sie soll weder wie eine Konzern-Beraterseite (Stockfotos, Schlagworte, blaue Verläufe, Handschlag-Bilder) noch wie eine Startup-Landingpage (bunte Verläufe, Emojis, große Aufforderungs-Buttons) aussehen.
 
@@ -186,13 +192,14 @@ Die Seite ist dunkel als Vorgabe und hat ein vollwertiges helles Schema. Ohne Wa
 - Zwei Schemata, Nacht als Vorgabe und Tag als Gegenstück, jede Farbe in beiden Fassungen
 - Akzentfarbe nur als Signal, nie als große Fläche
 - Der Weg zu LinkedIn steht im ersten Bildschirm und als eigener Abschluss
+- Belege erscheinen als Messwerte ohne Fläche: große Zahl, kleine Beschriftung darunter
 
 ## Colors
 
 Fast unbunte Tinte auf Grund, dazu ein warmes Signal und ein kühler Messwert. Jede Rolle hat eine Nacht- und eine Tag-Fassung. Im Code heißen die Variablen `--p`, `--ink`, `--mut`, `--card`, `--grid`, `--acc`, `--acc2` und `--sig-*`; das Schema tauscht nur deren Werte.
 
 ### Primary
-- **Messgeräte-Amber** (Nacht `messgeraete-amber`, Tag `messgeraete-amber-tag`): das Signal. Es steht am Cursor hinter dem Namen, an der Rollenzeile, an den Abschnittsnummern, am Pfadzeichen `~/`, an der aktiven Navigation, an den Quadraten vor Kartentiteln, als Unterstrich und Pfeil am LinkedIn-Link, an der Kennung `EN`, am Fokusring und an der Textmarkierung. Im hellen Schema wird es zu einem dunklen Kupferbraun, damit es auf hellem Grund lesbar bleibt.
+- **Messgeräte-Amber** (Nacht `messgeraete-amber`, Tag `messgeraete-amber-tag`): das Signal. Es steht am Cursor hinter dem Namen, an der Rollenzeile, an den Abschnittsnummern, am Pfadzeichen `~/`, an der aktiven Navigation, an den Quadraten vor Kartentiteln, als Unterstrich und Pfeil am LinkedIn-Link und an der Kontakt-Adresse, an der Kennung `EN`, am Fokusring und an der Textmarkierung. Im hellen Schema wird es zu einem dunklen Kupferbraun, damit es auf hellem Grund lesbar bleibt.
 
 ### Secondary
 - **Messwert-Blau** (Nacht `messwert-blau`, Tag `messwert-blau-tag`): die leisen Links im Fuß und das Leuchten hinter dem Porträt (22 % und 8 % Deckkraft, radial auslaufend).
@@ -202,10 +209,10 @@ Fast unbunte Tinte auf Grund, dazu ein warmes Signal und ein kühler Messwert. J
 
 ### Neutral
 - **Grund** (`nacht-grund`, `tag-grund`): Seitenhintergrund. Nachts fast Schwarz mit Blaustich, tagsüber ein warmes Papierweiß. Das Papierweiß ist eine bewusste Entscheidung des Seiteninhabers (bestätigt am 26.11.2026) und wird nicht gegen ein neutrales Weiß oder Grau getauscht.
-- **Fläche** (`nacht-flaeche`, `tag-flaeche`): Karten, Pillen, Kontakt, Umschalter. Nachts deutlich heller als der Grund, damit die Fläche auch ohne sichtbaren Schatten trägt; tagsüber reines Weiß.
+- **Fläche** (`nacht-flaeche`, `tag-flaeche`): Karten, Kontakt, Umschalter. Nachts deutlich heller als der Grund, damit die Fläche auch ohne sichtbaren Schatten trägt; tagsüber reines Weiß.
 - **Raster** (`nacht-raster`, `tag-raster`): nur für die 1-px-Linien des Karorasters im Hintergrund.
-- **Tinte** (`nacht-tinte`, `tag-tinte`): Fließtext, Namen, Titel, Kennzahlen, LinkedIn-Link.
-- **Gedämpft** (`nacht-gedaempft`, `tag-gedaempft`): Abschnittsüberschriften, Einleitung, Kartentext, englischer Absatz, Kennzahl-Beschriftung, Fuß.
+- **Tinte** (`nacht-tinte`, `tag-tinte`): Fließtext, Namen, Titel, Messwerte, LinkedIn-Link.
+- **Gedämpft** (`nacht-gedaempft`, `tag-gedaempft`): Abschnittsüberschriften, Einleitung, Kartentext, Sätze in den Erfahrungsfeldern, englischer Absatz, Messwert-Beschriftungen, Fuß.
 
 ### Named Rules
 **The Signal Rule.** Messgeräte-Amber markiert, es füllt nicht. Es erscheint auf Zeichen, Nummern, kurzen Zeilen, Unterstrichen und Ringen, nie als Hintergrund einer Fläche oder eines Buttons.
@@ -224,17 +231,17 @@ Fast unbunte Tinte auf Grund, dazu ein warmes Signal und ein kühler Messwert. J
 
 ### Hierarchy
 - **Display** (700, `clamp(2rem, 4.6vw, 3.6rem)`, Zeilenhöhe 1, Sperrung −0,03 em): nur der Name auf der Startseite, gefolgt vom Cursor `_`.
-- **Headline** (700, 1,8 rem, Zeilenhöhe 1): Seitentitel auf Unterseiten wie Datenschutz und 404, ohne Cursor. Dieselbe Größe trägt die Zahl einer Kennzahl auf dem Handy.
+- **Headline** (700, 1,8 rem, Zeilenhöhe 1): Seitentitel auf Unterseiten wie Datenschutz und 404, ohne Cursor.
 - **Contact** (700, `clamp(1rem, .6rem + 2.2vw, 1.55rem)`, Zeilenhöhe 1,2): die LinkedIn-Adresse im Kontakt-Abschluss.
-- **Figure** (700, 1,55 rem, Zeilenhöhe 1): die Zahl in einer Kennzahl-Pille.
+- **Figure** (700, 1,8 rem, Zeilenhöhe 1, Sperrung −0,02 em): jede Zahl eines Messwerts, in Erfahrungsfeldern, Vorher-nachher-Werten und Kennzahlen gleich groß. Steht an der Zahlenstelle ein Wort, weil es keine belegte Zahl gibt, dann in **Figure Word** (700, 1,15 rem).
 - **Role** (400, 1 rem, Messgeräte-Amber): die Berufszeile direkt unter dem Namen.
-- **Title** (700, 1 rem): Kartentitel als Begriff plus Kürzel, mit Amber-Quadrat davor.
+- **Title** (700, 1 rem): Kartentitel als Begriff plus Kürzel, mit Amber-Quadrat davor; Titel der Erfahrungsfelder ohne Zeichen.
 - **Body** (400, 0,9375 rem, Zeilenhöhe 1,6): Fließtext, höchstens 70 Zeichen breit, `text-wrap: pretty`.
 - **Lead** (400, 0,92 rem, gedämpft): die Einleitung im Kopf, höchstens 56 Zeichen breit.
 - **Label** (500, 0,9 rem, Großbuchstaben, Sperrung 0,12 em, gedämpft): Abschnittsüberschriften mit Nummer davor. Dieselbe Größe trägt den Satz im Arbeitgeber-Hinweis.
-- **Body Small** (400, 0,88 rem, gedämpft): Kartentext und Satz im Kontakt, auf allen Breiten gleich.
+- **Body Small** (400, 0,88 rem, gedämpft): Kartentext, Sätze in den Erfahrungsfeldern und Satz im Kontakt, auf allen Breiten gleich.
 - **Nav / Footer / Toggle** (400; 0,85 / 0,8 / 0,78 rem): Navigation, Fuß und Umschalter.
-- **Label Small** (500, 0,75 rem, Großbuchstaben, Sperrung 0,14 em): Kennzahl-Beschriftung, Marke „ARBEITGEBER“, Kennung `EN`. Das ist die kleinste Stufe der Seite (12 px).
+- **Label Small** (500, 0,75 rem, Großbuchstaben, Sperrung 0,14 em): Messwert-Beschriftungen, Marke „ARBEITGEBER“, Kennung `EN`. Das ist die kleinste Stufe der Seite (12 px).
 
 ### Named Rules
 **The One Font Rule.** Es gibt nur JetBrains Mono. Keine zweite Schrift für Überschriften, keine Systemschrift für Fließtext. Neue Hierarchie entsteht aus Größe, Strichstärke, Großschreibung und Farbe.
@@ -249,29 +256,30 @@ Eine zentrierte Spalte von höchstens 1040 px, mit mindestens 16 px Seitenrand, 
 
 Der Kopf ist ein zweispaltiges Raster (1,1 fr zu 0,9 fr, 30 px Abstand), unten bündig: links Name, Rolle, Einleitung und der LinkedIn-Link, rechts das freigestellte Porträt auf einem blauen Leuchten. Unter 760 px stapeln sich beide Spalten, der Text samt LinkedIn-Link kommt zuerst und steht damit im ersten Bildschirm.
 
-Abschnitte folgen mit 36 px Abstand und sind fortlaufend nummeriert (01 Arbeitsweise, 02 Kernthemen, 03 Hintergrund, 04 Kennzahlen, 05 Kontakt). Der Arbeitgeber-Hinweis gehört zu 03 und steht an dessen Ende. Der englische Absatz steht ohne Nummer zwischen 04 und 05. Fließtext bleibt bei höchstens 70 Zeichen Breite und lässt rechts Raum frei; Karten und Kontakt nutzen die volle Breite.
+Abschnitte folgen mit 36 px Abstand und sind fortlaufend nummeriert (01 Arbeitsweise, 02 Hintergrund, 03 Kernthemen, 04 Ausbildung und Sprachen, 05 Kontakt). Der Beleg steht vor dem Leistungsversprechen: erst der Hintergrund, dann die Kernthemen. Der Arbeitgeber-Hinweis gehört zu 02 und steht an dessen Ende. Der englische Absatz steht ohne Nummer zwischen 04 und 05. Fließtext bleibt bei höchstens 70 Zeichen Breite und lässt rechts Raum frei; Karten und Kontakt nutzen die volle Breite.
 
 - **Karten:** vier Spalten mit 14 px Abstand, unter 980 px zwei, unter 560 px eine.
-- **Kennzahlen:** Pillen in einem zweispaltigen Raster mit 12 px Abstand, linksbündig, damit lange Beschriftungen die Reihe nicht unregelmäßig umbrechen. Unter 560 px werden sie zu einem Messwert-Raster ohne Fläche: zwei Spalten, Zahl oben, Beschriftung darunter.
+- **Erfahrungsfelder:** drei gleichrangige Spalten, unter 640 px eine. Titel, Messwert und Satz liegen über `subgrid` auf gemeinsamen Zeilen, damit die Felder auch bei unterschiedlich langen Beschriftungen bündig bleiben.
+- **Vorher-nachher-Werte und Kennzahlen:** Messwerte in zwei Spalten mit 48 px Abstand, unter 420 bzw. 560 px enger oder einspaltig.
 - **Tippflächen:** Jedes Bedienelement ist mindestens 44 px hoch: Navigationslinks und Fußlinks über Innenabstand, der Umschalter über eine unsichtbar erweiterte Trefferfläche, der Kontakt als ganze Fläche.
-- **Fuß:** 44 px Abstand nach oben; Avatar und Name links, Links rechts angeschoben, bricht auf schmalen Schirmen um.
+- **Fuß:** 44 px Abstand nach oben; Avatar und Name links, Links rechts angeschoben. Unter 560 px stehen die Links in einer eigenen Zeile, eingerückt bündig unter dem Namen.
 
 ## Elevation & Depth
 
 Tiefe entsteht durch Flächen, die mit weichem, breitem Schatten über dem Raster schweben. Das gehört zur Identität: Neue Elemente, die sich vom Grund abheben sollen, bekommen Fläche und Schatten, keine Rahmen. Es gibt nur eine Schattenstufe, sie wechselt mit dem Schema. Im dunklen Schema ist der Schatten auf fast schwarzem Grund kaum zu sehen; dort trägt der hellere Flächenton (`nacht-flaeche`) die Trennung.
 
 ### Shadow Vocabulary
-- **Schwebe, Nacht** (`box-shadow: 0 10px 30px rgba(0, 0, 0, .35)`): Karten, Pillen, Kontakt, Umschalter und Arbeitgeber-Hinweis im dunklen Schema.
+- **Schwebe, Nacht** (`box-shadow: 0 10px 30px rgba(0, 0, 0, .35)`): Karten, Kontakt, Umschalter und Arbeitgeber-Hinweis im dunklen Schema.
 - **Schwebe, Tag** (`box-shadow: 0 8px 28px rgba(40, 30, 10, .10)`): dieselben Elemente im hellen Schema, warm getönt passend zum Papierweiß.
 
 ### Named Rules
-**The Surfaces-not-Lines Rule.** Keine Rahmen, keine Trennlinien, keine Hairlines, auch keine einseitigen Lichtkanten. Die einzigen Linien sind die des Karorasters im Hintergrund und der Amber-Unterstrich des LinkedIn-Links. Was getrennt werden soll, bekommt eine eigene Fläche oder Abstand.
+**The Surfaces-not-Lines Rule.** Keine Rahmen, keine Trennlinien, keine Hairlines, auch keine einseitigen Lichtkanten. Die einzigen Linien sind die des Karorasters im Hintergrund und die Unterstriche von Links. Was getrennt werden soll, bekommt eine eigene Fläche oder Abstand.
 
 **The One Lift Rule.** Es gibt genau eine Schattenstufe. Keine Hover-Hebung, keine gestaffelten Ebenen.
 
 ## Shapes
 
-Zwei Formen, klar getrennt. Inhaltsflächen wie Karten, Kontakt und der Arbeitgeber-Hinweis haben deutlich abgerundete Ecken (14 px). Kleine, einzeilige Elemente wie Kennzahlen (ab 560 px) und Umschalter sind volle Pillen (999 px). Der Avatar im Fuß ist kreisrund. Das Porträt im Kopf ist freigestellt und hat gar keine Form; es steht direkt auf dem Leuchten, ohne Bildunterschrift.
+Zwei Formen, klar getrennt. Inhaltsflächen wie Karten, Kontakt und der Arbeitgeber-Hinweis haben deutlich abgerundete Ecken (14 px). Der Umschalter ist eine volle Pille (999 px); die Pillenform ist damit Bedienelementen vorbehalten. Messwerte haben keine Form, sie stehen frei auf dem Raster. Der Avatar im Fuß ist kreisrund. Das Porträt im Kopf ist freigestellt und hat gar keine Form; es steht direkt auf dem Leuchten, ohne Bildunterschrift.
 
 ## Components
 
@@ -279,10 +287,10 @@ Zwei Formen, klar getrennt. Inhaltsflächen wie Karten, Kontakt und der Arbeitge
 Eine Zeile Konsolenpfad. Links die Marke `kazas.dev` in 700 mit Amber-Präfix `~/ `, rechts die Seitenlinks in 0,85 rem, jeweils mit 44 px Tippfläche. Die aktive Seite ist amber mit Präfix `> `. Links sind ohne Unterstreichung; beim Hover erscheint eine Unterstreichung mit 4 px Abstand. Am rechten Ende sitzt der Umschalter. Die Zeile bricht auf schmalen Schirmen um, ein Menü-Button ist nicht vorgesehen.
 
 ### Umschalter (Farbschema)
-Eine Pille auf Fläche mit Schatten, ohne Rahmen, 0,78 rem, mit auf 44 px erweiterter Trefferfläche. Stellungen mit Zeichen und Wort: `◐ auto`, `☀ hell`, `☾ dunkel`. Ein Klick wechselt von auto auf das Gegenteil der Systemeinstellung, der nächste zurück auf auto; so ändert jeder Klick sichtbar etwas. Nur eine feste Wahl wird im Browser gespeichert. Der Umschalter setzt auch die Farbe der Browserleiste (`meta theme-color`, je Schema eine Fassung). Ohne JavaScript bleibt er verborgen.
+Eine Pille auf Fläche mit Schatten, ohne Rahmen, 0,78 rem, mit auf 44 px erweiterter Trefferfläche. Stellungen mit Zeichen und Wort: `◐ auto`, `☀ hell`, `☾ dunkel`. Ein Klick wechselt von auto auf das Gegenteil der Systemeinstellung, der nächste zurück auf auto; so ändert jeder Klick sichtbar etwas. Nur eine feste Wahl wird im Browser gespeichert. Der Umschalter setzt auch die Farbe der Browserleiste (`meta theme-color`, je Schema eine Fassung im HTML); bei fester Wahl liest er sie aus dem Token `--p`. Ohne JavaScript bleibt er verborgen.
 
 ### LinkedIn-Link im Kopf
-Die Handlung im ersten Bildschirm, direkt unter der Einleitung: „Auf LinkedIn vernetzen“ in Tinte und 700, mit dauerhaftem Amber-Unterstrich (2 px, 6 px Abstand) und einem Amber-Pfeil davor, der nicht mit unterstrichen wird. Beim Hover wechselt der Unterstrich auf die Textfarbe. 44 px Tippfläche. Kein Button, keine Fläche.
+Die Handlung im ersten Bildschirm, direkt unter der Einleitung: „Auf LinkedIn schreiben“ in Tinte und 700, mit dauerhaftem Amber-Unterstrich (2 px, 6 px Abstand) und einem Amber-Pfeil davor, der nicht mit unterstrichen wird. Beim Hover wechselt der Unterstrich auf die Textfarbe. 44 px Tippfläche. Kein Button, keine Fläche.
 
 ### Abschnittsüberschrift
 Label in Großbuchstaben, gedämpft, mit zweistelliger Nummer und Schrägstrich in Amber davor (`01 / ARBEITSWEISE`). Die Nummern zählen fortlaufend über die Seite.
@@ -295,14 +303,20 @@ Label in Großbuchstaben, gedämpft, mit zweistelliger Nummer und Schrägstrich 
 - **Internal Padding:** 18 px, unter 560 px 14 px
 - **Inhalt:** Titel als Begriff plus Kürzel in Tinte, mit Amber-Quadrat `■` davor, darunter ein Satz in gedämpftem Body Small. Inhaltskarten sind nicht klickbar.
 
-### Kennzahl
-Ab 560 px eine Pille auf Fläche mit Schatten: links die Zahl in Figure-Größe, rechts die Beschriftung in Label Small, grundlinienbündig. Unter 560 px ein Messwert ohne Fläche: Zahl in 1,8 rem oben, Beschriftung darunter, damit die Kennzahlen nicht wie Buttons wirken. Nur für echte, belegte Werte.
+### Messwert
+Die Form für jede belegte Zahl: Zahl in Figure oben, Beschriftung in Label Small darunter, ohne Fläche, ohne Schatten, ohne Rahmen, damit Messwerte nie wie Buttons wirken. Zwischen Zahl und Beschriftung steht im HTML ein Leerzeichen, damit Screenreader beides getrennt lesen. Nur für echte, belegte Werte; gibt es keine Zahl, steht an ihrer Stelle ein Wort in Figure Word, nie eine geschätzte Zahl.
+
+### Erfahrungsfeld
+Titel, Messwert und ein Satz, in „02 / Hintergrund“. Die Felder sind gleichrangig und ohne Reihenfolge: keine Nummern, keine Jahreszahlen, keine Pfeile zwischen ihnen, damit der Werdegang nicht als Zeitstrahl gelesen wird.
+
+### Vorher-nachher-Beleg
+Unter den Erfahrungsfeldern ein Satz zur Arbeitsweise, daneben Messwerte der Form `2 h → 20 min` mit Beschriftung. Der Pfeil steht hier für vorher → nachher und ist das einzige Pfeilzeichen im Fließinhalt; für Screenreader ist er ausgeschrieben („von 2 Stunden auf 20 Minuten“), die sichtbare Form ist `aria-hidden`. Automatisierung erscheint so als Beleg der Arbeitsweise, nicht als eigenes Feld oder Kernthema.
 
 ### Arbeitgeber-Hinweis
-Eine getönte Fläche in Arbeitgeber-Blau mit 14 px Ecken und Schatten, am Ende von „03 / Hintergrund“, höchstens 70 Zeichen breit. Oben rechts steht klein die Marke „ARBEITGEBER“ (für Screenreader stumm, die Fläche ist als `aside` mit `aria-label` ausgezeichnet). Der Inhalt ist genau ein Satz in Arbeitgeber-Text; darin ist „SIGMA IT-Security und Infrastruktur“ voll ausgeschrieben und als Link in Arbeitgeber-Link und 700 gesetzt. Keine eigene Überschrift, kein zweiter Absatz, keine weitere Nennung auf der Seite.
+Eine getönte Fläche in Arbeitgeber-Blau mit 14 px Ecken und Schatten, am Ende von „02 / Hintergrund“, höchstens 70 Zeichen breit. Oben rechts steht klein die Marke „ARBEITGEBER“ (für Screenreader stumm, die Fläche ist als `aside` mit `aria-label` ausgezeichnet). Der Inhalt ist genau ein Satz in Arbeitgeber-Text; darin ist „SIGMA IT-Security und Infrastruktur“ voll ausgeschrieben und als Link in Arbeitgeber-Link gesetzt, mit dünner Unterstreichung statt Fettung, damit er nicht der kräftigste Link der Seitenmitte wird. Keine eigene Überschrift, kein zweiter Absatz, keine weitere Nennung auf der Seite.
 
 ### Kontakt-Abschluss
-Der letzte Abschnitt „05 / Kontakt“ ist eine einzige Fläche mit 14 px Ecken und Schatten, die als Ganzes zu LinkedIn führt. Oben die Adresse `linkedin.com/in/rkazas` in Contact-Größe mit Amber-Pfeil (der Pfeil bricht nie allein um), darunter ein Satz in Sie-Form, der zur Nachricht einlädt. Beim Hover wird die Adresse unterstrichen. LinkedIn steht hier allein.
+Der letzte Abschnitt „05 / Kontakt“ ist eine einzige Fläche mit 14 px Ecken und Schatten, die als Ganzes zu LinkedIn führt. Oben die Adresse `linkedin.com/in/rkazas` in Contact-Größe mit dauerhaftem Amber-Unterstrich wie beim Link im Kopf und Amber-Pfeil (der Pfeil bricht nie allein um und wird nicht unterstrichen), darunter ein Satz in Sie-Form, der zur Nachricht einlädt. Beim Hover wechselt der Unterstrich auf die Textfarbe, beim Antippen tönt sich die Fläche leicht in Amber. Der Fokusring umrahmt die ganze Fläche. LinkedIn steht hier allein; der Unterstrich unterscheidet die Kontaktfläche von den nicht klickbaren Inhaltskarten.
 
 ### Englischer Absatz
 Drei Sätze auf Englisch zwischen „04“ und „05“, als `section lang="en"` ausgezeichnet, gedämpft, mit der Kennung `EN` in Amber und Label Small davor.
@@ -314,7 +328,7 @@ Links im Fließtext erben die Textfarbe und sind an der Hover-Unterstreichung er
 Freigestelltes Foto ohne Rahmen, ohne Ecken und ohne Bildunterschrift, unten bündig, auf einem radialen Leuchten in Messwert-Blau.
 
 ### Bewegung
-Die einzige Animation ist der Cursor `_` hinter dem Namen: Er blinkt nach dem Laden viermal (1 s je Durchlauf, zwei harte Schritte) und bleibt dann sichtbar stehen. Damit endet das Blinken vor der 5-Sekunden-Grenze aus WCAG 2.2.2. Bei `prefers-reduced-motion: reduce` steht er von Anfang an still. Es gibt keine Übergänge, kein Einblenden beim Scrollen und keine Hover-Bewegung.
+Die einzige Animation ist der Cursor `_` hinter dem Namen: Er blinkt nach dem Laden viermal hart an und aus (je 0,5 s sichtbar und unsichtbar) und bleibt dann sichtbar stehen. Damit endet das Blinken vor der 5-Sekunden-Grenze aus WCAG 2.2.2. Bei `prefers-reduced-motion: reduce` steht er von Anfang an still. Es gibt keine Übergänge, kein Einblenden beim Scrollen und keine Hover-Bewegung.
 
 ## Do's and Don'ts
 
@@ -323,7 +337,7 @@ Die einzige Animation ist der Cursor `_` hinter dem Namen: Er blinkt nach dem La
 - **Do** neue Seiten mit derselben Navigation, demselben Fuß und demselben Karoraster bauen; Textseiten nutzen die schmale Dokumentspalte (höchstens 72 Zeichen) wie Datenschutz und 404.
 - **Do** den Weg zu LinkedIn auf jeder neuen Inhaltsseite erreichbar halten, mindestens im Fuß.
 - **Do** Abschnitte fortlaufend nummerieren (`01 /`, `02 /` …) und Konsolenzeichen per CSS mit leerem Alternativtext setzen.
-- **Do** Flächen mit Schatten statt Rahmen verwenden: 14 px für Inhaltsflächen, Pillen für einzeilige Elemente.
+- **Do** Flächen mit Schatten statt Rahmen verwenden: 14 px für Inhaltsflächen, die Pillenform nur für Bedienelemente wie den Umschalter.
 - **Do** jedem Bedienelement 44 px Tippfläche geben, notfalls über Innenabstand oder eine erweiterte Trefferfläche.
 - **Do** Amber auf Zeichen, Nummern, Unterstriche und Fokus beschränken und Messwert-Blau für leise Links verwenden.
 - **Do** Schrift und Bilder nur von kazas.dev selbst laden, als WebP mit `srcset` und festen Maßen.
@@ -336,6 +350,8 @@ Die einzige Animation ist der Cursor `_` hinter dem Namen: Er blinkt nach dem La
 - **Don't** Rahmen, Trennlinien, Hairlines oder einseitige Lichtkanten einsetzen; die einzigen Linien sind die des Rasters und der Unterstrich des LinkedIn-Links.
 - **Don't** eine zweite Schrift, Icon-Sets, Webfonts von fremden Servern oder eingebettete Inhalte einbinden.
 - **Don't** Schrift unter 0,75 rem setzen.
+- **Don't** den Werdegang als Zeitstrahl zeigen: keine Pfeile, Nummern oder Jahreszahlen zwischen Erfahrungsfeldern. Pfeile im Inhalt nur für Vorher-nachher-Werte.
+- **Don't** Messwerte in Pillen oder auf Flächen setzen; die Pillenform gehört dem Umschalter.
 - **Don't** Amber als Flächenfarbe für Buttons oder Hintergründe verwenden.
 - **Don't** den Arbeitgeber mehr als einmal pro Seite zeigen oder ihm mehr als einen Satz geben.
 - **Don't** mehrere Schattenstufen, Hover-Hebungen, Scroll-Animationen oder endlose Animationen einführen.

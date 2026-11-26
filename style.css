@@ -99,7 +99,7 @@ h2::before { content: attr(data-n) " / "; color: var(--acc); }
 .text { max-width: 70ch; }
 .cards { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); }
 .card { background: var(--card); padding: 18px; min-width: 0; border-radius: var(--r); box-shadow: var(--sh); }
-.card h3 { font-size: .95rem; font-weight: 700; margin: 0 0 6px; }
+.card h3 { font-size: .95rem; font-weight: 700; margin: 0 0 6px; hyphens: auto; overflow-wrap: break-word; }
 .card h3::before { content: "■ "; color: var(--acc); font-size: .7em; }
 .card p { color: var(--mut); font-size: .88rem; margin: 0; }
 .card a::after { content: " →"; color: var(--acc); }
@@ -119,8 +119,11 @@ h2::before { content: attr(data-n) " / "; color: var(--acc); }
 .contact a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .contact .arr { display: inline-block; margin-left: .6ch; color: var(--acc); }
 .contact:hover a { text-decoration: underline; text-underline-offset: 5px; }
+/* Englischer Absatz: Kennung EN in Label-Optik */
+.en .text { color: var(--mut); }
+.en-tag { display: inline-block; margin-right: 1.2ch; font-size: .72rem; font-weight: 500; letter-spacing: .14em; color: var(--acc); }
 .contact p { color: var(--mut); font-size: .88rem; max-width: 72ch; margin: 8px 0 0; text-wrap: pretty; }
-@media (max-width: 560px) { .card { padding: 14px; } .contact { padding: 18px; } .card p { font-size: .84rem; } .kpi { grid-template-columns: 1fr; } .kpi div { justify-content: flex-start; } }
+@media (max-width: 560px) { .cards { grid-template-columns: 1fr; } .card { padding: 14px; } .contact { padding: 18px; } .card p { font-size: .84rem; } .kpi { grid-template-columns: 1fr; } .kpi div { justify-content: flex-start; } }
 
 /* Arbeitgeber: ein Satz auf getönter Fläche, am Ende von Hintergrund */
 .sigma { position: relative; max-width: 70ch; margin-top: 18px; padding: 16px 120px 16px 20px; background: var(--sig-bg); color: var(--sig-text); border-radius: var(--r); box-shadow: var(--sh); }

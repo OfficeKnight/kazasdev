@@ -61,12 +61,14 @@ p { margin: 0 0 10px; }
 ::selection { background: var(--acc); color: var(--p); }
 
 /* Navigation */
-.nav { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; padding-block: 14px; font-size: .85rem; }
+.nav { display: flex; flex-wrap: wrap; gap: 0 22px; align-items: center; padding-block: 3px; font-size: .85rem; }
+.nav a { display: inline-block; padding-block: 11px; }
 .nav .brand { margin-right: auto; font-weight: 700; }
 .nav .brand::before { content: "~/ "; content: "~/ " / ""; color: var(--acc); }
 .nav a[aria-current] { color: var(--acc); }
 .nav a[aria-current]::before { content: "> "; content: "> " / ""; }
-.tog { border: 0; background: var(--card); color: var(--ink); font: inherit; font-size: .78rem; padding: 6px 14px; cursor: pointer; border-radius: 999px; box-shadow: var(--sh); }
+.tog { position: relative; border: 0; background: var(--card); color: var(--ink); font: inherit; font-size: .78rem; padding: 6px 14px; cursor: pointer; border-radius: 999px; box-shadow: var(--sh); }
+.tog::after { content: ""; position: absolute; inset: -6px -4px; }
 
 /* Kopf */
 .top { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: end; padding-block: 40px 10px; }
@@ -123,7 +125,7 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .en .text { color: var(--mut); }
 .en-tag { display: inline-block; margin-right: 1.2ch; font-size: .75rem; font-weight: 500; letter-spacing: .14em; color: var(--acc); }
 .contact p { color: var(--mut); font-size: .88rem; max-width: 72ch; margin: 8px 0 0; text-wrap: pretty; }
-@media (max-width: 560px) { .cards { grid-template-columns: 1fr; } .card { padding: 14px; } .contact { padding: 18px; } .kpi { grid-template-columns: 1fr; } .kpi div { justify-content: flex-start; } }
+@media (max-width: 560px) { .cards { grid-template-columns: 1fr; } .card { padding: 14px; } .contact { padding: 18px; } .kpi { grid-template-columns: repeat(2, 1fr); gap: 18px 16px; } .kpi div { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; padding: 0; background: none; box-shadow: none; border-radius: 0; } .kpi b { font-size: 1.8rem; } .kpi span { hyphens: auto; overflow-wrap: break-word; max-width: 100%; } }
 
 /* Arbeitgeber: ein Satz auf getönter Fläche, am Ende von Hintergrund */
 .sigma { position: relative; max-width: 70ch; margin-top: 18px; padding: 16px 120px 16px 20px; background: var(--sig-bg); color: var(--sig-text); border-radius: var(--r); box-shadow: var(--sh); }
@@ -133,9 +135,10 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 @media (max-width: 760px) { .sigma { padding: 30px 20px 16px; } }
 
 /* Fuß */
-.foot { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; padding-block: 22px; font-size: .8rem; margin-top: 44px; color: var(--mut); }
+.foot { display: flex; flex-wrap: wrap; gap: 0 24px; align-items: center; padding-block: 10px; font-size: .8rem; margin-top: 44px; color: var(--mut); }
 .foot img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 .foot .sp { margin-left: auto; display: flex; gap: 18px; }
+.foot .sp a { display: inline-block; padding-block: 12px; }
 .foot a { color: var(--acc2); }
 
 /* Datenschutz */

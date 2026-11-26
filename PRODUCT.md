@@ -29,6 +29,8 @@ Die Seite entwickelt sich noch. Eine spätere Selbstständigkeit ist möglich, a
 
 Kommt aus der Technik und denkt in Mechanismen statt in Papier. Er hat Schaltschränke für Industrieanlagen verdrahtet, Server und Netzwerke betreut und Versuchsfahrzeuge mit Messtechnik auf TISAX-zertifizierten Prüfgeländen ausgerüstet. Deshalb schreibt er Richtlinien, die in der Werkhalle und im Serverraum umsetzbar sind, und erklärt Sachverhalte so, dass Geschäftsführung und Technik dasselbe verstehen. Leitsatz zur Arbeitsweise: Wenige, gut gewählte Mechanismen bringen schnell große Wirkung, und ein Betrieb muss nicht jeden Stein absichern, um bei einem IT-Ausfall handlungsfähig zu bleiben.
 
+Eigene Werkzeuge und Automatisierungen sind der Beleg für „Mechanismen statt Papier“. Sie sind keine eigene Leistung und kein eigenes Kernthema; sein Fach bleibt Informationssicherheit und ISMS. Automatisierung erscheint deshalb nicht in der Hauptüberschrift und nicht als Kernthema-Karte, sondern als Arbeitsweise und als Beleg im Hintergrund.
+
 ## Operating Context
 
 - Besucher kommen vor allem über LinkedIn-Profil und Beiträge, über geteilte Links (Vorschaubild `assets/og.jpg`) und über die Suche nach seinem Namen.
@@ -53,9 +55,15 @@ Technik und Pflege:
 - Eine Vorschau von LinkedIn-Beiträgen auf der Seite ist vorerst nicht geplant.
 - Fachbegriffe, wie sie auf der Seite verwendet werden: ISMS, BSI IT-Grundschutz, ISO 27001, NIS-2, CRA, BCM (Notfallplanung), OT, TISAX.
 
+Projektseite (geplant, festgelegt am 26.11.2026):
+
+- Werkzeuge mit Bezug zu Informationssicherheit zuerst, andere danach.
+- Je Eintrag: Name, Ausgangslage, Werkzeug, Ergebnis als Messwert, Tags. Ein GitHub-Link nur, wenn das Werkzeug öffentlich ist.
+- Interne Werkzeuge früherer Arbeitgeber werden nur beschrieben.
+- Nichts zu SIGMA IT-Security und Infrastruktur.
+
 Offen:
 
-- Inhalt und Form der Projektseite;
 - wann Lebenslauf und Homelab folgen.
 
 ## Brand Commitments

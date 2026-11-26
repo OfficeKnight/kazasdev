@@ -113,7 +113,7 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
   .cards { grid-template-columns: repeat(2, 1fr); }
 }
 /* Erfahrungsfelder: gleichrangig, ohne Reihenfolge, Messwert-Optik ohne Fläche */
-.fields { list-style: none; margin: 20px 0 22px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px 24px; }
+.fields { list-style: none; margin: 20px 0 26px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 24px; }
 .fields li { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 8px; min-width: 0; }
 .fields h3 { font-size: 1rem; font-weight: 700; margin: 0; }
 .fields .m { display: flex; flex-direction: column; gap: 6px; margin: 0; }
@@ -121,8 +121,16 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .fields .m b.word { font-size: 1.15rem; line-height: 1.2; hyphens: manual; }
 .fields .m span { font-size: .75rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
 .fields li > p:last-child { margin: 0; color: var(--mut); font-size: .88rem; text-wrap: pretty; }
-@media (max-width: 980px) { .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .fields { grid-template-columns: 1fr; gap: 22px; } }
+@media (max-width: 640px) { .fields { grid-template-columns: 1fr; gap: 22px; } }
+/* Beleg der Arbeitsweise: zwei Vorher-nachher-Messwerte, Pfeil nur für Screenreader ausgeschrieben */
+.proof { margin: 0 0 22px; }
+.proof .text { margin-bottom: 12px; }
+.ba { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 48px; margin: 0; }
+.ba div { display: flex; flex-direction: column-reverse; gap: 6px; }
+.ba dt { font-size: .75rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
+.ba dd { margin: 0; font-size: 1.55rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; }
+@media (max-width: 420px) { .ba { grid-template-columns: 1fr; } }
+.sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 /* Kontakt: eine Fläche, ganz klickbar, LinkedIn allein */
 .contact { position: relative; background: var(--card); padding: 22px 24px; border-radius: var(--r); box-shadow: var(--sh); }
 .contact .nw { white-space: nowrap; }

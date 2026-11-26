@@ -141,6 +141,7 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .contact a { text-decoration: underline; text-decoration-color: var(--acc); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .contact:hover a { text-decoration-color: currentColor; }
 .contact:active { background: color-mix(in srgb, var(--card) 88%, var(--acc)); }
+@supports selector(:has(*)) { .contact:has(a:focus-visible) { outline: 2px solid var(--acc); outline-offset: 3px; } .contact a:focus-visible { outline: none; } }
 /* Englischer Absatz: Kennung EN in Label-Optik */
 .en .text { color: var(--mut); }
 .en-tag { display: inline-block; margin-right: 1.2ch; font-size: .75rem; font-weight: 500; letter-spacing: .14em; color: var(--acc); }

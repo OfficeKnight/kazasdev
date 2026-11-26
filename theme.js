@@ -6,7 +6,6 @@
   var k = "kazas-theme", h = document.documentElement, mq = null;
   var text = { auto: "◐ auto", light: "☀ hell", dark: "☾ dunkel" };
   var name = { auto: "automatisch nach Systemeinstellung", light: "hell", dark: "dunkel" };
-  var bar = { light: "#f4f2ec", dark: "#0b0e13" };
   var metas = document.querySelectorAll('meta[name="theme-color"]');
   try { mq = matchMedia("(prefers-color-scheme: light)"); } catch (e) {}
   function sysLight() { return !!(mq && mq.matches); }
@@ -14,12 +13,13 @@
   function apply(m) {
     h.classList.remove("light", "dark");
     if (m !== "auto") h.classList.add(m);
-    // Browserleiste am Handy: bei fester Wahl beide Eintraege auf die gewaehlte Farbe,
-    // bei auto wieder je Systemeinstellung
+    // Browserleiste am Handy: bei fester Wahl beide Eintraege auf den Seitengrund (--p)
+    // des gewaehlten Schemas, bei auto wieder die Werte aus dem HTML je Systemeinstellung
+    var grund = m === "auto" ? "" : getComputedStyle(h).getPropertyValue("--p").trim();
     for (var i = 0; i < metas.length; i++) {
       var el = metas[i];
       if (!el.hasAttribute("data-c")) el.setAttribute("data-c", el.getAttribute("content"));
-      el.setAttribute("content", m === "auto" ? el.getAttribute("data-c") : bar[m]);
+      el.setAttribute("content", grund || el.getAttribute("data-c"));
     }
   }
   var mode = load();

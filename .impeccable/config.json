@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "*.html"
+        ],
+        "createdAt": "2026-11-26T14:11:38.090Z",
+        "reason": "User confirmed 2026-11-26: Papierweiß #f4f2ec (tag-grund) is a deliberate choice by the site owner, recorded in DESIGN.md (Colors/Neutral); shared by all three pages via style.css"
+      }
+    ]
+  }
+}

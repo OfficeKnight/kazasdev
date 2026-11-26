@@ -14,7 +14,7 @@
   --p: #0b0e13; --ink: #e6e9ef; --mut: #8b94a3; --card: #131923; --grid: #161c26;
   --acc: #ffb224; --acc2: #7dd3fc;
   --sh: 0 10px 30px rgba(0, 0, 0, .35);
-  --sig-bg: #16243a; --sig-ink: #ffffff; --sig-text: #b9c8da; --sig-link: #8fcbf3;
+  --sig-bg: #142032; --sig-text: #b9c8da; --sig-link: #8fcbf3;
   --r: 14px;
   color-scheme: dark;
 }
@@ -24,7 +24,7 @@
     --p: #f4f2ec; --ink: #1d222b; --mut: #636b78; --card: #ffffff; --grid: #e6e2d8;
     --acc: #9b5609; --acc2: #1f6f9a;
     --sh: 0 8px 28px rgba(40, 30, 10, .10);
-    --sig-bg: #e6eef7; --sig-ink: #0b1f3a; --sig-text: #2f4663; --sig-link: #1f5f94;
+    --sig-bg: #e9eff6; --sig-text: #2f4663; --sig-link: #1f5f94;
     color-scheme: light;
   }
 }
@@ -32,7 +32,7 @@ html.light {
   --p: #f4f2ec; --ink: #1d222b; --mut: #636b78; --card: #ffffff; --grid: #e6e2d8;
   --acc: #9b5609; --acc2: #1f6f9a;
   --sh: 0 8px 28px rgba(40, 30, 10, .10);
-  --sig-bg: #e6eef7; --sig-ink: #0b1f3a; --sig-text: #2f4663; --sig-link: #1f5f94;
+  --sig-bg: #e9eff6; --sig-text: #2f4663; --sig-link: #1f5f94;
   color-scheme: light;
 }
 
@@ -71,7 +71,6 @@ p { margin: 0 0 10px; }
 /* Kopf */
 .top { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: end; padding-block: 40px 10px; }
 .sys { font-size: .75rem; color: var(--mut); display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; }
-.sys .v { color: var(--acc2); font-weight: 500; }
 h1 { font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1; margin: 14px 0 10px; font-weight: 700; letter-spacing: -.03em; }
 h1 .nm { display: block; }
 h1 .nm::after { content: "_"; color: var(--acc); animation: bl 1s steps(2) infinite; }
@@ -85,13 +84,12 @@ h1 .role { display: block; margin-top: 10px; font-weight: 400; line-height: 1.6;
 .go a { display: inline-block; padding-block: 10px; font-weight: 700; text-decoration: underline; text-decoration-color: var(--acc); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .go a::before { content: "→"; content: "→" / ""; display: inline-block; margin-right: 1ch; color: var(--acc); }
 .go a:hover { text-decoration-color: currentColor; }
-.pic { position: relative; min-height: 500px; padding-bottom: 26px; }
+.pic { position: relative; min-height: 500px; }
 .pic::before {
   content: ""; position: absolute; left: -25%; right: -25%; top: -10%; bottom: -30%; pointer-events: none;
   background: radial-gradient(ellipse 34% 34% at 50% 52%, color-mix(in srgb, var(--acc2) 22%, transparent) 0%, color-mix(in srgb, var(--acc2) 8%, transparent) 50%, transparent 100%);
 }
-.pic img { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); height: calc(100% - 26px); width: auto; max-width: 100%; object-fit: contain; }
-.pic .cap { position: absolute; bottom: 0; left: 0; right: 0; height: 26px; padding-top: 6px; text-align: center; white-space: nowrap; font-size: .7rem; color: var(--mut); }
+.pic img { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; max-width: 100%; object-fit: contain; }
 @media (max-width: 760px) { .top { grid-template-columns: 1fr; } .pic { min-height: 380px; } }
 
 /* Abschnitte */
@@ -124,13 +122,12 @@ h2::before { content: attr(data-n) " / "; color: var(--acc); }
 .contact p { color: var(--mut); font-size: .88rem; max-width: 72ch; margin: 8px 0 0; text-wrap: pretty; }
 @media (max-width: 560px) { .card { padding: 14px; } .contact { padding: 18px; } .card p { font-size: .84rem; } .kpi { grid-template-columns: 1fr; } .kpi div { justify-content: flex-start; } }
 
-/* SIGMA */
-.sigma { background: var(--sig-bg); color: var(--sig-ink); padding: 24px; position: relative; border-radius: var(--r); box-shadow: var(--sh); }
-.sigma::before { content: "ARBEITGEBER"; position: absolute; right: 14px; top: 10px; font-size: .68rem; color: var(--sig-link); letter-spacing: .14em; }
-.sigma h2 { color: var(--sig-ink); text-transform: none; letter-spacing: 0; font-size: 1.25rem; font-weight: 700; margin: 0 0 8px; }
-.sigma h2::before { content: ""; }
-.sigma p { color: var(--sig-text); font-size: .9rem; max-width: 64ch; margin: 0; }
-.sigma .lnk { display: inline-block; margin-top: 12px; color: var(--sig-link); font-weight: 700; }
+/* Arbeitgeber: ein Satz auf getönter Fläche, am Ende von Hintergrund */
+.sigma { position: relative; max-width: 70ch; margin-top: 18px; padding: 16px 120px 16px 20px; background: var(--sig-bg); color: var(--sig-text); border-radius: var(--r); box-shadow: var(--sh); }
+.sigma::before { content: "ARBEITGEBER"; content: "ARBEITGEBER" / ""; position: absolute; right: 14px; top: 10px; font-size: .68rem; letter-spacing: .14em; color: var(--sig-link); }
+.sigma p { margin: 0; font-size: .9rem; text-wrap: pretty; }
+.sigma a { color: var(--sig-link); font-weight: 700; }
+@media (max-width: 760px) { .sigma { padding: 30px 20px 16px; } }
 
 /* Fuß */
 .foot { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; padding-block: 22px; font-size: .8rem; margin-top: 44px; color: var(--mut); }

@@ -163,7 +163,7 @@ Fast unbunte Tinte auf Grund, dazu ein warmes Signal und ein kühler Messwert. J
 - **Arbeitgeber-Blau** (`arbeitgeber-grund`, `arbeitgeber-name`, `arbeitgeber-text`, `arbeitgeber-link` und ihre Tag-Fassungen): eine eigene, getönte Familie nur für den Arbeitgeber-Hinweis. Nachts ein tiefes Marineblau, tagsüber ein blasses Eisblau. Sie kommt nirgendwo sonst vor.
 
 ### Neutral
-- **Grund** (`nacht-grund`, `tag-grund`): Seitenhintergrund. Nachts fast Schwarz mit Blaustich, tagsüber ein warmes Papierweiß.
+- **Grund** (`nacht-grund`, `tag-grund`): Seitenhintergrund. Nachts fast Schwarz mit Blaustich, tagsüber ein warmes Papierweiß. Das Papierweiß ist eine bewusste Entscheidung des Seiteninhabers (bestätigt am 26.11.2026) und wird nicht gegen ein neutrales Weiß oder Grau getauscht.
 - **Fläche** (`nacht-flaeche`, `tag-flaeche`): Karten, Pillen, Umschalter. Nachts eine Stufe heller als der Grund, tagsüber reines Weiß.
 - **Raster** (`nacht-raster`, `tag-raster`): nur für die 1-px-Linien des Karorasters im Hintergrund.
 - **Tinte** (`nacht-tinte`, `tag-tinte`): Fließtext, Namen, Titel, Kennzahlen.

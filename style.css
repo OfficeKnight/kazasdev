@@ -151,7 +151,7 @@ h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; colo
 .sigma { position: relative; max-width: 70ch; margin-top: 18px; padding: 16px 120px 16px 20px; background: var(--sig-bg); color: var(--sig-text); border-radius: var(--r); box-shadow: var(--sh); }
 .sigma::before { content: "ARBEITGEBER"; content: "ARBEITGEBER" / ""; position: absolute; right: 14px; top: 10px; font-size: .75rem; letter-spacing: .14em; color: var(--sig-link); }
 .sigma p { margin: 0; font-size: .9rem; text-wrap: pretty; }
-.sigma a { color: var(--sig-link); font-weight: 700; }
+.sigma a { color: var(--sig-link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 @media (max-width: 760px) { .sigma { padding: 30px 20px 16px; } }
 
 /* Fuß */

@@ -1,55 +1,280 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-26T00:00:00Z",
+  "generatedAt": "2026-11-26T14:27:14Z",
   "title": "Design System: kazas.dev",
   "extensions": {
     "colorMeta": {
-      "messgeraete-amber": { "role": "primary", "displayName": "Messgeräte-Amber (Nacht)", "canonical": "#ffb224", "tonalRamp": ["oklch(18% 0.04 70)", "oklch(28% 0.07 68)", "oklch(38% 0.1 66)", "oklch(48% 0.12 64)", "oklch(58% 0.14 66)", "oklch(70% 0.16 72)", "oklch(82% 0.165 75)", "oklch(95% 0.05 85)"] },
-      "messgeraete-amber-tag": { "role": "primary", "displayName": "Messgeräte-Amber (Tag)", "canonical": "#9b5609", "tonalRamp": ["oklch(18% 0.04 70)", "oklch(28% 0.07 68)", "oklch(38% 0.1 66)", "oklch(48% 0.12 64)", "oklch(58% 0.14 66)", "oklch(70% 0.16 72)", "oklch(82% 0.165 75)", "oklch(95% 0.05 85)"] },
-      "messwert-blau": { "role": "secondary", "displayName": "Messwert-Blau (Nacht)", "canonical": "#7dd3fc", "tonalRamp": ["oklch(18% 0.03 235)", "oklch(28% 0.05 235)", "oklch(38% 0.07 236)", "oklch(48% 0.09 237)", "oklch(58% 0.1 235)", "oklch(70% 0.11 232)", "oklch(83% 0.11 230)", "oklch(95% 0.03 225)"] },
-      "messwert-blau-tag": { "role": "secondary", "displayName": "Messwert-Blau (Tag)", "canonical": "#1f6f9a", "tonalRamp": ["oklch(18% 0.03 235)", "oklch(28% 0.05 235)", "oklch(38% 0.07 236)", "oklch(48% 0.09 237)", "oklch(58% 0.1 235)", "oklch(70% 0.11 232)", "oklch(83% 0.11 230)", "oklch(95% 0.03 225)"] },
-      "arbeitgeber-grund": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Grund (Nacht)", "canonical": "#16243a", "tonalRamp": ["oklch(16% 0.03 255)", "oklch(26% 0.05 255)", "oklch(36% 0.06 254)", "oklch(46% 0.07 252)", "oklch(58% 0.07 250)", "oklch(70% 0.05 248)", "oklch(83% 0.03 248)", "oklch(95% 0.012 250)"] },
-      "arbeitgeber-grund-tag": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Grund (Tag)", "canonical": "#e6eef7", "tonalRamp": ["oklch(16% 0.03 255)", "oklch(26% 0.05 255)", "oklch(36% 0.06 254)", "oklch(46% 0.07 252)", "oklch(58% 0.07 250)", "oklch(70% 0.05 248)", "oklch(83% 0.03 248)", "oklch(95% 0.012 250)"] },
-      "arbeitgeber-name": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Name (Nacht)", "canonical": "#ffffff" },
-      "arbeitgeber-name-tag": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Name (Tag)", "canonical": "#0b1f3a" },
-      "arbeitgeber-text": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Text (Nacht)", "canonical": "#b9c8da" },
-      "arbeitgeber-text-tag": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Text (Tag)", "canonical": "#2f4663" },
-      "arbeitgeber-link": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Link (Nacht)", "canonical": "#8fcbf3" },
-      "arbeitgeber-link-tag": { "role": "tertiary", "displayName": "Arbeitgeber-Blau, Link (Tag)", "canonical": "#1f5f94" },
-      "nacht-grund": { "role": "neutral", "displayName": "Grund (Nacht)", "canonical": "#0b0e13", "tonalRamp": ["oklch(15% 0.01 260)", "oklch(25% 0.015 258)", "oklch(35% 0.018 258)", "oklch(45% 0.02 258)", "oklch(55% 0.02 258)", "oklch(67% 0.018 258)", "oklch(80% 0.012 258)", "oklch(94% 0.006 258)"] },
-      "nacht-flaeche": { "role": "neutral", "displayName": "Fläche (Nacht)", "canonical": "#131923" },
-      "nacht-raster": { "role": "neutral", "displayName": "Raster (Nacht)", "canonical": "#161c26" },
-      "nacht-tinte": { "role": "neutral", "displayName": "Tinte (Nacht)", "canonical": "#e6e9ef" },
-      "nacht-gedaempft": { "role": "neutral", "displayName": "Gedämpft (Nacht)", "canonical": "#8b94a3" },
-      "tag-grund": { "role": "neutral", "displayName": "Grund (Tag, Papierweiß)", "canonical": "#f4f2ec", "tonalRamp": ["oklch(15% 0.008 85)", "oklch(25% 0.01 85)", "oklch(35% 0.012 85)", "oklch(45% 0.012 85)", "oklch(55% 0.012 85)", "oklch(67% 0.012 85)", "oklch(82% 0.01 85)", "oklch(96% 0.008 90)"] },
-      "tag-flaeche": { "role": "neutral", "displayName": "Fläche (Tag)", "canonical": "#ffffff" },
-      "tag-raster": { "role": "neutral", "displayName": "Raster (Tag)", "canonical": "#e6e2d8" },
-      "tag-tinte": { "role": "neutral", "displayName": "Tinte (Tag)", "canonical": "#1d222b" },
-      "tag-gedaempft": { "role": "neutral", "displayName": "Gedämpft (Tag)", "canonical": "#636b78" }
+      "messgeraete-amber": {
+        "role": "primary",
+        "displayName": "Messgeräte-Amber (Nacht)",
+        "canonical": "#ffb224",
+        "tonalRamp": [
+          "oklch(18% 0.04 70)",
+          "oklch(28% 0.07 68)",
+          "oklch(38% 0.1 66)",
+          "oklch(48% 0.12 64)",
+          "oklch(58% 0.14 66)",
+          "oklch(70% 0.16 72)",
+          "oklch(82% 0.165 75)",
+          "oklch(95% 0.05 85)"
+        ]
+      },
+      "messgeraete-amber-tag": {
+        "role": "primary",
+        "displayName": "Messgeräte-Amber (Tag, Kupfer)",
+        "canonical": "#955309",
+        "tonalRamp": [
+          "oklch(18% 0.04 70)",
+          "oklch(28% 0.07 68)",
+          "oklch(38% 0.1 66)",
+          "oklch(48% 0.12 64)",
+          "oklch(58% 0.14 66)",
+          "oklch(70% 0.16 72)",
+          "oklch(82% 0.165 75)",
+          "oklch(95% 0.05 85)"
+        ]
+      },
+      "messwert-blau": {
+        "role": "secondary",
+        "displayName": "Messwert-Blau (Nacht)",
+        "canonical": "#7dd3fc",
+        "tonalRamp": [
+          "oklch(18% 0.03 235)",
+          "oklch(28% 0.05 235)",
+          "oklch(38% 0.07 236)",
+          "oklch(48% 0.09 237)",
+          "oklch(58% 0.1 235)",
+          "oklch(70% 0.11 232)",
+          "oklch(83% 0.11 230)",
+          "oklch(95% 0.03 225)"
+        ]
+      },
+      "messwert-blau-tag": {
+        "role": "secondary",
+        "displayName": "Messwert-Blau (Tag)",
+        "canonical": "#1d6992",
+        "tonalRamp": [
+          "oklch(18% 0.03 235)",
+          "oklch(28% 0.05 235)",
+          "oklch(38% 0.07 236)",
+          "oklch(48% 0.09 237)",
+          "oklch(58% 0.1 235)",
+          "oklch(70% 0.11 232)",
+          "oklch(83% 0.11 230)",
+          "oklch(95% 0.03 225)"
+        ]
+      },
+      "nacht-grund": {
+        "role": "neutral",
+        "displayName": "Grund (Nacht)",
+        "canonical": "#0b0e13",
+        "tonalRamp": [
+          "oklch(15% 0.01 260)",
+          "oklch(25% 0.015 258)",
+          "oklch(35% 0.018 258)",
+          "oklch(45% 0.02 258)",
+          "oklch(55% 0.02 258)",
+          "oklch(67% 0.018 258)",
+          "oklch(80% 0.012 258)",
+          "oklch(94% 0.006 258)"
+        ]
+      },
+      "nacht-flaeche": {
+        "role": "neutral",
+        "displayName": "Fläche (Nacht)",
+        "canonical": "#171f2b"
+      },
+      "nacht-raster": {
+        "role": "neutral",
+        "displayName": "Raster (Nacht)",
+        "canonical": "#161c26"
+      },
+      "nacht-tinte": {
+        "role": "neutral",
+        "displayName": "Tinte (Nacht)",
+        "canonical": "#e6e9ef"
+      },
+      "nacht-gedaempft": {
+        "role": "neutral",
+        "displayName": "Gedämpft (Nacht)",
+        "canonical": "#8b94a3"
+      },
+      "tag-grund": {
+        "role": "neutral",
+        "displayName": "Grund (Tag, Papierweiß, bewusste Entscheidung)",
+        "canonical": "#f4f2ec",
+        "tonalRamp": [
+          "oklch(15% 0.008 85)",
+          "oklch(25% 0.01 85)",
+          "oklch(35% 0.012 85)",
+          "oklch(45% 0.012 85)",
+          "oklch(55% 0.012 85)",
+          "oklch(67% 0.012 85)",
+          "oklch(82% 0.01 85)",
+          "oklch(96% 0.008 90)"
+        ]
+      },
+      "tag-flaeche": {
+        "role": "neutral",
+        "displayName": "Fläche (Tag)",
+        "canonical": "#ffffff"
+      },
+      "tag-raster": {
+        "role": "neutral",
+        "displayName": "Raster (Tag)",
+        "canonical": "#e6e2d8"
+      },
+      "tag-tinte": {
+        "role": "neutral",
+        "displayName": "Tinte (Tag)",
+        "canonical": "#1d222b"
+      },
+      "tag-gedaempft": {
+        "role": "neutral",
+        "displayName": "Gedämpft (Tag)",
+        "canonical": "#5c6470"
+      },
+      "arbeitgeber-grund": {
+        "role": "tertiary",
+        "displayName": "Arbeitgeber-Blau, Grund (Nacht)",
+        "canonical": "#142032",
+        "tonalRamp": [
+          "oklch(16% 0.03 255)",
+          "oklch(26% 0.05 255)",
+          "oklch(36% 0.06 254)",
+          "oklch(46% 0.07 252)",
+          "oklch(58% 0.07 250)",
+          "oklch(70% 0.05 248)",
+          "oklch(83% 0.03 248)",
+          "oklch(95% 0.012 250)"
+        ]
+      },
+      "arbeitgeber-text": {
+        "role": "tertiary",
+        "displayName": "Arbeitgeber-Blau, Text (Nacht)",
+        "canonical": "#b9c8da"
+      },
+      "arbeitgeber-link": {
+        "role": "tertiary",
+        "displayName": "Arbeitgeber-Blau, Link (Nacht)",
+        "canonical": "#8fcbf3"
+      },
+      "arbeitgeber-grund-tag": {
+        "role": "tertiary",
+        "displayName": "Arbeitgeber-Blau, Grund (Tag)",
+        "canonical": "#e9eff6",
+        "tonalRamp": [
+          "oklch(16% 0.03 255)",
+          "oklch(26% 0.05 255)",
+          "oklch(36% 0.06 254)",
+          "oklch(46% 0.07 252)",
+          "oklch(58% 0.07 250)",
+          "oklch(70% 0.05 248)",
+          "oklch(83% 0.03 248)",
+          "oklch(95% 0.012 250)"
+        ]
+      },
+      "arbeitgeber-text-tag": {
+        "role": "tertiary",
+        "displayName": "Arbeitgeber-Blau, Text (Tag)",
+        "canonical": "#2f4663"
+      },
+      "arbeitgeber-link-tag": {
+        "role": "tertiary",
+        "displayName": "Arbeitgeber-Blau, Link (Tag)",
+        "canonical": "#1f5f94"
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Nur der Name auf der Startseite, mit blinkendem Cursor." },
-      "headline": { "displayName": "Headline", "purpose": "Seitentitel auf Unterseiten (Datenschutz, 404)." },
-      "figure": { "displayName": "Figure", "purpose": "Zahl in der Kennzahl-Pille." },
-      "role": { "displayName": "Role", "purpose": "Berufszeile unter dem Namen, in Messgeräte-Amber." },
-      "title": { "displayName": "Title", "purpose": "Kartentitel mit Amber-Quadrat." },
-      "body": { "displayName": "Body", "purpose": "Fließtext, höchstens 70 Zeichen breit." },
-      "body-small": { "displayName": "Body Small", "purpose": "Kartentext, gedämpft." },
-      "label": { "displayName": "Label", "purpose": "Nummerierte Abschnittsüberschriften in Großbuchstaben." },
-      "label-small": { "displayName": "Label Small", "purpose": "Beschriftung in Kennzahl-Pillen, Marke ARBEITGEBER." },
-      "meta": { "displayName": "Meta", "purpose": "Statuszeile, Navigation, Umschalter, Bildunterschrift, Fuß." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nur der Name auf der Startseite, mit Cursor."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Seitentitel auf Unterseiten; Kennzahl auf dem Handy."
+      },
+      "contact": {
+        "displayName": "Contact",
+        "purpose": "LinkedIn-Adresse im Kontakt-Abschluss."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Zahl in der Kennzahl-Pille."
+      },
+      "role": {
+        "displayName": "Role",
+        "purpose": "Berufszeile unter dem Namen, in Messgeräte-Amber."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Kartentitel als Begriff plus Kürzel."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Fließtext, höchstens 70 Zeichen breit."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Einleitung im Kopf, gedämpft."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nummerierte Abschnittsüberschriften; Satz im Arbeitgeber-Hinweis."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Kartentext und Satz im Kontakt."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Navigation."
+      },
+      "footer": {
+        "displayName": "Footer",
+        "purpose": "Fuß."
+      },
+      "toggle": {
+        "displayName": "Toggle",
+        "purpose": "Umschalter."
+      },
+      "label-small": {
+        "displayName": "Label Small",
+        "purpose": "Kennzahl-Beschriftung, Marke ARBEITGEBER, Kennung EN; kleinste Stufe."
+      }
     },
     "shadows": [
-      { "name": "schwebe-nacht", "value": "0 10px 30px rgba(0, 0, 0, .35)", "purpose": "Einzige Schattenstufe im dunklen Schema: Karten, Pillen, Umschalter, Arbeitgeber-Hinweis." },
-      { "name": "schwebe-tag", "value": "0 8px 28px rgba(40, 30, 10, .10)", "purpose": "Dieselbe Stufe im hellen Schema, warm getönt." }
+      {
+        "name": "schwebe-nacht",
+        "value": "0 10px 30px rgba(0, 0, 0, .35)",
+        "purpose": "Einzige Schattenstufe im dunklen Schema; die Trennung trägt dort vor allem der hellere Flächenton."
+      },
+      {
+        "name": "schwebe-tag",
+        "value": "0 8px 28px rgba(40, 30, 10, .10)",
+        "purpose": "Dieselbe Stufe im hellen Schema, warm getönt."
+      }
     ],
     "motion": [
-      { "name": "cursor-blink", "value": "1s steps(2) infinite", "purpose": "Einzige Animation: Cursor hinter dem Namen. Steht bei prefers-reduced-motion still." }
+      {
+        "name": "cursor-blink",
+        "value": "1s steps(2) 4",
+        "purpose": "Einzige Animation: Cursor hinter dem Namen, viermal, dann stehend; bei reduzierter Bewegung aus."
+      }
     ],
     "breakpoints": [
-      { "name": "schmal", "value": "560px" },
-      { "name": "kopf", "value": "760px" },
-      { "name": "karten", "value": "980px" }
+      {
+        "name": "schmal",
+        "value": "560px"
+      },
+      {
+        "name": "kopf",
+        "value": "760px"
+      },
+      {
+        "name": "karten",
+        "value": "980px"
+      }
     ]
   },
   "components": [
@@ -57,102 +282,151 @@
       "name": "Navigation",
       "kind": "nav",
       "refersTo": "nav-link-active",
-      "description": "Konsolenpfad mit Marke, Seitenlinks und Umschalter; aktive Seite amber mit Prompt-Zeichen.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">kazas.dev</a><a href=\"#\" aria-current=\"page\">Start</a><a href=\"#\">Projekte</a><button class=\"ds-tog\" type=\"button\">◐ auto</button></nav>",
-      "css": ".ds-nav { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; padding-block: 14px; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .85rem; color: var(--ink, #e6e9ef); } .ds-nav a { color: inherit; text-decoration: none; } .ds-nav a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-nav a:focus-visible, .ds-tog:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; } .ds-brand { margin-right: auto; font-weight: 700; } .ds-brand::before { content: \"~/ \"; color: var(--acc, #ffb224); } .ds-nav a[aria-current] { color: var(--acc, #ffb224); } .ds-nav a[aria-current]::before { content: \"> \"; } .ds-tog { border: 0; background: var(--card, #131923); color: var(--ink, #e6e9ef); font: inherit; font-size: .78rem; padding: 6px 14px; cursor: pointer; border-radius: 999px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); }"
+      "description": "Konsolenpfad mit Marke, Seitenlinks (44 px Tippfläche) und Umschalter; aktive Seite amber mit Prompt-Zeichen.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">kazas.dev</a><a href=\"#\" aria-current=\"page\">Start</a><button class=\"ds-tog\" type=\"button\">◐ auto</button></nav>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; gap: 0 22px; align-items: center; padding-block: 3px; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .85rem; color: var(--ink, #e6e9ef); } .ds-nav a { display: inline-block; padding-block: 11px; color: inherit; text-decoration: none; } .ds-nav a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-nav a:focus-visible, .ds-tog:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; } .ds-brand { margin-right: auto; font-weight: 700; } .ds-brand::before { content: \"~/ \"; content: \"~/ \" / \"\"; color: var(--acc, #ffb224); } .ds-nav a[aria-current] { color: var(--acc, #ffb224); } .ds-nav a[aria-current]::before { content: \"> \"; content: \"> \" / \"\"; } .ds-tog { position: relative; border: 0; background: var(--card, #171f2b); color: var(--ink, #e6e9ef); font: inherit; font-size: .78rem; padding: 6px 14px; cursor: pointer; border-radius: 999px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); } .ds-tog::after { content: \"\"; position: absolute; inset: -6px -4px; }"
     },
     {
       "name": "Umschalter",
       "kind": "button",
       "refersTo": "theme-toggle",
-      "description": "Pille für das Farbschema mit drei Stellungen: auto, hell, dunkel.",
+      "description": "Pille für das Farbschema: auto und Gegenteil der Systemeinstellung im Wechsel, 44 px Trefferfläche.",
       "html": "<button class=\"ds-toggle\" type=\"button\">☾ dunkel</button>",
-      "css": ".ds-toggle { border: 0; background: var(--card, #131923); color: var(--ink, #e6e9ef); font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .78rem; padding: 6px 14px; cursor: pointer; border-radius: 999px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); } .ds-toggle:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
+      "css": ".ds-toggle { position: relative; border: 0; background: var(--card, #171f2b); color: var(--ink, #e6e9ef); font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .78rem; padding: 6px 14px; cursor: pointer; border-radius: 999px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); } .ds-toggle::after { content: \"\"; position: absolute; inset: -6px -4px; } .ds-toggle:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
     },
     {
-      "name": "Statuszeile",
+      "name": "LinkedIn-Link im Kopf",
       "kind": "custom",
-      "description": "Schlüssel-Wert-Paare über dem Namen, Werte in Messwert-Blau.",
-      "html": "<p class=\"ds-sys\"><span>host <span class=\"ds-v\">kazas.dev</span></span><span>loc <span class=\"ds-v\">Chemnitz</span></span><span>status <span class=\"ds-v\">online</span></span></p>",
-      "css": ".ds-sys { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .75rem; color: var(--mut, #8b94a3); } .ds-v { color: var(--acc2, #7dd3fc); font-weight: 500; }"
+      "refersTo": "linkedin-line",
+      "description": "Die Handlung im ersten Bildschirm: Tinte, Amber-Unterstrich, Pfeil davor, 44 px Tippfläche.",
+      "html": "<p class=\"ds-go\"><a href=\"#\">Auf LinkedIn vernetzen</a></p>",
+      "css": ".ds-go { margin: 0; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .9375rem; color: var(--ink, #e6e9ef); } .ds-go a { display: inline-block; padding-block: 10px; color: inherit; font-weight: 700; text-decoration: underline; text-decoration-color: var(--acc, #ffb224); text-decoration-thickness: 2px; text-underline-offset: 6px; } .ds-go a::before { content: \"→\"; content: \"→\" / \"\"; display: inline-block; margin-right: 1ch; color: var(--acc, #ffb224); } .ds-go a:hover { text-decoration-color: currentColor; } .ds-go a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
     },
     {
       "name": "Abschnittsüberschrift",
       "kind": "custom",
       "refersTo": "section-label",
-      "description": "Nummeriertes Label in Großbuchstaben, Nummer in Amber.",
+      "description": "Nummeriertes Label in Großbuchstaben, Nummer in Amber, für Screenreader stumm.",
       "html": "<h2 class=\"ds-h2\" data-n=\"02\">Kernthemen</h2>",
-      "css": ".ds-h2 { font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .9rem; font-weight: 500; color: var(--mut, #8b94a3); text-transform: uppercase; letter-spacing: .12em; margin: 0 0 14px; } .ds-h2::before { content: attr(data-n) \" / \"; color: var(--acc, #ffb224); }"
+      "css": ".ds-h2 { font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .9rem; font-weight: 500; color: var(--mut, #8b94a3); text-transform: uppercase; letter-spacing: .12em; margin: 0 0 14px; } .ds-h2::before { content: attr(data-n) \" / \"; content: attr(data-n) \" / \" / \"\"; color: var(--acc, #ffb224); }"
     },
     {
       "name": "Karte",
       "kind": "card",
       "refersTo": "card",
-      "description": "Fläche mit Schatten, Titel mit Amber-Quadrat, ein bis zwei Sätze gedämpft.",
-      "html": "<div class=\"ds-card\"><h3><a href=\"#\">LinkedIn</a></h3><p>Beiträge zu Notfallplanung, NIS-2 und Technik im Mittelstand.</p></div>",
-      "css": ".ds-card { background: var(--card, #131923); padding: 18px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; max-width: 320px; } .ds-card h3 { font-size: .95rem; font-weight: 700; margin: 0 0 6px; color: var(--ink, #e6e9ef); } .ds-card h3::before { content: \"■ \"; color: var(--acc, #ffb224); font-size: .7em; } .ds-card a { color: inherit; text-decoration: none; } .ds-card a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-card a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; } .ds-card a::after { content: \" →\"; color: var(--acc, #ffb224); } .ds-card p { color: var(--mut, #8b94a3); font-size: .88rem; line-height: 1.6; margin: 0; }"
+      "description": "Inhaltsfläche mit Schatten, Titel als Begriff plus Kürzel, nicht klickbar.",
+      "html": "<div class=\"ds-card\"><h3>Notfallplanung (BCM)</h3><p>Notfallplanung, die greift, wenn die IT schon ausgefallen ist.</p></div>",
+      "css": ".ds-card { background: var(--card, #171f2b); padding: 18px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; max-width: 320px; } .ds-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 6px; color: var(--ink, #e6e9ef); text-wrap: balance; } .ds-card h3::before { content: \"■ \"; content: \"■ \" / \"\"; color: var(--acc, #ffb224); font-size: .7em; } .ds-card p { color: var(--mut, #8b94a3); font-size: .88rem; line-height: 1.6; margin: 0; }"
     },
     {
       "name": "Kennzahl-Pille",
       "kind": "chip",
       "refersTo": "kpi-pill",
-      "description": "Belegte Zahl mit Beschriftung in einer schwebenden Pille.",
-      "html": "<div class=\"ds-kpi\"><b>8</b><span>Jahre Fahrzeugerprobung</span></div>",
-      "css": ".ds-kpi { display: inline-flex; align-items: baseline; gap: 12px; padding: 12px 22px; border-radius: 999px; background: var(--card, #131923); box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-kpi b { font-size: 1.55rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; } .ds-kpi span { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut, #8b94a3); font-weight: 500; }"
+      "description": "Belegte Zahl mit Beschriftung; unter 560 px ohne Fläche als Messwert.",
+      "html": "<div class=\"ds-kpi\"><b>8</b><span>Jahre Fahrzeug&shy;erprobung</span></div>",
+      "css": ".ds-kpi { display: inline-flex; align-items: baseline; gap: 12px; padding: 12px 22px; border-radius: 999px; background: var(--card, #171f2b); box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-kpi b { font-size: 1.55rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; } .ds-kpi span { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut, #8b94a3); font-weight: 500; }"
     },
     {
       "name": "Arbeitgeber-Hinweis",
       "kind": "custom",
       "refersTo": "employer-note",
-      "description": "Getönte Fläche mit Marke ARBEITGEBER und genau einem Satz, der Name ist der Link.",
-      "html": "<aside class=\"ds-employer\"><p>Ich arbeite im Consulting für Informationssicherheit bei <a href=\"#\">SIGMA IT-Security und Infrastruktur</a> in Chemnitz.</p></aside>",
-      "css": ".ds-employer { position: relative; background: var(--sig-bg, #16243a); padding: 24px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; } .ds-employer::before { content: \"ARBEITGEBER\"; position: absolute; right: 14px; top: 10px; font-size: .68rem; letter-spacing: .14em; color: var(--sig-link, #8fcbf3); } .ds-employer p { margin: 0; max-width: 64ch; font-size: .9rem; line-height: 1.6; color: var(--sig-text, #b9c8da); } .ds-employer a { color: var(--sig-link, #8fcbf3); font-weight: 700; text-decoration: none; } .ds-employer a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-employer a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
+      "description": "Getönte Fläche am Ende von Hintergrund, genau ein Satz, der Name ist der Link.",
+      "html": "<aside class=\"ds-employer\" aria-label=\"Arbeitgeber\"><p>Ich arbeite im Consulting für Informationssicherheit bei <a href=\"#\">SIGMA IT-Security und Infrastruktur</a> in Chemnitz.</p></aside>",
+      "css": ".ds-employer { position: relative; max-width: 70ch; background: var(--sig-bg, #142032); padding: 16px 120px 16px 20px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--sig-text, #b9c8da); } .ds-employer::before { content: \"ARBEITGEBER\"; content: \"ARBEITGEBER\" / \"\"; position: absolute; right: 14px; top: 10px; font-size: .75rem; letter-spacing: .14em; color: var(--sig-link, #8fcbf3); } .ds-employer p { margin: 0; font-size: .9rem; line-height: 1.6; text-wrap: pretty; } .ds-employer a { color: var(--sig-link, #8fcbf3); font-weight: 700; text-decoration: none; } .ds-employer a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-employer a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
+    },
+    {
+      "name": "Kontakt-Abschluss",
+      "kind": "card",
+      "refersTo": "contact",
+      "description": "Eine ganz klickbare Fläche mit der LinkedIn-Adresse und einer Einladung in Sie-Form.",
+      "html": "<div class=\"ds-contact\"><a href=\"#\">linkedin.com/in/<span class=\"ds-nw\">rkazas<span class=\"ds-arr\" aria-hidden=\"true\">→</span></span></a><p>Schreiben Sie mir auf LinkedIn eine Nachricht oder vernetzen Sie sich mit mir.</p></div>",
+      "css": ".ds-contact { position: relative; background: var(--card, #171f2b); padding: 22px 24px; border-radius: 14px; box-shadow: var(--sh, 0 10px 30px rgba(0,0,0,.35)); font-family: \"JetBrains Mono\", ui-monospace, monospace; color: var(--ink, #e6e9ef); } .ds-contact a { color: inherit; text-decoration: none; font-size: clamp(1rem, .6rem + 2.2vw, 1.55rem); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; } .ds-contact a::after { content: \"\"; position: absolute; inset: 0; border-radius: inherit; } .ds-contact a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; } .ds-contact:hover a { text-decoration: underline; text-underline-offset: 5px; } .ds-nw { white-space: nowrap; } .ds-arr { display: inline-block; margin-left: .6ch; color: var(--acc, #ffb224); } .ds-contact p { color: var(--mut, #8b94a3); font-size: .88rem; line-height: 1.6; margin: 8px 0 0; }"
     },
     {
       "name": "Leiser Link",
       "kind": "custom",
       "refersTo": "quiet-link",
-      "description": "Links im Fuß in Messwert-Blau.",
+      "description": "Links im Fuß in Messwert-Blau, 44 px Tippfläche.",
       "html": "<span class=\"ds-foot\"><a href=\"#\">LinkedIn</a><a href=\"#\">Datenschutz</a></span>",
-      "css": ".ds-foot { display: flex; gap: 18px; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .8rem; } .ds-foot a { color: var(--acc2, #7dd3fc); text-decoration: none; } .ds-foot a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-foot a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
+      "css": ".ds-foot { display: flex; gap: 18px; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .8rem; } .ds-foot a { display: inline-block; padding-block: 12px; color: var(--acc2, #7dd3fc); text-decoration: none; } .ds-foot a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-foot a:focus-visible { outline: 2px solid var(--acc, #ffb224); outline-offset: 3px; }"
     }
   ],
   "narrative": {
     "northStar": "Konsole ohne Rahmen",
-    "overview": "Die Seite liest sich wie eine Konsolenausgabe, ohne eine Konsole nachzubauen. Es gibt kein Fenster, keine Titelleiste und keine Eingabezeile. Was bleibt, ist die Grammatik einer Konsole: eine Monospace-Schrift für alles, Pfad- und Prompt-Zeichen als Wegweiser, eine Statuszeile mit Schlüssel-Wert-Paaren, nummerierte Abschnitte und ein blinkender Cursor hinter dem Namen. Darunter liegt ein ruhiges Karoraster wie auf Millimeterpapier oder einem Schaltplan.\n\nInhalte stehen auf Flächen statt in Rahmen. Karten, Kennzahl-Pillen und der Umschalter heben sich mit weichem Schatten vom Raster ab, Linien und Rahmen gibt es nicht. Die Farbe ist sparsam: Messgeräte-Amber zeigt an, wo man hinschauen soll, und Messwert-Blau markiert Werte und leise Links. Alles andere ist Tinte auf Grund in zwei Grautönen.\n\nDie Seite ist dunkel als Vorgabe und hat ein vollwertiges helles Schema. Ohne Wahl folgt sie der Systemeinstellung, der Umschalter legt hell oder dunkel fest. Sie soll weder wie eine Konzern-Beraterseite (Stockfotos, Schlagworte, blaue Verläufe, Handschlag-Bilder) noch wie eine Startup-Landingpage (bunte Verläufe, Emojis, große Aufforderungs-Buttons) aussehen.",
+    "overview": "Die Seite liest sich wie eine Konsolenausgabe, ohne eine Konsole nachzubauen. Es gibt kein Fenster, keine Titelleiste und keine Eingabezeile. Was bleibt, ist die Grammatik einer Konsole: eine Monospace-Schrift für alles, Pfad- und Prompt-Zeichen als Wegweiser, nummerierte Abschnitte und ein Cursor hinter dem Namen. Darunter liegt ein ruhiges Karoraster wie auf Millimeterpapier oder einem Schaltplan.\n\nDie Konsolen-Grammatik trägt nur, was der Besucher braucht. Kostüm ohne Inhalt gehört nicht dazu: Eine Statuszeile mit `host / loc / status` oder Bildunterschriften im Dateipfad-Stil wurden bewusst entfernt, weil sie für Nicht-Techniker wie Rauschen wirkten.\n\nInhalte stehen auf Flächen statt in Rahmen. Karten, Kennzahl-Pillen, der Kontakt und der Umschalter heben sich mit weichem Schatten vom Raster ab, Linien und Rahmen gibt es nicht. Die Farbe ist sparsam: Messgeräte-Amber zeigt an, wo man hinschauen soll, Messwert-Blau markiert leise Links. Alles andere ist Tinte auf Grund in zwei Grautönen.\n\nDie Seite ist dunkel als Vorgabe und hat ein vollwertiges helles Schema. Ohne Wahl folgt sie der Systemeinstellung. Sie soll weder wie eine Konzern-Beraterseite (Stockfotos, Schlagworte, blaue Verläufe, Handschlag-Bilder) noch wie eine Startup-Landingpage (bunte Verläufe, Emojis, große Aufforderungs-Buttons) aussehen.",
     "keyCharacteristics": [
       "Eine einzige Schrift, JetBrains Mono, selbst ausgeliefert",
       "Karoraster im Hintergrund, 48 px Teilung",
       "Flächen mit weichem Schatten statt Linien und Rahmen",
-      "Konsolenzeichen als Markierungen: `~/`, `>`, `01 /`, `■`, `→`, `_`",
+      "Konsolenzeichen als Markierungen: `~/`, `>`, `01 /`, `■`, `→`, `_`, für Screenreader stumm",
       "Zwei Schemata, Nacht als Vorgabe und Tag als Gegenstück, jede Farbe in beiden Fassungen",
-      "Akzentfarbe nur als Signal, nie als große Fläche"
+      "Akzentfarbe nur als Signal, nie als große Fläche",
+      "Der Weg zu LinkedIn steht im ersten Bildschirm und als eigener Abschluss"
     ],
     "rules": [
-      { "name": "The Signal Rule", "body": "Messgeräte-Amber markiert, es füllt nicht. Es erscheint auf Zeichen, Nummern, kurzen Zeilen und Ringen, nie als Hintergrund einer Fläche oder eines Buttons.", "section": "colors" },
-      { "name": "The Two Schemes Rule", "body": "Jede neue Farbe bekommt eine Nacht- und eine Tag-Fassung und wird an drei Stellen gesetzt: in `:root`, im `prefers-color-scheme: light`-Block unter `html:not(.dark)` und in `html.light`. Fehlt eine Stelle, bricht der Umschalter.", "section": "colors" },
-      { "name": "The One Font Rule", "body": "Es gibt nur JetBrains Mono. Keine zweite Schrift für Überschriften, keine Systemschrift für Fließtext. Neue Hierarchie entsteht aus Größe, Strichstärke, Großschreibung und Farbe.", "section": "typography" },
-      { "name": "The Glyph Grammar Rule", "body": "Konsolenzeichen sind die einzige Ikonografie. `~/` steht vor der Marke, `> ` vor der aktiven Seite, `01 / ` vor Abschnittsüberschriften, `■ ` vor Kartentiteln, ` →` hinter Links, `_` hinter dem Namen. Sie werden per CSS (`::before`, `::after`) gesetzt, damit sie nicht im Textinhalt landen. Keine Icon-Sets.", "section": "typography" },
-      { "name": "The Surfaces-not-Lines Rule", "body": "Keine Rahmen, keine Trennlinien, keine Hairlines. Die einzigen Linien sind die des Karorasters im Hintergrund. Was getrennt werden soll, bekommt eine eigene Fläche oder Abstand.", "section": "elevation" },
-      { "name": "The One Lift Rule", "body": "Es gibt genau eine Schattenstufe. Keine Hover-Hebung, keine gestaffelten Ebenen.", "section": "elevation" }
+      {
+        "name": "The Signal Rule",
+        "body": "Messgeräte-Amber markiert, es füllt nicht. Es erscheint auf Zeichen, Nummern, kurzen Zeilen, Unterstrichen und Ringen, nie als Hintergrund einer Fläche oder eines Buttons.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Schemes Rule",
+        "body": "Jede neue Farbe bekommt eine Nacht- und eine Tag-Fassung und wird an drei Stellen gesetzt: in `:root`, im `prefers-color-scheme: light`-Block unter `html:not(.dark)` und in `html.light`. Fehlt eine Stelle, bricht der Umschalter.",
+        "section": "colors"
+      },
+      {
+        "name": "The Grid Headroom Rule",
+        "body": "Text im hellen Schema muss AA (4,5:1) auch dort bestehen, wo eine Rasterlinie (`tag-raster`) unter den Buchstaben liegt, nicht nur auf dem Papierweiß.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Font Rule",
+        "body": "Es gibt nur JetBrains Mono. Keine zweite Schrift für Überschriften, keine Systemschrift für Fließtext. Neue Hierarchie entsteht aus Größe, Strichstärke, Großschreibung und Farbe.",
+        "section": "typography"
+      },
+      {
+        "name": "The 12 px Floor Rule",
+        "body": "Keine Schrift unter 0,75 rem. Kleine Beschriftungen gewinnen Lesbarkeit über Sperrung und Großschreibung, nicht über noch kleinere Größen.",
+        "section": "typography"
+      },
+      {
+        "name": "The Glyph Grammar Rule",
+        "body": "Konsolenzeichen sind die einzige Ikonografie. `~/` steht vor der Marke, `> ` vor der aktiven Seite, `01 / ` vor Abschnittsüberschriften, `■ ` vor Kartentiteln, `→` an Links, `_` hinter dem Namen. Sie werden per CSS gesetzt, und zwar immer mit leerem Alternativtext und Rückfall-Deklaration davor (`content: \"■ \"; content: \"■ \" / \"\";`), damit Screenreader sie nicht vorlesen. Steht ein Zeichen im HTML, bekommt es `aria-hidden=\"true\"`. Keine Icon-Sets.",
+        "section": "typography"
+      },
+      {
+        "name": "The Surfaces-not-Lines Rule",
+        "body": "Keine Rahmen, keine Trennlinien, keine Hairlines, auch keine einseitigen Lichtkanten. Die einzigen Linien sind die des Karorasters im Hintergrund und der Amber-Unterstrich des LinkedIn-Links. Was getrennt werden soll, bekommt eine eigene Fläche oder Abstand.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Lift Rule",
+        "body": "Es gibt genau eine Schattenstufe. Keine Hover-Hebung, keine gestaffelten Ebenen.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do alle Farben über die Variablen `--p`, `--ink`, `--mut`, `--card`, `--grid`, `--acc` und `--acc2` setzen und jede neue Farbe in beiden Schemata an allen drei Stellen definieren.",
+      "Do alle Farben über die Variablen `--p`, `--ink`, `--mut`, `--card`, `--grid`, `--acc`, `--acc2` und `--sig-*` setzen und jede neue Farbe in beiden Schemata an allen drei Stellen definieren.",
       "Do neue Seiten mit derselben Navigation, demselben Fuß und demselben Karoraster bauen; Textseiten nutzen die schmale Dokumentspalte (höchstens 72 Zeichen) wie Datenschutz und 404.",
-      "Do Abschnitte fortlaufend nummerieren (`01 /`, `02 /` …) und Konsolenzeichen per CSS setzen.",
+      "Do den Weg zu LinkedIn auf jeder neuen Inhaltsseite erreichbar halten, mindestens im Fuß.",
+      "Do Abschnitte fortlaufend nummerieren (`01 /`, `02 /` …) und Konsolenzeichen per CSS mit leerem Alternativtext setzen.",
       "Do Flächen mit Schatten statt Rahmen verwenden: 14 px für Inhaltsflächen, Pillen für einzeilige Elemente.",
-      "Do Amber auf Zeichen, Nummern und Fokus beschränken und Messwert-Blau für Werte und leise Links verwenden.",
+      "Do jedem Bedienelement 44 px Tippfläche geben, notfalls über Innenabstand oder eine erweiterte Trefferfläche.",
+      "Do Amber auf Zeichen, Nummern, Unterstriche und Fokus beschränken und Messwert-Blau für leise Links verwenden.",
       "Do Schrift und Bilder nur von kazas.dev selbst laden, als WebP mit `srcset` und festen Maßen.",
-      "Do jede Bewegung mit `prefers-reduced-motion` abschalten."
+      "Do jede Bewegung mit `prefers-reduced-motion` abschalten und jedes Blinken vor 5 Sekunden enden lassen."
     ],
     "donts": [
       "Don't wie eine Konzern-Beraterseite aussehen: keine Stockfotos, keine Schlagwort-Kacheln, keine blauen Verläufe, keine Handschlag-Bilder.",
       "Don't wie eine Startup-Landingpage aussehen: keine bunten Verläufe, keine Emojis, keine großen Aufforderungs-Buttons.",
-      "Don't Rahmen, Trennlinien oder Hairlines einsetzen; die einzigen Linien sind die des Rasters.",
+      "Don't Konsolen-Kostüm ohne Inhalt einsetzen: keine Statuszeilen wie `host / loc / status`, keine Bildunterschriften im Dateipfad-Stil.",
+      "Don't Rahmen, Trennlinien, Hairlines oder einseitige Lichtkanten einsetzen; die einzigen Linien sind die des Rasters und der Unterstrich des LinkedIn-Links.",
       "Don't eine zweite Schrift, Icon-Sets, Webfonts von fremden Servern oder eingebettete Inhalte einbinden.",
+      "Don't Schrift unter 0,75 rem setzen.",
       "Don't Amber als Flächenfarbe für Buttons oder Hintergründe verwenden.",
       "Don't den Arbeitgeber mehr als einmal pro Seite zeigen oder ihm mehr als einen Satz geben.",
-      "Don't mehrere Schattenstufen, Hover-Hebungen oder Scroll-Animationen einführen."
+      "Don't mehrere Schattenstufen, Hover-Hebungen, Scroll-Animationen oder endlose Animationen einführen.",
+      "Don't das Papierweiß des hellen Schemas gegen neutrales Weiß oder Grau tauschen."
     ]
   }
 }

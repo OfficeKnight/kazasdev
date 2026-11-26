@@ -252,7 +252,7 @@ Der Kopf ist ein zweispaltiges Raster (1,1 fr zu 0,9 fr, 30 px Abstand), unten b
 Abschnitte folgen mit 36 px Abstand und sind fortlaufend nummeriert (01 Arbeitsweise, 02 Kernthemen, 03 Hintergrund, 04 Kennzahlen, 05 Kontakt). Der Arbeitgeber-Hinweis gehört zu 03 und steht an dessen Ende. Der englische Absatz steht ohne Nummer zwischen 04 und 05. Fließtext bleibt bei höchstens 70 Zeichen Breite und lässt rechts Raum frei; Karten und Kontakt nutzen die volle Breite.
 
 - **Karten:** vier Spalten mit 14 px Abstand, unter 980 px zwei, unter 560 px eine.
-- **Kennzahlen:** Pillen in einer umbrechenden Reihe mit 12 px Abstand, unter 980 px ein zweispaltiges Raster. Unter 560 px werden sie zu einem Messwert-Raster ohne Fläche: zwei Spalten, Zahl oben, Beschriftung darunter.
+- **Kennzahlen:** Pillen in einem zweispaltigen Raster mit 12 px Abstand, linksbündig, damit lange Beschriftungen die Reihe nicht unregelmäßig umbrechen. Unter 560 px werden sie zu einem Messwert-Raster ohne Fläche: zwei Spalten, Zahl oben, Beschriftung darunter.
 - **Tippflächen:** Jedes Bedienelement ist mindestens 44 px hoch: Navigationslinks und Fußlinks über Innenabstand, der Umschalter über eine unsichtbar erweiterte Trefferfläche, der Kontakt als ganze Fläche.
 - **Fuß:** 44 px Abstand nach oben; Avatar und Name links, Links rechts angeschoben, bricht auf schmalen Schirmen um.
 

@@ -64,6 +64,7 @@ Offen:
 - Sprache Deutsch. Er schreibt in der Ich-Form, Besucher werden gesiezt.
 - Ton: sachlich und konkret, aus der Praxis, keine Werbesprache.
 - Der Arbeitgeber heißt immer voll „SIGMA IT-Security und Infrastruktur“.
+- Der Werdegang wirkt öffentlich nicht chronologisch. Stationen erscheinen als gleichrangige Erfahrungsfelder, ohne Pfeile, Zeitstrahl oder Reihenfolge, die eine Abfolge nahelegt; der tatsächliche Verlauf ging hin und her.
 
 ## Evidence on Hand
 
@@ -72,6 +73,7 @@ Offen:
 - Kennzahlen auf der Startseite: 7 Jahre IT-Dienstleister, 8 Jahre Fahrzeugerprobung, B.Sc. IT-Sicherheit, 3 Sprachen.
 - Sprachen: Deutsch und Russisch als Muttersprachen, Englisch fließend.
 - Werdegang in Textform: Schaltschrankbau, Server und Netzwerke, Ausrüstung von Versuchsfahrzeugen auf TISAX-zertifizierten Prüfgeländen, selbst programmierte Werkzeuge, die Berichte von Stunden auf Minuten verkürzt haben.
+- Belegte Zahlen zum Werdegang (vom Inhaber genannt am 26.11.2026): Testbericht von 2 Stunden auf 20 Minuten, Rechnung von 1 Stunde auf 10 Minuten, 8 selbst programmierte Werkzeuge, von 25 Kollegen genutzt, 60 bis 100 ausgerüstete Versuchsfahrzeuge, Arbeit auf 5 Prüfgeländen.
 - LinkedIn-Profil: https://www.linkedin.com/in/rkazas/
 
 Nicht vorhanden und nicht zu erfinden: Kundennamen, Referenzen und Testimonials, Fallstudien, Zertifikate und Auditor-Qualifikationen, Projektbeschreibungen, Publikationen außerhalb von LinkedIn, Preise oder Leistungspakete.

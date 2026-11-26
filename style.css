@@ -11,7 +11,7 @@
 
 /* Nacht (Vorgabe) */
 :root {
-  --p: #0b0e13; --ink: #e6e9ef; --mut: #8b94a3; --card: #131923; --grid: #161c26;
+  --p: #0b0e13; --ink: #e6e9ef; --mut: #8b94a3; --card: #171f2b; --grid: #161c26;
   --acc: #ffb224; --acc2: #7dd3fc;
   --sh: 0 10px 30px rgba(0, 0, 0, .35);
   --sig-bg: #142032; --sig-text: #b9c8da; --sig-link: #8fcbf3;
@@ -63,9 +63,9 @@ p { margin: 0 0 10px; }
 /* Navigation */
 .nav { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; padding-block: 14px; font-size: .85rem; }
 .nav .brand { margin-right: auto; font-weight: 700; }
-.nav .brand::before { content: "~/ "; color: var(--acc); }
+.nav .brand::before { content: "~/ "; content: "~/ " / ""; color: var(--acc); }
 .nav a[aria-current] { color: var(--acc); }
-.nav a[aria-current]::before { content: "> "; }
+.nav a[aria-current]::before { content: "> "; content: "> " / ""; }
 .tog { border: 0; background: var(--card); color: var(--ink); font: inherit; font-size: .78rem; padding: 6px 14px; cursor: pointer; border-radius: 999px; box-shadow: var(--sh); }
 
 /* Kopf */
@@ -74,7 +74,7 @@ p { margin: 0 0 10px; }
 h1 { font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1; margin: 14px 0 10px; font-weight: 700; letter-spacing: -.03em; }
 h1 .nm { display: block; }
 /* Cursor blinkt viermal (4 s) und bleibt dann stehen: WCAG 2.2.2 verlangt ein Ende vor 5 s */
-h1 .nm::after { content: "_"; color: var(--acc); animation: bl 1s steps(2) 4; }
+h1 .nm::after { content: "_"; content: "_" / ""; color: var(--acc); animation: bl 1s steps(2) 4; }
 @keyframes bl { to { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { h1 .nm::after { animation: none; } }
 .role { color: var(--acc); font-size: 1rem; margin: 0; }
@@ -96,14 +96,13 @@ h1 .role { display: block; margin-top: 10px; font-weight: 400; line-height: 1.6;
 /* Abschnitte */
 section { margin-top: 36px; }
 h2 { font-size: .9rem; font-weight: 500; color: var(--mut); text-transform: uppercase; letter-spacing: .12em; margin: 0 0 14px; }
-h2::before { content: attr(data-n) " / "; color: var(--acc); }
+h2::before { content: attr(data-n) " / "; content: attr(data-n) " / " / ""; color: var(--acc); }
 .text { max-width: 70ch; }
 .cards { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); }
 .card { background: var(--card); padding: 18px; min-width: 0; border-radius: var(--r); box-shadow: var(--sh); }
 .card h3 { font-size: .95rem; font-weight: 700; margin: 0 0 6px; hyphens: auto; overflow-wrap: break-word; }
-.card h3::before { content: "■ "; color: var(--acc); font-size: .7em; }
+.card h3::before { content: "■ "; content: "■ " / ""; color: var(--acc); font-size: .7em; }
 .card p { color: var(--mut); font-size: .88rem; margin: 0; }
-.card a::after { content: " →"; color: var(--acc); }
 .kpi { display: flex; flex-wrap: wrap; gap: 12px; }
 .kpi div { display: inline-flex; align-items: baseline; gap: 12px; padding: 12px 22px; border-radius: 999px; background: var(--card); box-shadow: var(--sh); min-width: 0; }
 .kpi b { font-size: 1.55rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; }

@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-11-26T14:11:38.090Z",
         "reason": "User confirmed 2026-11-26: Papierweiß #f4f2ec (tag-grund) is a deliberate choice by the site owner, recorded in DESIGN.md (Colors/Neutral); shared by all three pages via style.css"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-26T14:53:32.014Z",
+        "reason": "False positive: source scan omits the display h1 (2-3.6rem); DESIGN.md documents section labels distinguished by weight, capitals, tracking and colour; rendered scans at 1440/390/320 do not report it"
       }
     ]
   }
